@@ -58,6 +58,10 @@ Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 ### Johdanto
 
 _Lyhyt kuvaus projektista ja dokumentista_
+Tästä dokumentista löytyy Ticorporate projektimme projektisuunnitelma.
+
+Projektimme on websovellus josta löytyy aluksi ainakin yksi juomapeli. Juomapelin lisäksi, sovelluksesta voi katsoa halutessaan erilaisia drinkkivinkkejä, joita taas voi filtteröidä omien mieltymyksien mukaan.
+Suunnitelmissa on yrittää lisätä mahdollisuus muokata ja/tai lisätä omia sääntöjä peleihin.
 
 ### Projektin tausta ja tavoitteet
 
