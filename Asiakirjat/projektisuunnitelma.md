@@ -65,7 +65,7 @@ Suunnitelmissa on yrittää lisätä mahdollisuus muokata ja/tai lisätä omia s
 
 ### Projektin tausta ja tavoitteet
 
-_Mitä tehdään ja kelle? Mitkä ovat projektin tavoitteet?_
+Hauska websovellus yli 18-vuotiaille kaveriporukoille jotka viettävät iltoja yhdessä. Projektin tavoitteena on tehdä websovellus mitä voi pelata useampi henkilö omalla mobiililaitteella samanaikaisesti pelaajien luomassa aulassa.
 
 ### Tuotokset
 
