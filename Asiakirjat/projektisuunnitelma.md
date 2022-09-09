@@ -57,7 +57,6 @@ Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
 ### Johdanto
 
-_Lyhyt kuvaus projektista ja dokumentista_
 Tästä dokumentista löytyy Ticorporate projektimme projektisuunnitelma.
 
 Projektimme on websovellus josta löytyy aluksi ainakin yksi juomapeli. Juomapelin lisäksi, sovelluksesta voi katsoa halutessaan erilaisia drinkkivinkkejä, joita taas voi filtteröidä omien mieltymyksien mukaan.
@@ -95,8 +94,6 @@ _Tässä luvussa kuvataan tapa, jolla projekti viedään läpi. Esim. Scrum, OMT
 
 ### Projektin organisaatio
 
-_Ketä projektiin kuuluu ja mitkä ovat henkilöiden päävastuut. Kuinka projekti organisoituu ja minkä tyyppisiä ryhmiä/työmuotoja muodostetaan. Selvittäkää myös ohjauksen ja asiakkaan kuin myös muidenkin projektiin osallistuneiden tehtävät ja toimet_
-
 | Nimi         | Rooli(t)                                                | Yhteystiedot           |
 | ------------ | ------------------------------------------------------- | ---------------------- |
 | Julius Kelja | Scrum Master, UI/UX                                     | AA2850@student.jamk.fi |
@@ -108,27 +105,27 @@ _Ketä projektiin kuuluu ja mitkä ovat henkilöiden päävastuut. Kuinka projek
 
 ### Sisäinen raportointi
 
-_Kuvaa kuinka projekti raportoi omalle organisaatiolleen ja kuka vastaa mistäkin raportoinnista_
+Scrum Master ja Product Owner pitävät huolen raportoinneista, jotka heille on suotu. Tiimin muut jäsenet raportoivat edellämainituille, jotka tarvittaessa vievät asiat eteenpäin.
 
 ### Palaverikäytänteet (Daily Scrum, Sprint Backlog, jne)
 
-_Projektin viikkopalaveri pidetään xxx paikassa xxx. Palaverin aikana selvitetään tehdyt työt ja suunnitellaan tulevat. Palavereista tehdään pöytäkirja joita säilytetään projektihakemistossa_
+Projektin viikkopalaveri pidetään perjantaisin huoneessa 205 DGC:llä. Palaverin aikana selvitetään tehdyt työt ja suunnitellaan tulevat. Palavereista tehdään pöytäkirja, joita säilytetään projektihakemistossa.
 
 ### Kommunikointitavat
 
-_Kuvaa mitä eri tapoja projektilla ja asiakkaalla on käytössään kommunikointiin projektin aikana. Mikäli yrityksellä tai asiakkaalla on jokin järjestelmä esim. konferenssipuhelujen käyttämiseen, se tulee mainita tässä (mielellään myös käyttöohjeet)_
+Kommunikointi tapahtuu pääosin Discord-kanavan kautta.
 
 ## Dokumentointi
 
-_Kirjaa tähän miten projekti on ajatellut työnsä dokumentoida. Vai dokumentoiko lainkaan?_
+Haluttu dokumentointi luodaan aluksi joko pilveen tai omalle tietokoneelle, ja siitä jaetaan oikeuksineen linkit tiimin muille jäsenille Discord-serverille.
 
 ### Dokumenttipohjat
 
-_Kuvaa mitä pohjia dokumentoinnissa käytetään. Onko kyseessä projektin omat vai JAMKin pohjat vai jotain muuta_
+Projektissa käytetään pääasiassa joko JAMKin tai Labramestarin määräämiä/tekemiä pohjia. Muutoin luodaan siistit pohjat itse tai käytetään muita valmispohjia.
 
 ### Dokumenttien hallinta
 
-_Kuvaa dokumenttien säilytys, kenellä on oikeudet dokumenttien hallintaan, miten backupit on hoidettu, kuinka dokumentteja versioidaan (esim. 1.0 on vasta kun asiakas on hyväksynyt dokumentin) ja nimetään (onko esim. dokumentin nimessä versionumero)_
+Dokumenteista jaetaan linkit oikeuksineen Discord-serverin "linkit"-kanavalle. Tärkeät linkit kiinnitetään keskusteluun, jotta ne ovat helposti löydettävissä. Dokumenteista on alkuperäiset versiot tallessa jakajan omalla tietokoneella tai pilvessä. Tarvittaessa käytäntöä muutetaan.
 
 ## Riskien hallinta
 
