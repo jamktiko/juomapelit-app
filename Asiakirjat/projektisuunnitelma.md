@@ -64,7 +64,7 @@ Suunnitelmissa on yrittää lisätä mahdollisuus muokata ja/tai lisätä omia s
 
 ### Projektin tausta ja tavoitteet
 
-_Mitä tehdään ja kelle? Mitkä ovat projektin tavoitteet?_
+Hauska websovellus yli 18-vuotiaille kaveriporukoille jotka viettävät iltoja yhdessä. Projektin tavoitteena on tehdä websovellus mitä voi pelata useampi henkilö omalla mobiililaitteella samanaikaisesti pelaajien luomassa aulassa.
 
 ### Tuotokset
 
@@ -81,6 +81,14 @@ _Mitä tehdään ja kelle? Mitkä ovat projektin tavoitteet?_
 ### Projektin hyväksyminen
 
 _Kirjoita tähän lukuun minkä toimintojen jälkeen projekti on hyväksyttävissä. Yleensä hyväksyminen voidaan todeta kun projektin tavoitteet ovat toteutuneet._
+Sovellus on hyväksyttävässä kunnossa kun siitä löytyy ainakin:
+
+- Yksi juomapeli (Tavallisella korttipakalla pelattava)
+- Toimiva moninpeli
+- Toimiva Drinkkivinkki osio
+- Toimivat animaatiot ja ääniefektit
+- Mahdollisuus asetuksien säätöön
+- Käyttäjäystävällinen ulkoasu. Tämä testataan vapaaehtoisilla testaajilla.
 
 ## Toimintasuunnitelma
 
@@ -115,9 +123,13 @@ Scrum Master ja Product Owner pitävät huolen raportoinneista, jotka heille on 
 
 Projektin viikkopalaveri pidetään perjantaisin huoneessa 205 DGC:llä. Palaverin aikana selvitetään tehdyt työt ja suunnitellaan tulevat. Palavereista tehdään pöytäkirja, joita säilytetään projektihakemistossa.
 
+Daily Scrumit pidetään klo 9:30 joka työpäivä.
+
+Sprint backlogien ajoista päätetään erikseen, mutta niistä informoidaan tiimiläisiä ajoissa.
+
 ### Kommunikointitavat
 
-Kommunikointi tapahtuu ensisijaisesti Discord-kanavan kautta.
+Kommunikointi tapahtuu ensisijaisesti Discord-kanavan kautta, sekä kokouksissa työpaikalla.
 
 ## Dokumentointi
 
