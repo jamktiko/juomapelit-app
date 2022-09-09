@@ -115,9 +115,13 @@ Scrum Master ja Product Owner pitävät huolen raportoinneista, jotka heille on 
 
 Projektin viikkopalaveri pidetään perjantaisin huoneessa 205 DGC:llä. Palaverin aikana selvitetään tehdyt työt ja suunnitellaan tulevat. Palavereista tehdään pöytäkirja, joita säilytetään projektihakemistossa.
 
+Daily Scrumit pidetään klo 9:30 joka työpäivä.
+
+Sprint backlogien ajoista päätetään erikseen, mutta niistä informoidaan tiimiläisiä ajoissa.
+
 ### Kommunikointitavat
 
-Kommunikointi tapahtuu ensisijaisesti Discord-kanavan kautta.
+Kommunikointi tapahtuu ensisijaisesti Discord-kanavan kautta, sekä kokouksissa työpaikalla.
 
 ## Dokumentointi
 
