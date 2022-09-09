@@ -36,22 +36,22 @@
 
 \<Projektin nimi>
 
-Tekijät:
+Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
 ### Termit ja lyhenteet
 
-| Termi | Kuvaus |
-|---|---|
-Git | Versionhallintajärjestelmä
-GitHub | Palvelu joka on rakennettu GIT versionhallinnan ympärille
-Markdown | Merkkauskieli
+| Termi    | Kuvaus                                                    |
+| -------- | --------------------------------------------------------- |
+| Git      | Versionhallintajärjestelmä                                |
+| GitHub   | Palvelu joka on rakennettu GIT versionhallinnan ympärille |
+| Markdown |  Merkkauskieli                                            |
 
 ### Viitteet
 
-| Viittaus | Materiaali |
-|---|---|
-HLTP | \<linkki hltp dokumenttiin>
-GDD | \<linkki gamedesign dokumenttiin>
+| Viittaus | Materiaali                        |
+| -------- | --------------------------------- |
+| HLTP     | \<linkki hltp dokumenttiin>       |
+| GDD      | \<linkki gamedesign dokumenttiin> |
 
 ## Projektin sisältö
 
@@ -93,26 +93,26 @@ _Tässä luvussa kuvataan tapa, jolla projekti viedään läpi. Esim. Scrum, OMT
 
 _Ketä projektiin kuuluu ja mitkä ovat henkilöiden päävastuut. Kuinka projekti organisoituu ja minkä tyyppisiä ryhmiä/työmuotoja muodostetaan. Selvittäkää myös ohjauksen ja asiakkaan kuin myös muidenkin projektiin osallistuneiden tehtävät ja toimet_
 
-| Nimi | Rooli(t) | Yhteystiedot
-|---|---|---|
-Martti Vainaa | Scrum Master | A1234@student.jamk.fi
-Kalevi Kuollut | Developer, testing lead | B1234@student.jamk.fi
+| Nimi           | Rooli(t)                | Yhteystiedot           |
+| -------------- | ----------------------- | ---------------------- |
+| Martti Vainaa  | Scrum Master            | A1234@student.jamk.fi  |
+| Kalevi Kuollut | Developer, testing lead |  B1234@student.jamk.fi |
 
 ### Ohjausryhmä
 
-| Nimi | Rooli(t) | Yhteystiedot
-|---|---|---|
-Martti Vainaa | Ohjaaja | A1234@jamk.fi
-Kalevi Kuollut | Lehtori | B1234@student.jamk.fi
+| Nimi           | Rooli(t) | Yhteystiedot           |
+| -------------- | -------- | ---------------------- |
+| Martti Vainaa  | Ohjaaja  | A1234@jamk.fi          |
+| Kalevi Kuollut | Lehtori  |  B1234@student.jamk.fi |
 
 ### Työryhmät
 
 _jos on_
 
-| Nimi | Rooli(t) | Yhteystiedot
-|---|---|---|
-Martti Vainaa | Scrum Master | A1234@student.jamk.fi
-Kalevi Kuollut | Developer, testing lead | B1234@student.jamk.fi
+| Nimi           | Rooli(t)                | Yhteystiedot           |
+| -------------- | ----------------------- | ---------------------- |
+| Martti Vainaa  | Scrum Master            | A1234@student.jamk.fi  |
+| Kalevi Kuollut | Developer, testing lead |  B1234@student.jamk.fi |
 
 ### Asiakkaan vastuut
 
@@ -165,9 +165,9 @@ _Kuvaa tässä kuinka projekti aikoo hallinnoida ja seurata projektiriskejä_
 
 Esimerkiksi näin.
 
-| Riskit | Todennäköisyys | Impakti | Minimointi
-|---|---|---|---|
-Työntekijät eivät ole motivoituneita ja eivät saavu paikalle | Pieni | Suuri | Pidetään työpaikalla kahvia ja pullaa.
+| Riskit                                                       | Todennäköisyys |  Impakti | Minimointi                             |
+| ------------------------------------------------------------ | -------------- | -------- | -------------------------------------- |
+| Työntekijät eivät ole motivoituneita ja eivät saavu paikalle | Pieni          |  Suuri   | Pidetään työpaikalla kahvia ja pullaa. |
 
 ## Avoimet asiat
 
