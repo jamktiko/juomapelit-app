@@ -154,7 +154,7 @@ Esimerkiksi näin.
 | Motivaationpuute työntekijöillä                           | Pieni          |  Suuri       | Pidetään tarpeeksi taukoja ja hankimme keskeisiä viihdykkeitä (kahvipulla, koristeita etc.) |
 | Projekti kasvaa liian suureksi eikä aika riitä tekemiseen | Kohtalainen    |  Suuri       | Daily SCRUM-kokousten pitäminen ja hyvä suunnittelu.                                        |
 | Sairastapaukset mitkä estävät tiettyjen töiden teon       | Kohtalainen    |  Kohtalainen | Perehdytään kaikkien tiiminjäsenten työtehtäviin ja autetaan tarvittaessa.                  |
-|                                                           | Liian Suuri    |              |                                                                                             |
+|                                                           |                |              |                                                                                             |
 
 ## Avoimet asiat
 
