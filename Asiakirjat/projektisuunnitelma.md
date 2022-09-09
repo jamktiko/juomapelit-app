@@ -16,9 +16,6 @@
     - [Projektin lopettamisesta](#projektin-lopettamisesta)
   - [Projektin resurssit](#projektin-resurssit)
     - [Projektin organisaatio](#projektin-organisaatio)
-    - [Ohjausryhmä](#ohjausryhm%C3%A4)
-    - [Työryhmät](#ty%C3%B6ryhm%C3%A4t)
-    - [Asiakkaan vastuut](#asiakkaan-vastuut)
     - [Työkalut](#ty%C3%B6kalut)
   - [Aikataulu](#aikataulu)
   - [Raportointi ja kommunikointi](#raportointi-ja-kommunikointi)
@@ -57,9 +54,10 @@ Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
 ### Johdanto
 
-Tästä dokumentista löytyy Ticorporate projektimme projektisuunnitelma.
+Tästä dokumentista löytyy Ticorporate-projektimme projektisuunnitelma.
 
-Projektimme on websovellus josta löytyy aluksi ainakin yksi juomapeli. Juomapelin lisäksi, sovelluksesta voi katsoa halutessaan erilaisia drinkkivinkkejä, joita taas voi filtteröidä omien mieltymyksien mukaan.
+Projektimme on websovellus, josta löytyy aluksi ainakin yksi juomapeli. Juomapelin lisäksi sovelluksesta voi katsoa halutessaan erilaisia drinkkivinkkejä, joita taas voi filtteröidä omien mieltymyksien mukaan.
+
 Suunnitelmissa on yrittää lisätä mahdollisuus muokata ja/tai lisätä omia sääntöjä peleihin.
 
 ### Projektin tausta ja tavoitteet
@@ -80,7 +78,6 @@ Hauska websovellus yli 18-vuotiaille kaveriporukoille jotka viettävät iltoja y
 
 ### Projektin hyväksyminen
 
-_Kirjoita tähän lukuun minkä toimintojen jälkeen projekti on hyväksyttävissä. Yleensä hyväksyminen voidaan todeta kun projektin tavoitteet ovat toteutuneet._
 Sovellus on hyväksyttävässä kunnossa kun siitä löytyy ainakin:
 
 - Yksi juomapeli (Tavallisella korttipakalla pelattava)
@@ -92,7 +89,7 @@ Sovellus on hyväksyttävässä kunnossa kun siitä löytyy ainakin:
 
 ## Toimintasuunnitelma
 
-_Tässä luvussa kuvataan tapa, jolla projekti viedään läpi. Esim. Scrum, OMT++, Protoilu jne. Ota huomioon myös kestävä kehitys!_
+Projektia tehdään Scrum-metodin avulla. Roolit on jaettu jokaiselle ryhmän jäsenelle.
 
 ### Projektin aloittamisesta
 
