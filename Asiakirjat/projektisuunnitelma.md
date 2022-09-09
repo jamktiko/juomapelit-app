@@ -34,7 +34,7 @@
 
 ## Projektin tiedot
 
-\<Projektin nimi>
+\<Juomapelit-app>
 
 Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
@@ -93,51 +93,18 @@ _Tässä luvussa kuvataan tapa, jolla projekti viedään läpi. Esim. Scrum, OMT
 
 _Ketä projektiin kuuluu ja mitkä ovat henkilöiden päävastuut. Kuinka projekti organisoituu ja minkä tyyppisiä ryhmiä/työmuotoja muodostetaan. Selvittäkää myös ohjauksen ja asiakkaan kuin myös muidenkin projektiin osallistuneiden tehtävät ja toimet_
 
-| Nimi           | Rooli(t)                | Yhteystiedot           |
-| -------------- | ----------------------- | ---------------------- |
-| Martti Vainaa  | Scrum Master            | A1234@student.jamk.fi  |
-| Kalevi Kuollut | Developer, testing lead |  B1234@student.jamk.fi |
-
-### Ohjausryhmä
-
-| Nimi           | Rooli(t) | Yhteystiedot           |
-| -------------- | -------- | ---------------------- |
-| Martti Vainaa  | Ohjaaja  | A1234@jamk.fi          |
-| Kalevi Kuollut | Lehtori  |  B1234@student.jamk.fi |
-
-### Työryhmät
-
-_jos on_
-
-| Nimi           | Rooli(t)                | Yhteystiedot           |
-| -------------- | ----------------------- | ---------------------- |
-| Martti Vainaa  | Scrum Master            | A1234@student.jamk.fi  |
-| Kalevi Kuollut | Developer, testing lead |  B1234@student.jamk.fi |
-
-### Asiakkaan vastuut
-
-**Jos on asiakas!**
-
-_Tässä luvussa kuvataan mitä vastuita asiakkaalla on projektia kohtaan. Listaa tähän kaikki resurssit joita asiakas projektille antaa eri vaiheissa. Näitä voidaan pitää asiakkaan vastuina, jotta projektia voidaan viedä eteenpäin. Muistakaa painottaa asiakkaalle, mitä heiltä vaaditaan projektin onnistumiselle_
-
-### Työkalut
-
-_Listaa tähän kaikki työkalut joita projekti tarvitsee projektin onnistumiseksi. Niin ohjelmistot kuin raudatkin. Mikäli asiakas tarjoaa jotain siitä tulee mainita tässä kappaleessa_
-
-- Palvelimet?
-- Pilvipalvelut?
-- Työasemat?
-- Jne
+| Nimi         | Rooli(t)                                                | Yhteystiedot           |
+| ------------ | ------------------------------------------------------- | ---------------------- |
+| Julius Kelja | Scrum Master, UI/UX                                     | AA2850@student.jamk.fi |
+| Janne Matela | Product Owner, Liiketoiminta ja markkinointi, Tekniikka | AA4110@student.jamk.fi |
+| Aku Järvinen | Tekniikka, Testaus, AWS                                 | AA3953@student.jamk.fi |
+| Toni Virta   | Tekniikka, Frontend                                     | AA3098@student.jamk.fi |
 
 ## Raportointi ja kommunikointi
 
 ### Sisäinen raportointi
 
 _Kuvaa kuinka projekti raportoi omalle organisaatiolleen ja kuka vastaa mistäkin raportoinnista_
-
-### Asiakasraportointi
-
-_Kuvaa kuinka projekti raportoi asiakkaalle ja millä aikataululla. Kenelle tehdyt raportit lähetetään._
 
 ### Palaverikäytänteet (Daily Scrum, Sprint Backlog, jne)
 
