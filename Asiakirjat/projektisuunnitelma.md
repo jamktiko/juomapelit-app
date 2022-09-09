@@ -81,6 +81,14 @@ Hauska websovellus yli 18-vuotiaille kaveriporukoille jotka viettävät iltoja y
 ### Projektin hyväksyminen
 
 _Kirjoita tähän lukuun minkä toimintojen jälkeen projekti on hyväksyttävissä. Yleensä hyväksyminen voidaan todeta kun projektin tavoitteet ovat toteutuneet._
+Sovellus on hyväksyttävässä kunnossa kun siitä löytyy ainakin:
+
+- Yksi juomapeli (Tavallisella korttipakalla pelattava)
+- Toimiva moninpeli
+- Toimiva Drinkkivinkki osio
+- Toimivat animaatiot ja ääniefektit
+- Mahdollisuus asetuksien säätöön
+- Käyttäjäystävällinen ulkoasu. Tämä testataan vapaaehtoisilla testaajilla.
 
 ## Toimintasuunnitelma
 
