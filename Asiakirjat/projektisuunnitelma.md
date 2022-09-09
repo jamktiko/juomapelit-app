@@ -82,7 +82,7 @@ Sovellus on hyväksyttävässä kunnossa kun siitä löytyy ainakin:
 
 - Yksi juomapeli (Tavallisella korttipakalla pelattava)
 - Toimiva moninpeli
-- Toimiva Drinkkivinkki osio
+- Toimiva Drinkkivinkki-osio
 - Toimivat animaatiot ja ääniefektit
 - Mahdollisuus asetuksien säätöön
 - Käyttäjäystävällinen ulkoasu. Tämä testataan vapaaehtoisilla testaajilla.
@@ -93,11 +93,21 @@ Projektia tehdään Scrum-metodin avulla. Roolit on jaettu jokaiselle ryhmän j�
 
 ### Projektin aloittamisesta
 
+Projektista on valmiina ensimmäinen Figma-prototyyppi, johon on jaettu linkki Discord-serverin "linkit"-kanavalle. Tätä voidaan käyttää referenssinä, pohjana tai poistetaan kokonaan ja tehdään uusi prototyyppi. Tämä päätetään Design Sprintin aikana.
+
+Design Sprint aloitetaan 12.9.2022, jolloin projekti virallisesti lähtee käyntiin.
+
 ### Projektin toteuttamisesta
+
+Prototyyppi luodaan Figmalla. Frontend pystytetään ensisijaisesti Angularia käyttäen, mutta tarvittaessa vaihdetaan Svelteen. Backend toteutetaan Serverless-ratkaisua AWS-pilvipalvelua käyttäen. Projekti julkaistaan websovelluksena.
 
 ### Projektin testaamisesta
 
+Projektia testataan Cypressillä. Sovellus annetaan myös testauskäyttöön vapaaehtoisille käyttäjille.
+
 ### Projektin lopettamisesta
+
+Projekti nähdään valmiiksi, kun siinä on Projektin hyväksyminen -osiossa mainitut asiat. Projekti lopetetaan Scrum-metodin määrämillä tavoilla.
 
 ## Projektin resurssit
 
@@ -142,17 +152,13 @@ Dokumenteista jaetaan linkit oikeuksineen Discord-serverin "linkit"-kanavalle. T
 
 ## Riskien hallinta
 
-_Kuvaa tässä kuinka projekti aikoo hallinnoida ja seurata projektiriskejä_
-
-Esimerkiksi näin.
-
-| Riskit                                                    | Todennäköisyys |  Impakti     | Minimointi                                                                                  |
-| --------------------------------------------------------- | -------------- | ------------ | ------------------------------------------------------------------------------------------- |
-| Motivaationpuute työntekijöillä                           | Pieni          |  Suuri       | Pidetään tarpeeksi taukoja ja hankimme keskeisiä viihdykkeitä (kahvipulla, koristeita etc.) |
-| Projekti kasvaa liian suureksi eikä aika riitä tekemiseen | Kohtalainen    |  Suuri       | Daily SCRUM-kokousten pitäminen ja hyvä suunnittelu.                                        |
-| Sairastapaukset mitkä estävät tiettyjen töiden teon       | Kohtalainen    |  Kohtalainen | Perehdytään kaikkien tiiminjäsenten työtehtäviin ja autetaan tarvittaessa.                  |
-|                                                           |                |              |                                                                                             |
+| Riskit                                                     | Todennäköisyys |  Impakti     | Minimointi                                                                                  |
+| ---------------------------------------------------------- | -------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| Motivaationpuute työntekijöillä                            | Pieni          |  Suuri       | Pidetään tarpeeksi taukoja ja hankimme keskeisiä viihdykkeitä (kahvipulla, koristeita etc.) |
+| Projekti kasvaa liian suureksi, eikä aika riitä tekemiseen | Kohtalainen    |  Suuri       | Daily Scrum-kokousten pitäminen ja hyvä suunnittelu.                                        |
+| Sairastapaukset, mitkä estävät tiettyjen töiden teon       | Kohtalainen    |  Kohtalainen | Perehdytään kaikkien tiiminjäsenten työtehtäviin ja autetaan tarvittaessa.                  |
+|                                                            |                |              |                                                                                             |
 
 ## Avoimet asiat
 
-_Kuvaa tässä luvussa mitä asioita projektista on vielä avoinna. Mihin asiakkaan tulisi ottaa kantaa_
+- Ei toistaiseksi
