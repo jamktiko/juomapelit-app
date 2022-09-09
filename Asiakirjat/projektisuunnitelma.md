@@ -68,13 +68,17 @@ _Mitä tehdään ja kelle? Mitkä ovat projektin tavoitteet?_
 
 ### Tuotokset
 
-_Kirjoita tähän mitä projekti tuottaa elinkaarensa aikana. Esim._
-
 - Projektisuunnitelma
 - Esitutkimus
-- Spring backlog
+- Sprint backlog
+- Product backlog
+- Prototyyppi
+- Liiketoimintasuunnitelma
+- Verkkosivut
+- Mainos?
+- Loppuraportti
 
-### Projektin hyväskyminen
+### Projektin hyväksyminen
 
 _Kirjoita tähän lukuun minkä toimintojen jälkeen projekti on hyväksyttävissä. Yleensä hyväksyminen voidaan todeta kun projektin tavoitteet ovat toteutuneet._
 
@@ -113,7 +117,7 @@ Projektin viikkopalaveri pidetään perjantaisin huoneessa 205 DGC:llä. Palaver
 
 ### Kommunikointitavat
 
-Kommunikointi tapahtuu pääosin Discord-kanavan kautta.
+Kommunikointi tapahtuu ensisijaisesti Discord-kanavan kautta.
 
 ## Dokumentointi
 
