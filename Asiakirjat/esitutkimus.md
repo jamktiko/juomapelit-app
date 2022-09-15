@@ -28,11 +28,22 @@ Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
 ### Termit ja lyhenteet
 
-| Termi    | Kuvaus                                                    |
-| -------- | --------------------------------------------------------- |
-| GIT      | Versionhallintajärjestelmä                                |
-| GitHub   | Palvelu joka on rakennettu GIT versionhallinnan ympärille |
-| Markdown |  Merkkauskieli                                            |
+| Termi        | Kuvaus                                                                                                                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GIT          | Versionhallintajärjestelmä                                                                                                                                                  |
+| GitHub       | Palvelu joka on rakennettu GIT versionhallinnan ympärille                                                                                                                   |
+| Markdown     |  Merkkauskieli                                                                                                                                                              |
+| Scrum        | Ketterä sovelluskehitysmenetelmä                                                                                                                                            |
+| Scrum Master | Henkilö joka vastaa Scrummin ylläpitämisestä ja toimivuudesta                                                                                                               |
+| PO           | Product Owner. Henkilö jolla on selkeä visio projektin lopputuloksesta                                                                                                      |
+| HTML         | Hypertext Markup Language. Avoimesti standardoitu merkintäkieli, jota käytetään käyttää nettisivujen rakentamiseen.                                                         |
+| CSS          | Cascading Style Sheets. Käytetään esim HTML tekstin kustomointiin.                                                                                                          |
+| Frontend     | Loppukäyttäjälle näkyvä osuus sovelluksesta                                                                                                                                 |
+| Backend      | Sovelluksen taustalla pyörivä osuus, joka käsittelee kaiken sovelluslogiikan yms.                                                                                           |
+| Fullstack    | Kahden edellisen termin kokonaisuus.                                                                                                                                        |
+| Framework    | Ohjelmistokehitys joka antaa rungon sovelluksen tai sivuston kehitykseen.                                                                                                   |
+| PWA          | Progressive Web Application. Mobiilin verkkoselaimessa toimiva verkkosivu joka pyrkii yhdistämään natiivin mobiilisovelluksen ja responsiivisen verkkosivun parhaat puolet. |
+| AWS          | Amazon Web Services                                                                                                                                                         |
 
 ### Viitteet
 
