@@ -18,55 +18,52 @@
 
 ## Projektin tiedot
 
-_Projektin nimi ja lyhyt versio visiosta_
+<Juomapelit-app>
 
-Tekijät:
+Juomapelit-appin tarkoituksena on luoda toimiva PWA eli nettiselaimen kautta toimiva sovellus, joka korvaisi fyysisen korttipakan.
+Lobbyn ja pelin luominen, sekä lobbyyn liittyminen on vaivatonta, helppoa ja nopeaa. Sovelluksesta löytyy aluksi ainakin yksi tuttu
+juomapeli, tulevaisuudessa ehkä useampia ja modattava korttipakka, johon käyttäjä saa itse lisätä kortteihin omat säännöt.
+
+Tekijät: Julius Kelja, Janne Matela, Aku Järvinen, Toni Virta
 
 ### Termit ja lyhenteet
 
-_Esimerkiksi:_
-
-| Termi | Kuvaus |
-|---|---|
-GIT | Versionhallintajärjestelmä
-GitHub | Palvelu joka on rakennettu GIT versionhallinnan ympärille
-Markdown | Merkkauskieli
+| Termi    | Kuvaus                                                    |
+| -------- | --------------------------------------------------------- |
+| GIT      | Versionhallintajärjestelmä                                |
+| GitHub   | Palvelu joka on rakennettu GIT versionhallinnan ympärille |
+| Markdown |  Merkkauskieli                                            |
 
 ### Viitteet
 
-_Esimerkiksi:_
-
-| Viittaus | Materiaali |
-|---|---|
-HLTP | _linkki hltp dokumenttiin_
-GDD | _linkki gamedesign dokumenttiin_
+| Viittaus | Materiaali                       |
+| -------- | -------------------------------- |
+| HLTP     | _linkki hltp dokumenttiin_       |
+| GDD      | _linkki gamedesign dokumenttiin_ |
 
 ## Johdanto
 
-_Tämän dokumentin tarkoituksena on tuottaa esitutkimus tietojärjestelmästä X. Tietojärjestelmä X on..._
-
-_Luvussa 2. listataan vaatimukset, luvussa 3. käyttötapaukset..._
+Tämän dokumentin tarkoituksena on tuottaa esitutkimus Juomapelit-appistä. App on websovellus, jonka tarkoituksena on korvata fyysinen korttipakka, ja juomapelejä pystyttäisiin pelaamaan multiplayerinä useammalla laitteella samanaikaisesti.
 
 ## Visio
 
-_Tässä aliluvussa kuvataan tuotteen visio ja mahdollinen slogan_
+Sovelluksen päävisiona toimii helppokäyttöinen, verkkoselaimessa toimiva app, joka korvaa fyysisen korttipakan. Sovelluksesta löytyy ainakin yksi tuttu juomapeli. Lobby ja automaattisesti generoitu koodi, jolla muut pelaajat liittyvät käyttäjän luomaan lobbyyn, ovat luotuja parilla klikkauksella. Pelaaminen ei vaadi sisäänkirjautumista. Sovellus sisältää mahdollisimman vähän ärsyttäviä pop-upeja tai pelin keskeyttäviä ikkunoita ja mainoksia. Sovelluksella on mahdollista pelata monella eri laitteella samaa peliä yhteisessä lobbyssä multiplayer-ominaisuuden avulla.
 
 ## Käyttäjäkertomukset
 
-_Listaa käyttäjäkertomukset ja niiden hyväksymiskriteeristö_
+https://jamkstudent-my.sharepoint.com/:p:/g/personal/aa3098_student_jamk_fi/ETg_iavc2IdDhc_0Gp59s1UBnaDpVti4FbC1vOIPK6YWGg?e=eD6sSw
 
 ## Tekniset vaatimukset
 
-_Lista projektin teknisistä vaatimuksista_
-
-Esimerkiksi:
-
-1. Applikaation/sivuston tulee käyttää TLS/SLS salausta
-2. Pelin tulee toimi sulavasti (>60fps) Samsung Galaxy S2 puhelimella
+1. Pelien tulee toimia sulavasti
+2. Sovelluksen tulee toimia yleisimmillä alustoilla, esim. Android, iOS, PC, Mac
+3. Serverless-backend
+4. Mahdollinen tietokanta?
+5. Toimiva Multiplayer (WebSocket?)
 
 ## Ratkaisuvaihtoehdot
 
-_Listaa niin monta ratkaisuvaihtoehtoa kuin niitä tulee ilmi_
+Alla listattuna ratkaisuvaihtoehdot.
 
 ### Ratkaisuvaihtoehto 1
 
