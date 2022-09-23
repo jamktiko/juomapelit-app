@@ -1,24 +1,27 @@
-<div *ngIf="korttiLkm <= 52" class="kortit">
-  <h2>Nykyinen kortti</h2>
-  <h3>{{this.shufflatutKortit[0].maa}} {{this.shufflatutKortit[0].arvo}}</h3>
-  <p>Kortti nro {{korttiLkm}}/52</p>
-  <button type="button" (click)="seuraava()">Seuraava kortti</button>
-</div>
+<body>
+  <div *ngIf="korttiLkm <= 52" class="kortit">
+    <h2>Nykyinen kortti</h2>
+    <h3>{{this.shufflatutKortit[0].maa}} {{this.shufflatutKortit[0].arvo}}</h3>
+    <p>Kortti nro {{korttiLkm}}/52</p>
+    <button type="button" (click)="seuraava()">Seuraava kortti</button>
+  </div>
 
-<div *ngIf="korttiLkm > 52" class="kortit">
-  <h2>Peli on päättynynt</h2>
-  <p>Aloitetaanko uusi peli?</p>
-  <button type="button" (click)="uusiPeli()">Uusi peli</button>
-</div>
+  <div *ngIf="korttiLkm > 52" class="kortit">
+    <h2>Peli on päättynynt</h2>
+    <p>Aloitetaanko uusi peli?</p>
+    <button type="button" (click)="uusiPeli()">Uusi peli</button>
+  </div>
 
-<h2>Käytetty</h2>
-<ul>
-  <li *ngFor="let kortti of this.pelatutKortit">{{this.kortti.maa}} {{this.kortti.arvo}}</li>
-</ul>
+  <!-- Alla oleva table on vain sovelluskehityksen aikana näkyvillä -->
+  <table>
+    <td>
+      <h3>Käytetty</h3>
+      <tr *ngFor="let kortti of this.pelatutKortit">{{this.kortti.maa}} {{this.kortti.arvo}}</tr>
+    </td>
+    <td>
+      <h3>Jäljellä</h3>
+      <tr *ngFor="let kortti of shufflatutKortit">{{kortti.maa}} {{kortti.arvo}}</tr>
+    </td>
 
-
-<h4>Jäljellä kortit</h4>
-<ul>
-
-  <li *ngFor="let kortti of shufflatutKortit">{{kortti.maa}} {{kortti.arvo}}</li>
-</ul>
+  </table>
+</body>

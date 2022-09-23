@@ -37,12 +37,13 @@ export class DeckComponent implements OnInit {
     if (this.shufflatutKortit.length === 0) {
       this.loppu = true;
   }
+  console.log(this.kortit)
 }
   uusiPeli() {
     this.loppu = false;
-    this.shufflatutKortit = [];
     this.korttiLkm = 1;
-    this.shufflatutKortit = this.shuffle(this.kortit);
+    this.shufflatutKortit = this.shuffle(this.pelatutKortit);
     this.pelatutKortit = [];
+    console.log(this.kortit)
   }
 }
