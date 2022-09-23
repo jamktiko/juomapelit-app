@@ -1,1 +1,24 @@
-<p>deck works!</p>
+<div *ngIf="korttiLkm <= 52" class="kortit">
+  <h2>Nykyinen kortti</h2>
+  <h3>{{this.shufflatutKortit[0].maa}} {{this.shufflatutKortit[0].arvo}}</h3>
+  <p>Kortti nro {{korttiLkm}}/52</p>
+  <button type="button" (click)="seuraava()">Seuraava kortti</button>
+</div>
+
+<div *ngIf="korttiLkm > 52" class="kortit">
+  <h2>Peli on päättynynt</h2>
+  <p>Aloitetaanko uusi peli?</p>
+  <button type="button" (click)="uusiPeli()">Uusi peli</button>
+</div>
+
+<h2>Käytetty</h2>
+<ul>
+  <li *ngFor="let kortti of this.pelatutKortit">{{this.kortti.maa}} {{this.kortti.arvo}}</li>
+</ul>
+
+
+<h4>Jäljellä kortit</h4>
+<ul>
+
+  <li *ngFor="let kortti of shufflatutKortit">{{kortti.maa}} {{kortti.arvo}}</li>
+</ul>
