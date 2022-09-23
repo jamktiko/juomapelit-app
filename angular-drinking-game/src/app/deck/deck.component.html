@@ -2,6 +2,7 @@
   <div *ngIf="korttiLkm <= 52" class="kortit">
     <h2>Nykyinen kortti</h2>
     <h3>{{this.shufflatutKortit[0].maa}} {{this.shufflatutKortit[0].arvo}}</h3>
+    <p>{{this.saannot[x].nimi}}</p>
     <p>Kortti nro {{korttiLkm}}/52</p>
     <button type="button" (click)="seuraava()">Seuraava kortti</button>
   </div>

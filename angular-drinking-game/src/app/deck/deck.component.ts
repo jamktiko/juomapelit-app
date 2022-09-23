@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KORTIT } from '../mock-cards';
 import { Kortti } from '../kortti';
+import { SAANNOT } from '../mock-saannot';
 
 @Component({
   selector: 'app-deck',
@@ -11,6 +12,9 @@ import { Kortti } from '../kortti';
 export class DeckComponent implements OnInit {
   loppu = false; // Onko peli loppu vai ei
   kortit = KORTIT;
+  saannot = SAANNOT;
+  x = 0;
+  sakko = 3;
   korttiLkm = 1; // Montako korttia on pelattu
   constructor() { }
 
@@ -37,7 +41,7 @@ export class DeckComponent implements OnInit {
     if (this.shufflatutKortit.length === 0) {
       this.loppu = true;
   }
-  console.log(this.kortit)
+
 }
   uusiPeli() {
     this.loppu = false;
