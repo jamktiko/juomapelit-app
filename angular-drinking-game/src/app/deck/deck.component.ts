@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { KORTIT } from '../mock-cards';
-import { Kortti } from '../kortti';
-import { SAANNOT } from '../mock-saannot';
+import { CARDS } from '../mock-cards';
+import { Card } from '../card';
+import { RULES } from '../mock-rules';
 
 @Component({
   selector: 'app-deck',
@@ -10,44 +10,44 @@ import { SAANNOT } from '../mock-saannot';
 })
 
 export class DeckComponent implements OnInit {
-  loppu = false; // Onko peli loppu vai ei
-  kortit = KORTIT;
-  saannot = SAANNOT;
-  x = 0;
-  sakko = 3;
-  korttiLkm = 1; // Montako korttia on pelattu
+  isOver = false; // Tells when the game is over
+  cards = CARDS;
+  rules = RULES;
+  cardCount = 1; // How many cards have been played
   constructor() { }
 
-  shufflatutKortit: any[] = []; // Shufflattu korttipakka
-  pelatutKortit: any[] = []; // Taulukko pelatuille korteille. Lähinnä debuggausta varten
+  shuffledCards: any[] = []; // Shuffled cards
+  playedCards: any[] = []; // Played cards
 
   ngOnInit(): void {
-    this.shufflatutKortit = this.shuffle(this.kortit); // Shufflaa kortit
+    this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
   }
   
-  shuffle(kortit: Kortti[]) {
-    for (let i = kortit.length - 1; i > 0; i--) {
+  // Fisher-Yates shuffle algorithm
+  shuffle(cards: Card[]) {
+    for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [kortit[i], kortit[j]] = [kortit[j], kortit[i]];
+      [cards[i], cards[j]] = [cards[j], cards[i]];
     }
-    return kortit;
+    return cards;
   } // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   
-
-  seuraava() {
-    this.korttiLkm++;
-    this.pelatutKortit.push(this.shufflatutKortit[0]);
-    this.shufflatutKortit.splice(0, 1);
-    if (this.shufflatutKortit.length === 0) {
-      this.loppu = true;
+  // Plays the next card when the user clicks the button to do so 
+  next() {
+    this.cardCount++;
+    this.playedCards.push(this.shuffledCards[0]);
+    this.shuffledCards.splice(0, 1);
+    if (this.shuffledCards.length === 0) {
+      this.isOver = true;
   }
 
 }
-  uusiPeli() {
-    this.loppu = false;
-    this.korttiLkm = 1;
-    this.shufflatutKortit = this.shuffle(this.pelatutKortit);
-    this.pelatutKortit = [];
-    console.log(this.kortit)
+// Starts a new game when the user clicks the button to do so
+  newGame() {
+    this.isOver = false;
+    this.cardCount = 1;
+    this.shuffledCards = this.shuffle(this.playedCards);
+    this.playedCards = [];
+    console.log(this.cards)
   }
 }
