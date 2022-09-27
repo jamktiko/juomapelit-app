@@ -1,27 +1,27 @@
 <body>
-  <div *ngIf="korttiLkm <= 52" class="kortit">
+  <div *ngIf="cardCount <= 52" class="cardsClass">
     <h2>Nykyinen kortti</h2>
-    <h3>{{this.shufflatutKortit[0].maa}} {{this.shufflatutKortit[0].arvo}}</h3>
-    <p>{{this.saannot[x].nimi}}</p>
-    <p>Kortti nro {{korttiLkm}}/52</p>
-    <button type="button" (click)="seuraava()">Seuraava kortti</button>
+    <h3>{{this.shuffledCards[0].maa}} {{this.shuffledCards[0].arvo}}</h3>
+    <p>Kortti nro {{cardCount}}/52</p>
+    <button type="button" (click)="next()">Seuraava kortti</button>
   </div>
 
-  <div *ngIf="korttiLkm > 52" class="kortit">
+  <!-- After all the cards has been played, the game shall ask if you want to play again. -->
+  <div *ngIf="cardCount > 52" class="cardsClass">
     <h2>Peli on päättynynt</h2>
     <p>Aloitetaanko uusi peli?</p>
-    <button type="button" (click)="uusiPeli()">Uusi peli</button>
+    <button type="button" (click)="newGame()">Uusi peli</button>
   </div>
 
-  <!-- Alla oleva table on vain sovelluskehityksen aikana näkyvillä -->
+  <!-- Things under this line is only here for the development time -->
   <table>
     <td>
-      <h3>Käytetty</h3>
-      <tr *ngFor="let kortti of this.pelatutKortit">{{this.kortti.maa}} {{this.kortti.arvo}}</tr>
+      <h3>Käytetty</h3> <!-- Not used deck -->
+      <tr *ngFor="let card of this.playedCards">{{this.card.suit}} {{this.card.rank}}</tr>
     </td>
     <td>
-      <h3>Jäljellä</h3>
-      <tr *ngFor="let kortti of shufflatutKortit">{{kortti.maa}} {{kortti.arvo}}</tr>
+      <h3>Jäljellä</h3> <!-- Used deck -->
+      <tr *ngFor="let card of shuffledCards">{{card.suit}} {{card.rank}}</tr>
     </td>
 
   </table>
