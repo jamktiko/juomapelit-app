@@ -1,1 +1,38 @@
-<p>cards works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="cards.component.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelikortit</title>
+</head>
+<body>
+    <h1>Pelikortit</h1>
+
+
+    <canvas id="cardTemplate" width="300" height="470" style="border:1px solid #161616; border-radius:25px">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+        <script>
+            const c = document.getElementById("cardTemplate");
+            
+            let suit = c.getContext("2d");
+            suit.font = "60px Roboto-Black, sans-serif";
+            suit.fillText("♠", 20, 110);
+
+            let rank = c.getContext("2d");
+            rank.font = "50px Roboto-Black, sans-serif";
+            rank.fillText("2", 20, 60);
+
+            let suit1 = c.getContext("2d");
+            suit1.font = "60px Roboto-Black, sans-serif";
+            suit1.rotate(180 * Math.PI / 180);
+            suit1.fillText("♠", -280, -360);
+
+            let rank1 = c.getContext("2d");
+            rank1.font = "50px Roboto-Black, sans-serif";
+            rank1.fillText("2", -280, -410);
+
+        </script> 
+</body>
+</html>
