@@ -1,7 +1,7 @@
 <body>
   <div *ngIf="cardCount <= 52" class="cardsClass">
     <h2>Nykyinen kortti</h2>
-    <h3>{{this.shuffledCards[0].maa}} {{this.shuffledCards[0].arvo}}</h3>
+    <h3>{{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}</h3>
     <p>Kortti nro {{cardCount}}/52</p>
     <button type="button" class="button" (click)="next()">Seuraava kortti</button>
   </div>
