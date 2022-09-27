@@ -3,14 +3,14 @@
     <h2>Nykyinen kortti</h2>
     <h3>{{this.shuffledCards[0].maa}} {{this.shuffledCards[0].arvo}}</h3>
     <p>Kortti nro {{cardCount}}/52</p>
-    <button type="button" (click)="next()">Seuraava kortti</button>
+    <button type="button" class="button" (click)="next()">Seuraava kortti</button>
   </div>
 
   <!-- After all the cards has been played, the game shall ask if you want to play again. -->
   <div *ngIf="cardCount > 52" class="cardsClass">
     <h2>Peli on päättynynt</h2>
     <p>Aloitetaanko uusi peli?</p>
-    <button type="button" (click)="newGame()">Uusi peli</button>
+    <button type="button" class="button" (click)="newGame()">Uusi peli</button>
   </div>
 
   <!-- Things under this line is only here for the development time -->
