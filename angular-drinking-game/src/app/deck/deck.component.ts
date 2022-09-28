@@ -14,13 +14,16 @@ export class DeckComponent implements OnInit {
   cards = CARDS;
   rules = RULES;
   cardCount = 1; // How many cards have been played
+  curRule = "template";
   constructor() { }
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
 
+
   ngOnInit(): void {
     this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
+    this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
   }
   
   // Fisher-Yates shuffle algorithm
@@ -40,7 +43,8 @@ export class DeckComponent implements OnInit {
     if (this.shuffledCards.length === 0) {
       this.isOver = true;
   }
-
+  this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
+  return this.curRule;
 }
 // Starts a new game when the user clicks the button to do so
   newGame() {
@@ -49,5 +53,9 @@ export class DeckComponent implements OnInit {
     this.shuffledCards = this.shuffle(this.playedCards);
     this.playedCards = [];
     console.log(this.cards)
+    this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
+    return this.curRule;
   }
+  
+  
 }
