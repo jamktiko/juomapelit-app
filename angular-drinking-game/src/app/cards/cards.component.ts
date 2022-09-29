@@ -26,7 +26,6 @@ export class CardsComponent implements OnInit {
     this.c.rotate(180 * Math.PI / 180);
     this.c.fillText("♠", -280, -360);
 
-
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText("2", -280, -410);
 
