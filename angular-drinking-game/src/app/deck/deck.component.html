@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,11 +16,11 @@
     <p>{{cardCount}}/52</p>
     <p>{{curRule}}</p>
 
-    <button type="button" class="button" (click)="next()">Päätä vuorosi</button>
+    <button *ngIf="cardCount != 52" type="button" class="button" (click)="next()">Päätä vuorosi</button>
   </div>
 
   <!-- After all the cards has been played, the game shall ask if you want to play again. -->
-  <div *ngIf="cardCount > 52" class="cardsClass">
+  <div *ngIf="cardCount == 52" class="cardsClass">
     <h2>Peli on päättynynt</h2>
     <p>Aloitetaanko uusi peli?</p>
     <button type="button" class="button" (click)="newGame()">Uusi peli</button>
@@ -38,4 +39,5 @@
 
   </table>
 </body>
+
 </html>

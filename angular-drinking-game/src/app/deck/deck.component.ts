@@ -37,18 +37,22 @@ export class DeckComponent implements OnInit {
   
   // Plays the next card when the user clicks the button to do so 
   next() {
+    if (this.cardCount != 52) {
     this.cardCount++;
     this.playedCards.push(this.shuffledCards[0]);
     this.shuffledCards.splice(0, 1);
     if (this.shuffledCards.length === 0) {
       this.isOver = true;
   }
+}
   this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
   return this.curRule;
 }
 // Starts a new game when the user clicks the button to do so
   newGame() {
     this.isOver = false;
+    this.playedCards.push(this.shuffledCards[0]);
+    this.shuffledCards.splice(0, 1);
     this.cardCount = 1;
     this.shuffledCards = this.shuffle(this.playedCards);
     this.playedCards = [];
