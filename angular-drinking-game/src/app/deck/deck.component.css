@@ -17,6 +17,14 @@ color: #FFFFFF;
 text-shadow: -1.5px 0 1px black, 0 4px 1px black, 1.5px 0 1px black, 0 -1.5px black;
 }
 
+#card-placeholder {
+  width: 300px;
+  height: 470px;
+  position: static;
+  border: 1px solid grey;
+  margin: 0 auto;
+  padding: 10px;
+}
 
 body {
   background-color: white;
