@@ -1,18 +1,14 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
-@Component({
-  selector: 'app-cards',
-  template: `<canvas #canvas width="600" height="300"></canvas>`})
+  @Component({
+    selector: 'app-cards',
+    templateUrl: './cards.component.html',
+    styleUrls: ['./cards.component.css']
+  })
 export class CardsComponent implements OnInit {
   constructor () {};
-
-
-  @ViewChild('canvas', {static:true})
-  canvas = ElementRef<HTMLCanvasElement>;
-  private ctx = ElementRef;
   
   ngOnInit(): void {
-    this.ctx = this.canvas.nativeElement.getContext('2d');
   }
 
 }
