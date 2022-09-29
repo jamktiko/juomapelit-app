@@ -3,6 +3,7 @@ import { CARDS } from '../mock-cards';
 import { Card } from '../card';
 import { RULES } from '../mock-rules';
 
+
 @Component({
   selector: 'app-deck',
   templateUrl: './deck.component.html',
