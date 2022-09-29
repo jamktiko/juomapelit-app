@@ -12,9 +12,13 @@
   <div *ngIf="cardCount <= 52" class="cardsClass">
     <h4>Sinun vuorosi</h4>
     <!--Here the cards-component-->
-    <h3>{{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}</h3>
+    <div id="card-placeholder">
+      {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
+      <p>{{curRule}}</p>
+    </div>
+
     <p>{{cardCount}}/52</p>
-    <p>{{curRule}}</p>
+
 
     <button *ngIf="cardCount != 52" type="button" class="button" (click)="next()">Päätä vuorosi</button>
   </div>
