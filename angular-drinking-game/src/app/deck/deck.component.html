@@ -1,10 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
 <body>
   <div *ngIf="cardCount <= 52" class="cardsClass">
-    <h2>Nykyinen kortti</h2>
+    <h4>Sinun vuorosi</h4>
+    <!--Here the cards-component-->
     <h3>{{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}</h3>
-    <p>Kortti nro {{cardCount}}/52</p>
+    <p>{{cardCount}}/52</p>
     <p>{{curRule}}</p>
-    <button type="button" class="button" (click)="next()">Seuraava kortti</button>
+
+    <button type="button" class="button" (click)="next()">Päätä vuorosi</button>
   </div>
 
   <!-- After all the cards has been played, the game shall ask if you want to play again. -->
@@ -27,3 +38,4 @@
 
   </table>
 </body>
+</html>

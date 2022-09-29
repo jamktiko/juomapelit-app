@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: skyblue;
+    font-family: 'Roboto';
+}
+
 
 /* Roboto-font */
 @font-face { font-family: 'Roboto'; src: url('Roboto/Roboto-Regular.ttf'); } 
