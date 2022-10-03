@@ -1,5 +1,21 @@
+body {
+    text-align:center;
+}
+
+#rule {
+    position: absolute;
+    width: 300px;
+    height: 190px;
+    top: 21rem;
+}
+
 #cardTemplate {
     background-color:white;
     border-radius:25px;
     border: 1px solid black;
+}
+
+#content {
+    margin: 0 auto;
+    width: 300px;
 }

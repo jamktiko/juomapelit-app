@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
 <body>
+
   <div *ngIf="cardCount <= 52" class="cardsClass">
-    <h4>Sinun vuorosi</h4>
+    <h2>Sinun vuorosi!</h2>
+    
     <!--Here the cards-component-->
-    <div id="card-placeholder">
-      {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
-      <p>{{curRule}}</p>
-    </div>
+    <app-cards></app-cards>
+
+  <div id="content">
+    {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
 
     <p>{{cardCount}}/52</p>
 
+    <!--Päätä vuorosi -button-->
+    <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button>
 
-    <button *ngIf="cardCount != 52" type="button" class="button" (click)="next()">Päätä vuorosi</button>
-  </div>
 
   <!-- After all the cards has been played, the game shall ask if you want to play again. -->
   <div *ngIf="cardCount == 52" class="cardsClass">
-    <h2>Peli on päättynynt</h2>
+    <h2>Peli on päättynyt</h2>
     <p>Aloitetaanko uusi peli?</p>
-    <button type="button" class="button" (click)="newGame()">Uusi peli</button>
+    <button type="button" class="button2" (click)="newGame()">Uusi peli</button>
   </div>
 
   <!-- Things under this line is only here for the development time -->
@@ -42,6 +34,8 @@
     </td>
 
   </table>
-</body>
+</div>
 
-</html>
+</div>
+
+</body>

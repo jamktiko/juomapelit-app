@@ -1,9 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: skyblue;
+    background-color: #45B4D9;
     font-family: 'Roboto';
 }
 
+main {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px dashed grey;
+}
+
+h1 {
+    text-align:center;
+}
+
+.button2 {
+    font-family: 'Roboto-Black';
+    color: white;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.1em;
+    position: static;
+    background: #E48100;
+    border: 2px solid #452900;
+    box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25), inset 1px -30px 1px rgba(0, 0, 0, 0.2), inset 0px 3px 0.5px #FFFFFF, inset 0px -8px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 349px;
+    height: 73px;
+    border-radius: 24px;
+    text-shadow: 0px 1.5px 1px rgba(22, 8, 0, 0.8);
+    text-shadow: -2px 0 1px #772B00, 0 4px 1px #772B00, 2px 0 1px #772B00, 0 -1.5px #772B00;
+  }
 
 /* Roboto-font */
 @font-face { font-family: 'Roboto'; src: url('Roboto/Roboto-Regular.ttf'); } 
