@@ -30,5 +30,4 @@ export class CardsComponent implements OnInit {
     this.c.fillText("2", -280, -410);
 
   }
-
 }

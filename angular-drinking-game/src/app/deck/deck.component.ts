@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CARDS } from '../mock-cards';
 import { Card } from '../card';
 import { RULES } from '../mock-rules';
+import { CardsComponent } from '../cards/cards.component';
 
 
 @Component({
