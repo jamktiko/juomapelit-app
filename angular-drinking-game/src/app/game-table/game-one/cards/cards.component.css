@@ -1,5 +1,37 @@
+body {
+    text-align:center;
+}
+
+#content {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#content > #rule {
+    position: absolute;
+    width: 280px;
+    height: 190px;
+    top: 17.5rem;
+    border: 1px dashed grey;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+}
+
 #cardTemplate {
+    width: 300px;
+    height: 470px;
     background-color:white;
     border-radius:25px;
     border: 1px solid black;
+    margin: 0 auto;
+}
+
+
+
+/* Responsive layout */
+@media screen and (max-width: 500px) {
+
 }

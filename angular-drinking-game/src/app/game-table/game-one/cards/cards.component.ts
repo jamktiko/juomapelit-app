@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { RULES } from '../mock-rules';
+import { DeckComponent } from '../deck/deck.component';
 
   @Component({
     selector: 'app-cards',
@@ -7,14 +9,24 @@ import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
   })
   
 export class CardsComponent implements OnInit {
-  constructor () {};
+  rules = RULES;
+  curRule = "";
+  constructor ( private deckComponent: DeckComponent) {};
   @ViewChild('canvas', { static: true }) 
   // @ts-ignore
   canvas: ElementRef<HTMLCanvasElement>|ElementRef;
   // @ts-ignore
   c: CanvasRenderingContext2D|CanvasRenderingContext2D;
 
+  @ViewChild('canvas2', { static: true })
+  // @ts-ignore
+  canvas2: ElementRef<HTMLCanvasElement>|ElementRef;
+  // @ts-ignore
+  c2: CanvasRenderingContext2D|CanvasRenderingContext2D;
+
   ngOnInit(): void {
+    /* Card-canvas */
+    this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
     this.c = this.canvas.nativeElement.getContext('2d');
     this.c.font = "60px Roboto-Black, sans-serif";
     this.c.fillText("♠", 20, 110);
@@ -28,6 +40,5 @@ export class CardsComponent implements OnInit {
 
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText("2", -280, -410);
-
   }
 }
