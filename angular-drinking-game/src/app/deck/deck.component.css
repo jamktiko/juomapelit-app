@@ -6,13 +6,10 @@ h2 {
   font-family: 'Roboto-Black';
   font-style: normal;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 2.5em;
   line-height: 47px;
   text-align: center;
   letter-spacing: -0.02em;
   color: #FFFFFF;
   text-shadow: -1.5px 0 1px black, 0 4px 1px black, 1.5px 0 1px black, 0 -1.5px black;
-}
-h3 {
-  color: red
 }
