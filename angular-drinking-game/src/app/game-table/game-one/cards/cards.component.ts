@@ -18,12 +18,6 @@ export class CardsComponent implements OnInit {
   // @ts-ignore
   c: CanvasRenderingContext2D|CanvasRenderingContext2D;
 
-  @ViewChild('canvas2', { static: true })
-  // @ts-ignore
-  canvas2: ElementRef<HTMLCanvasElement>|ElementRef;
-  // @ts-ignore
-  c2: CanvasRenderingContext2D|CanvasRenderingContext2D;
-
   ngOnInit(): void {
     /* Card-canvas */
     this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
