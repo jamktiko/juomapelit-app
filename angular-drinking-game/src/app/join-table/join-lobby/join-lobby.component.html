@@ -1,0 +1,11 @@
+<form>
+  <label for="roomcode">Huoneen koodi</label>
+  <input type="text" id="roomcode" name="roomcode" value="ABCD">
+  <br>
+  <label for="name">Nimimerkkisi</label>
+  <input type="text" id="name" name="name" value="pelaaja1">
+</form>
+
+<button [routerLink]="['/GameLobby']" routerLinkActive="router-link-active">Liity</button>
+<br>
+<button [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>

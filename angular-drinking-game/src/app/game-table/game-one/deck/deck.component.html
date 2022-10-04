@@ -1,0 +1,35 @@
+<body>
+  <div *ngIf="cardCount <= 52" class="cardsClass">
+    <h4>Sinun vuorosi</h4>
+    <!--Here the cards-component-->
+    <div id="card-placeholder">
+      {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
+      <p>{{curRule}}</p>
+    </div>
+
+    <p>{{cardCount}}/52</p>
+
+
+    <button *ngIf="cardCount != 52" type="button" class="button" (click)="next()">Päätä vuorosi</button>
+  </div>
+
+  <!-- After all the cards has been played, the game shall ask if you want to play again. -->
+  <div *ngIf="cardCount == 52" class="cardsClass">
+    <h2>Peli on päättynynt</h2>
+    <p>Aloitetaanko uusi peli?</p>
+    <button type="button" class="button" (click)="newGame()">Uusi peli</button>
+  </div>
+
+  <!-- Things under this line is only here for the development time -->
+  <table>
+    <td>
+      <h3>Käytetty</h3> <!-- Not used deck -->
+      <tr *ngFor="let card of this.playedCards">{{this.card.suit}} {{this.card.rank}}</tr>
+    </td>
+    <td>
+      <h3>Jäljellä</h3> <!-- Used deck -->
+      <tr *ngFor="let card of shuffledCards">{{card.suit}} {{card.rank}}</tr>
+    </td>
+
+  </table>
+</body>
