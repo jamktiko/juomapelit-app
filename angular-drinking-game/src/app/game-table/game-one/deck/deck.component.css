@@ -1,0 +1,56 @@
+
+h2 {
+  color: blue
+}
+h3 {
+  color: red
+}
+h4 {
+  font-family: 'Roboto-Black';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 47px;
+text-align: center;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+text-shadow: -1.5px 0 1px black, 0 4px 1px black, 1.5px 0 1px black, 0 -1.5px black;
+}
+
+#card-placeholder {
+  width: 300px;
+  height: 470px;
+  position: static;
+  border: 1px solid grey;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 38px;
+  letter-spacing: 0.1em;
+  color: black;
+  border: 1.8px solid grey;
+  text-align: center;
+}
+.button {
+  font-family: 'Roboto-Black';
+  color: white;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.1em;
+  position: static;
+  background: #E48100;
+  border: 2px solid #452900;
+  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25), inset 1px -40px 1px rgba(0, 0, 0, 0.2), inset 0px 5px 1px #FFFFFF, inset 0px -10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  width: 349px;
+  height: 73px;
+  border-radius: 24px;
+  text-shadow: 0px 1.5px 1px rgba(22, 8, 0, 0.8);
+  text-shadow: -2px 0 1px #772B00, 0 4px 1px #772B00, 2px 0 1px #772B00, 0 -1.5px #772B00;
+}
