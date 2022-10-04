@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
-import { RULES } from '../mock-rules';
+import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
 
   @Component({
