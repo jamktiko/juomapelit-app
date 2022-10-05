@@ -2,40 +2,41 @@
 
   <div *ngIf="cardCount <= 52" class="cardsClass">
     <h2>Sinun vuorosi!</h2>
-    
+
     <!--Here the cards-component-->
-    <app-cards></app-cards>
+    <app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards ">
+    </app-cards>
 
-  <div id="content">
-    {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
+    <div id="content">
+      {{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
 
-    <p>{{cardCount}}/52</p>
+      <p>{{cardCount}}/52</p>
 
-    <!--Päätä vuorosi -button-->
-    <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button>
+      <!--Päätä vuorosi -button-->
+      <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button>
 
 
-  <!-- After all the cards has been played, the game shall ask if you want to play again. -->
-  <div *ngIf="cardCount == 52" class="cardsClass">
-    <h2>Peli on päättynyt</h2>
-    <p>Aloitetaanko uusi peli?</p>
-    <button type="button" class="button2" (click)="newGame()">Uusi peli</button>
+      <!-- After all the cards has been played, the game shall ask if you want to play again. -->
+      <div *ngIf="cardCount == 52" class="cardsClass">
+        <h2>Peli on päättynyt</h2>
+        <p>Aloitetaanko uusi peli?</p>
+        <button type="button" class="button2" (click)="newGame()">Uusi peli</button>
+      </div>
+
+      <!-- Things under this line is only here for the development time -->
+      <table>
+        <td>
+          <h3>Käytetty</h3> <!-- Not used deck -->
+          <tr *ngFor="let card of this.playedCards">{{this.card.suit}} {{this.card.rank}}</tr>
+        </td>
+        <td>
+          <h3>Jäljellä</h3> <!-- Used deck -->
+          <tr *ngFor="let card of shuffledCards">{{card.suit}} {{card.rank}}</tr>
+        </td>
+
+      </table>
+    </div>
+
   </div>
-
-  <!-- Things under this line is only here for the development time -->
-  <table>
-    <td>
-      <h3>Käytetty</h3> <!-- Not used deck -->
-      <tr *ngFor="let card of this.playedCards">{{this.card.suit}} {{this.card.rank}}</tr>
-    </td>
-    <td>
-      <h3>Jäljellä</h3> <!-- Used deck -->
-      <tr *ngFor="let card of shuffledCards">{{card.suit}} {{card.rank}}</tr>
-    </td>
-
-  </table>
-</div>
-
-</div>
 
 </body>

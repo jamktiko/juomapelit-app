@@ -1,10 +1,11 @@
 <body>
     <div id="content">
-    <!--HTML Canvas-->
-    <canvas #canvas id="cardTemplate" width="300" height="470">
-    Your browser does not support the HTML canvas tag.</canvas>
-    
-    <!--Current rule-->
-    <div id="rule">{{curRule}}</div>
-    </div>  
+        <!--HTML Canvas-->
+        <canvas (click)="nextThing()" #canvas id="cardTemplate" width="300" height="470">
+            Your browser does not support the HTML canvas tag.</canvas>
+
+        <!--Current rule-->
+        <div id="rule">{{this.curRule}}</div>
+
+    </div>
 </body>
