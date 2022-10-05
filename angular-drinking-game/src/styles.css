@@ -4,15 +4,64 @@ body {
     font-family: 'Roboto';
 }
 
+#joinGame {
+    margin: 5em;
+}
+
+#logo {
+    width: 200px;
+    height: 200px;
+    margin: 5em auto;
+    background: url('src/app/assets/images/logo.png') no-repeat 0 0;
+    background-size: 200px 200px;
+}
+
 main {
     width: 70%;
     margin: 0 auto;
     padding: 1em;
     border: 1px dashed grey;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    text-align:center;
+    font-family: 'Roboto-Black';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.5em;
+    line-height: 47px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-shadow: -1.5px 0 1px black, 0 4px 1px black, 1.5px 0 1px black, 0 -1.5px black;
+}
+
+nav {
+    display:flex;
+    justify-content: center;
+}
+
+.button1 {
+    font-family: 'Roboto-Black';
+    color: white;
+    font-size: 35px;
+    line-height: 38px;
+    letter-spacing: 0.08em;
+    background: #FFB800;
+    border: 2px solid #4A2D00;
+    box-shadow: inset 1px -40px 1px rgba(200, 88, 88, 0.2), inset 0px 5px 1px #FFFFFF, inset 0px -10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 370px;
+    height: 80px;
+    text-shadow: 0px 1.5px 1px 4A2D00;
+    text-shadow: -2px 0 1px #4A2D00, 0 3.5px 1px #4A2D00, 2px 0 1px #4A2D00, 0 -2px #4A2D00;
+    margin-bottom: 0.5em;
 }
 
 .button2 {
@@ -21,7 +70,6 @@ h1 {
     font-size: 32px;
     line-height: 38px;
     letter-spacing: 0.1em;
-    position: static;
     background: #E48100;
     border: 2px solid #452900;
     box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25), inset 1px -30px 1px rgba(0, 0, 0, 0.2), inset 0px 3px 0.5px #FFFFFF, inset 0px -8px 1px rgba(0, 0, 0, 0.25);
@@ -31,6 +79,7 @@ h1 {
     border-radius: 24px;
     text-shadow: 0px 1.5px 1px rgba(22, 8, 0, 0.8);
     text-shadow: -2px 0 1px #772B00, 0 4px 1px #772B00, 2px 0 1px #772B00, 0 -1.5px #772B00;
+    margin-top: 0.5em;
   }
 
 

@@ -1,5 +1,10 @@
-<button [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity Peliin</button>
-<br>
-<button>Luo Peli</button>
-<br>
-<button [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button>
+<body>
+    <div id="logo"></div>
+    <nav>
+        <ul>
+            <li><button class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button></li>
+            <li><button class="button1" [routerLink]="['/Guide']">Luo peli</button></li>
+            <li><button class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button></li>
+        </ul>   
+    </nav>
+</body>

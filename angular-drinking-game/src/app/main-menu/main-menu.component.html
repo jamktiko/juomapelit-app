@@ -1,5 +1,13 @@
-<button [routerLink]="['/Settings']" routerLinkActive="router-link-active">╬</button>
-<hr>
-<button [routerLink]="['/JoinTable']">Pelaa</button>
-<br>
-<button [routerLink]="['/Guide']">Ohjeet</button>
+<!--Logo-->
+<!--<img src="assets/images/logo.png" alt="logo" style="width:100px; height:100px">-->
+
+<div id="logo"></div>
+
+<!--Navigation-->
+<nav>
+    <ul>
+    <li><button class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></li>
+    <li><button class="button2" [routerLink]="['/Guide']">Ohjeet</button></li>
+    <li><button class="button2" [routerLink]="['/Settings']" routerLinkActive="router-link-active">Asetukset</button></li>
+    </ul>   
+</nav>

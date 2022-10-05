@@ -2,13 +2,13 @@ body {
     text-align:center;
 }
 
-#content {
+#cardBox {
     display:flex;
     justify-content:center;
     align-items: center;
 }
 
-#content > #rule {
+#cardBox > #rule {
     position: absolute;
     width: 280px;
     height: 190px;
