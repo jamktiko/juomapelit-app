@@ -1,5 +1,8 @@
-<button [routerLink]="['/Settings']" routerLinkActive="router-link-active">╬</button>
-<hr>
 <button [routerLink]="['/JoinTable']">Pelaa</button>
 <br>
-<button [routerLink]="['/Guide']">Ohjeet</button>
+<button (click)="modalService.open('modal-guide');">Ohjeet</button>
+
+<jw-modal id="modal-guide">
+  <app-guide></app-guide>
+  <button (click)="modalService.close('modal-guide');">X</button>
+</jw-modal>
