@@ -46,7 +46,8 @@ export class DeckComponent implements OnInit {
     this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
     return this.curRule;
   }
-  // Starts a new game when the user clicks the button to do so
+  // Starts a new game when the user clicks the button to do so, this isn't used at the moment,
+  // but it might be used in the future instead of reloadPage();
   newGame() {
     this.isOver = false;
     this.playedCards.push(this.shuffledCards[0]);
@@ -58,4 +59,23 @@ export class DeckComponent implements OnInit {
     this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
     return this.curRule;
   }
+ // Restarts the page
+  reloadPage() {
+    window.location.reload();
+  }
+  // Function that changes the rank of the cards to letters when starting a new game.
+  changeRankToLetter() {
+    for (let i = 0; i < this.playedCards.length; i++) {
+    if (this.playedCards[i].rank == 'J') {
+      this.playedCards[i].rank = 11;
+    } else if (this.playedCards[i].rank == 'Q') {
+      this.playedCards[i].rank = 12;
+    } else if (this.playedCards[i].rank == 'K') {
+      this.playedCards[i].rank = 13;
+    } else if (this.playedCards[i].rank == 'A') {
+      this.playedCards[i].rank = 1;
+    }
+    };
+};
+
 }
