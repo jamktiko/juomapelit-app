@@ -12,7 +12,7 @@ export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   cards = CARDS;
   rules = RULES;
-  cardCount = 1; // How many cards have been played
+  cardCount = 0; // How many cards have been played
   curRule = 'template';
 
   shuffledCards: any[] = []; // Shuffled cards
@@ -52,7 +52,7 @@ export class DeckComponent implements OnInit {
     this.isOver = false;
     this.playedCards.push(this.shuffledCards[0]);
     this.shuffledCards.splice(0, 1);
-    this.cardCount = 1;
+    this.cardCount = 0;
     this.shuffledCards = this.shuffle(this.playedCards);
     this.playedCards = [];
     console.log(this.cards);
