@@ -13,8 +13,8 @@
       <p>{{cardCount}}/52</p>
 
       <!--Päätä vuorosi -button-->
-      <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button>
-
+      <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button><br>
+      <button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
 
       <!-- After all the cards has been played, the game shall ask if you want to play again. -->
       <div *ngIf="cardCount == 52" class="cardsClass">

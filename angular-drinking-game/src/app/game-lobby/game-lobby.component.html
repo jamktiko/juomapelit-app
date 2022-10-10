@@ -1,2 +1,8 @@
-<p>game-lobby works!</p>
-<button [routerLink]="['/GameTable']" routerLinkActive="router-link-active">Valitse Peli</button>
+<h1>Lobby ABCD</h1>
+<!--List of players-->
+  <nav>
+      <ul>
+          <li><button class="button2" [routerLink]="['/GameTable']" routerLinkActive="router-link-active">Valitse peli</button></li>
+          <li><button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button></li>
+      </ul>   
+  </nav>
