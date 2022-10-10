@@ -11,8 +11,8 @@ import { DeckComponent } from '../deck/deck.component';
 export class CardsComponent implements OnInit {
   @Input() curRule: any;
   @Input() shuffledCards: any[] = []; // Shuffled cards
-
   
+  flipped: boolean = false;
   rules = RULES;
   constructor (public deckComponent : DeckComponent) {};
   @ViewChild('canvas', { static: true }) 
@@ -83,6 +83,11 @@ export class CardsComponent implements OnInit {
   this.changeSuitRank();
   this.changeSuitRank()}
 
+  flipCard() {
+    this.flipped === true;
+    console.log('miaus')
+  }
+
   // Changes the rank of the card to a letter if it is a face card.
   changeRankToLetter() {
     if (this.shuffledCards[0].rank == 11) {
@@ -94,7 +99,6 @@ export class CardsComponent implements OnInit {
     } else if (this.shuffledCards[0].rank == 1) {
       this.shuffledCards[0].rank = "A";
     };
-
     
 };
 
