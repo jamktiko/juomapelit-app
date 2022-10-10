@@ -12,11 +12,12 @@ export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   cards = CARDS;
   rules = RULES;
-  cardCount = 0; // How many cards have been played
+  cardCount = 1; // How many cards have been played
   curRule = 'template';
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
+
   constructor() {}
 
   ngOnInit(): void {
@@ -46,13 +47,14 @@ export class DeckComponent implements OnInit {
     this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
     return this.curRule;
   }
+
   // Starts a new game when the user clicks the button to do so, this isn't used at the moment,
   // but it might be used in the future instead of reloadPage();
   newGame() {
     this.isOver = false;
     this.playedCards.push(this.shuffledCards[0]);
     this.shuffledCards.splice(0, 1);
-    this.cardCount = 0;
+    this.cardCount = 1;
     this.shuffledCards = this.shuffle(this.playedCards);
     this.playedCards = [];
     console.log(this.cards);

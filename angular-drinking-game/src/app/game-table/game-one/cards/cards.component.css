@@ -8,15 +8,6 @@ body {
     align-items: center;
 }
 
-.cardBack {
-    width: 300px;
-    height: 470px;
-    background-color:white;
-    border-radius:25px;
-    border: 1px solid black;
-    margin: 0 auto;
-}
-
 #cardBox > #rule {
     position: absolute;
     width: 280px;
@@ -29,7 +20,16 @@ body {
     text-align: center;
 }
 
-#cardTemplate {
+#cardBack {
+    width: 300px;
+    height: 470px;
+    background-color:grey;
+    border-radius:25px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#cardFront {
     width: 300px;
     height: 470px;
     background-color:white;
