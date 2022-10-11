@@ -1,17 +1,8 @@
 <div id="cardBox">
     <!--Backside of card-->
-    <div (click)="flipCard()" *ngIfElse="flipped === false"; else elseBlock>
-    <canvas (click)="flipCard()" #canvas id="cardBack" width="300" height="470">
-        Your browser does not support the HTML canvas tag.</canvas>
+    <div (click)="nextCard()">
+    <canvas #canvas id="cardBack" width="300" height="470"></canvas>
     </div>
-
-    <!--Frontside of card-->
-    <div #elseBlock (click)="nextThing()" >
-        <canvas #canvas id="cardFront" width="300" height="470">
-            Your browser does not support the HTML canvas tag.</canvas>
-    </div>
-
-    <!--Current rule-->
-    <div (click)="nextThing()" id="rule">{{this.curRule}}</div>
+    <div (click)="nextCard()" id="rule">{{this.curRule}}</div>
 
 </div>

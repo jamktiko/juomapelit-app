@@ -13,7 +13,7 @@ export class DeckComponent implements OnInit {
   cards = CARDS;
   rules = RULES;
   cardCount = 1; // How many cards have been played
-  curRule = 'template';
+  curRule = 'zz';
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
@@ -21,8 +21,7 @@ export class DeckComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
-    this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
+      this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
   }
 
   // Fisher-Yates shuffle algorithm
@@ -65,19 +64,6 @@ export class DeckComponent implements OnInit {
   reloadPage() {
     window.location.reload();
   }
-  // Function that changes the rank of the cards to letters when starting a new game.
-  changeRankToLetter() {
-    for (let i = 0; i < this.playedCards.length; i++) {
-    if (this.playedCards[i].rank == 'J') {
-      this.playedCards[i].rank = 11;
-    } else if (this.playedCards[i].rank == 'Q') {
-      this.playedCards[i].rank = 12;
-    } else if (this.playedCards[i].rank == 'K') {
-      this.playedCards[i].rank = 13;
-    } else if (this.playedCards[i].rank == 'A') {
-      this.playedCards[i].rank = 1;
-    }
-    };
-};
 
 }
+

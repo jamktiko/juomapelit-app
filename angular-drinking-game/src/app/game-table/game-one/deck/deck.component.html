@@ -14,7 +14,7 @@
       <div *ngIf="cardCount == 52" class="cardsClass">
         <h2>Peli on päättynyt</h2>
         <p>Aloitetaanko uusi peli?</p>
-        <button type="button" class="button2" (click)="newGame()">Uusi peli</button>
+        <button type="button" class="button2" (click)="reloadPage()">Uusi peli</button>
       </div>
 
       <!-- Things under this line is only here for the development time -->
@@ -29,6 +29,4 @@
         </td>
 
       </table>
-      <!--Päätä vuorosi -button-->
-      <button *ngIf="cardCount != 52" type="button" class="button2" (click)="next()">Päätä vuorosi</button><br>
 </body>
