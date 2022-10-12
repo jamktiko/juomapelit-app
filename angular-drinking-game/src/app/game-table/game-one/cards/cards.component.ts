@@ -9,6 +9,7 @@ import { DeckComponent } from '../deck/deck.component';
   })
   
 export class CardsComponent implements OnInit {
+  // Inputs
   @Input() curRule: any;
   @Input() shuffledCards: any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
@@ -87,16 +88,23 @@ export class CardsComponent implements OnInit {
   
   // Plays the next card when the user clicks the button to do so
   next() {
+    // Checks if the deck is either used up or if the user has flipped the first card
     if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
-
+      // Adds the card to the played cards array
       this.deckComponent.playedCards.push(this.shuffledCards[0]);
+      // Removes the card from the shuffled cards array
       this.shuffledCards.splice(0, 1);
+      // Checks if the deck is used up
       if (this.shuffledCards.length === 0) {
+        // If the deck is used up, the user can no longer play the game
         this.deckComponent.isOver = true;
       }
     }
+    // Describes the rule, checking it from the mock-rules.ts file.
     this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
+    // Describes the rule header, checking it from the mock-rules.ts file.
     this.curRuleHeader = this.rules[this.shuffledCards[0].rank - 1].name;
+    // Increases the card count
     this.deckComponent.cardCount++;
     return this.curRule;
   }
