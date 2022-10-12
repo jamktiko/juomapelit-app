@@ -11,8 +11,10 @@ import { DeckComponent } from '../deck/deck.component';
 export class CardsComponent implements OnInit {
   @Input() curRule: any;
   @Input() shuffledCards: any[] = []; // Shuffled cards
+  @Input() playedCards: any[] = []; // Played cards
   rules = RULES;
   playing = false
+  curRuleHeader: any;
 
   constructor (public deckComponent : DeckComponent) {};
   
@@ -82,10 +84,26 @@ export class CardsComponent implements OnInit {
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0].rank, -280, -410);
   }
+  
+  // Plays the next card when the user clicks the button to do so
+  next() {
+    if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
+
+      this.deckComponent.playedCards.push(this.shuffledCards[0]);
+      this.shuffledCards.splice(0, 1);
+      if (this.shuffledCards.length === 0) {
+        this.deckComponent.isOver = true;
+      }
+    }
+    this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
+    this.curRuleHeader = this.rules[this.shuffledCards[0].rank - 1].name;
+    this.deckComponent.cardCount++;
+    return this.curRule;
+  }
 
   // Switches to next card
   nextCard() {
-      this.deckComponent.next();
+      this.next();
       this.cardFrontside();
       this.addSuitRank();
     }
