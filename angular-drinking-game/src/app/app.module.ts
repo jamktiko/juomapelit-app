@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 
 import { DeckComponent } from './game-table/game-one/deck/deck.component';
 import { CardsComponent } from './game-table/game-one/cards/cards.component';
+import { TestingComponent } from './testing/testing.component';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +14,7 @@ import { CardsComponent } from './game-table/game-one/cards/cards.component';
     DeckComponent,
     CardsComponent,
     routingComponents,
+    TestingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
