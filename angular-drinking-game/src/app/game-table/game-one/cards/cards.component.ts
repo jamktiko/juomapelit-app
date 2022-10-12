@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
 import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
@@ -57,6 +58,7 @@ export class CardsComponent implements OnInit {
 
   // Draw suit and rank to card
   addSuitRank() {
+    this.c.textAlign = "center";
     // Adds suit and rank to top
     this.c.font = "60px Roboto-Black, sans-serif";
         // Hearts and diamonds color red, spades and clubs black
@@ -75,15 +77,15 @@ export class CardsComponent implements OnInit {
         } else if (this.shuffledCards[0].rank == 1) {
           this.shuffledCards[0].rank = "A";
         };
-    this.c.fillText(this.shuffledCards[0].suit, 20, 110);
+    this.c.fillText(this.shuffledCards[0].suit, 35, 110);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0].rank, 20, 60);
+    this.c.fillText(this.shuffledCards[0].rank, 35, 60);
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
     this.c.font = "60px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0].suit, -280, -360);
+    this.c.fillText(this.shuffledCards[0].suit, -295, -360);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0].rank, -280, -410);
+    this.c.fillText(this.shuffledCards[0].rank, -295, -410);
   }
   
   // Plays the next card when the user clicks the button to do so

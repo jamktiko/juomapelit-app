@@ -32,11 +32,8 @@ body {
     height: 470px;
     background-color:white;
     border-radius:25px;
-    border: 1px solid black;
     margin: 0 auto;
 }
-
-
 
 /* Responsive layout */
 @media screen and (max-width: 500px) {
