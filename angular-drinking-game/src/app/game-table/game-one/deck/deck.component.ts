@@ -12,16 +12,18 @@ export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   cards = CARDS;
   rules = RULES;
-  cardCount = 1; // How many cards have been played
-  curRule = 'template';
+
+  cardCount = 0; // How many cards have been played
+  curRule = '';
+
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
+
   constructor() {}
 
   ngOnInit(): void {
-    this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
-    this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
+      this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
   }
 
   // Fisher-Yates shuffle algorithm
@@ -33,20 +35,10 @@ export class DeckComponent implements OnInit {
     return cards;
   } // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
-  // Plays the next card when the user clicks the button to do so
-  next() {
-    if (this.cardCount != 52) {
-      this.cardCount++;
-      this.playedCards.push(this.shuffledCards[0]);
-      this.shuffledCards.splice(0, 1);
-      if (this.shuffledCards.length === 0) {
-        this.isOver = true;
-      }
-    }
-    this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
-    return this.curRule;
-  }
-  // Starts a new game when the user clicks the button to do so
+
+
+  // Starts a new game when the user clicks the button to do so, this isn't used at the moment,
+  // but it might be used in the future instead of reloadPage();
   newGame() {
     this.isOver = false;
     this.playedCards.push(this.shuffledCards[0]);
@@ -58,4 +50,10 @@ export class DeckComponent implements OnInit {
     this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
     return this.curRule;
   }
+ // Restarts the page
+  reloadPage() {
+    window.location.reload();
+  }
+
 }
+

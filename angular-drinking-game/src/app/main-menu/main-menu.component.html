@@ -1,8 +1,13 @@
-<button [routerLink]="['/JoinTable']">Pelaa</button>
-<br>
-<button (click)="modalService.open('modal-guide');">Ohjeet</button>
+<!--Logo-->
+<div id="logo">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/beer.png" alt="logo" style="width:300px; height:300px">
+</div>
 
-<jw-modal id="modal-guide">
-  <app-guide></app-guide>
-  <button (click)="modalService.close('modal-guide');">X</button>
-</jw-modal>
+<!--Navigation-->
+<nav>
+    <ul>
+    <li><button class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></li>
+    <li><button class="button2" [routerLink]="['/Guide']">Ohjeet</button></li>
+    <li><button class="button2" [routerLink]="['/Settings']" routerLinkActive="router-link-active">Asetukset</button></li>
+    </ul>   
+</nav>

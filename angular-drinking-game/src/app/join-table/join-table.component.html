@@ -1,5 +1,13 @@
-<button [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity Peliin</button>
-<br>
-<button>Luo Peli</button>
-<br>
-<button [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button>
+<!--Logo-->
+<div id="logo">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/beer.png" alt="logo" style="width:300px; height:300px">
+</div>
+<nav>
+    <ul>
+        <li><button class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity
+                peliin</button></li>
+        <li><button class="button1" [routerLink]="['/CreateLobby']">Luo peli</button></li>
+        <li><button class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button>
+        </li>
+    </ul>
+</nav>

@@ -1,5 +1,5 @@
 export interface Rule {
-  number: number;
+  number: number | string;
   name: string;
   rule: string;
 }

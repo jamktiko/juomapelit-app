@@ -10,6 +10,7 @@ import { GameOneComponent } from './game-table/game-one/game-one.component';
 import { JoinLobbyComponent } from './join-table/join-lobby/join-lobby.component';
 import { GameLobbyComponent } from './game-lobby/game-lobby.component';
 import { AppComponent } from './app.component';
+import { CreateLobbyComponent } from './join-table/create-lobby/create-lobby.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'MainMenu', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'GameOne', component: GameOneComponent },
   { path: 'JoinLobby', component: JoinLobbyComponent },
   { path: 'GameLobby', component: GameLobbyComponent },
+  { path: 'CreateLobby', component: CreateLobbyComponent },
 ];
 
 @NgModule({
@@ -37,4 +39,5 @@ export const routingComponents = [
   GameOneComponent,
   JoinLobbyComponent,
   GameLobbyComponent,
+  CreateLobbyComponent,
 ];

@@ -1,0 +1,8 @@
+#players {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#players, td {
+    padding:0.5em;
+}

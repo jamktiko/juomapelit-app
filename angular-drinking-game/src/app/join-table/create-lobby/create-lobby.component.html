@@ -1,0 +1,27 @@
+<h1>Luo huone</h1>
+<form id="createLobby">
+  <label for="roomcode" class="formLabel">Huoneen koodi</label>
+  <div id="codeClass" style="font-size: 2em">{{this.koodi}}</div>
+  <br>
+  <br>
+  <label for="name" class="formLabel">Nimimerkkisi</label><br>
+  <input type="text" id="name" name="name" class="formItem" placeholder="pelaaja1" maxlength="15">
+</form>
+
+<h1>Valitse peli</h1>
+
+<ul>
+  <li><button class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Vesiputous</button></li>
+  <li><button class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Ylis</button></li>
+  <li><button class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Never Have I
+      Ever</button></li>
+  <li><button class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Peli 3</button></li>
+  <li><button class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Gameing</button></li>
+</ul>
+
+<br>
+<br>
+<br>
+<br>
+
+<button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>

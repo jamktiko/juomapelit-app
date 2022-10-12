@@ -1,10 +1,9 @@
-<body>
-    <div id="content">
-    <!--HTML Canvas-->
-    <canvas #canvas id="cardTemplate" width="300" height="470">
-    Your browser does not support the HTML canvas tag.</canvas>
-    
-    <!--Current rule-->
-    <div id="rule">{{curRule}}</div>
-    </div>  
-</body>
+<div id="cardBox">
+    <!--Backside of card-->
+    <div (click)="nextCard()">
+        <canvas #canvas id="cardBack" width="300" height="470"></canvas>
+    </div>
+    <div (click)="nextCard()" id="rule" class="disableSelection">{{this.curRule}}</div>
+    <div (click)="nextCard()" id="ruleHeader" class="disableSelection">{{this.curRuleHeader}}</div>
+
+</div>

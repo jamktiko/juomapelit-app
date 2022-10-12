@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
 import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
 
@@ -9,30 +10,150 @@ import { DeckComponent } from '../deck/deck.component';
   })
   
 export class CardsComponent implements OnInit {
+  // Inputs
+  @Input() curRule: any;
+  @Input() shuffledCards: any[] = []; // Shuffled cards
+  @Input() playedCards: any[] = []; // Played cards
   rules = RULES;
-  curRule = "";
-  constructor ( private deckComponent: DeckComponent) {};
+  curRuleHeader: any;
+
+  constructor (public deckComponent : DeckComponent) {};
+  
   @ViewChild('canvas', { static: true }) 
   // @ts-ignore
   canvas: ElementRef<HTMLCanvasElement>|ElementRef;
   // @ts-ignore
   c: CanvasRenderingContext2D|CanvasRenderingContext2D;
 
-  ngOnInit(): void {
-    /* Card-canvas */
-    this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
-    this.c = this.canvas.nativeElement.getContext('2d');
-    this.c.font = "60px Roboto-Black, sans-serif";
-    this.c.fillText("♠", 20, 110);
 
+  // Empty the canvas
+  clearCanvas() {
+    this.c.clearRect(0, 0, 300, 470);
+  }
+
+  // Draw downward card to canvas
+  cardBackside() {
+    // Colors canvas red
+    this.c.fillStyle = "#f64747";
+    this.c.fillRect(0, 0, 300, 470);
+
+    // Details:
+    // left line
+    this.c.beginPath();
+    this.c.moveTo(30,30);
+    this.c.lineTo(30, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // right line
+    this.c.beginPath();
+    this.c.moveTo(270, 30)
+    this.c.lineTo(270, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // top line
+    this.c.beginPath();
+    this.c.moveTo(270, 30)
+    this.c.lineTo(30, 30);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // bottom line
+    this.c.beginPath();
+    this.c.moveTo(30, 440)
+    this.c.lineTo(270, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // circle
+    this.c.beginPath();
+    this.c.arc(150, 235, 50, 0, 2 * Math.PI);
+    this.c.lineWidth = 5,5;
+    this.c.stroke();
+    this.c.fill();
+  }
+
+  // Draw upward card to canvas
+  cardFrontside() {
+    // Clears canvas
+    this.clearCanvas();
+    // Colors canvas white
+    this.c.beginPath();
+    this.c.rect(0, 0, 300, 470);
+    this.c.fillStyle = "#ffffff";
+    this.c.fill();
+    // Adds suits and ranks
+    this.addSuitRank();
+  }
+
+  // Draw suit and rank to card
+  addSuitRank() {
+    this.c.textAlign = "center";
+    // Adds suit and rank to top
+    this.c.font = "60px Roboto-Black, sans-serif";
+        // Hearts and diamonds color red, spades and clubs black
+        if (this.shuffledCards[0].suit === "♦" || this.shuffledCards[0].suit === "♥") {
+          this.c.fillStyle = "red";
+        } else {
+          this.c.fillStyle = "black";
+        };
+        // Changes ranks 11/12/13/1 to J/Q/K/A
+        if (this.shuffledCards[0].rank == 11) {
+          this.shuffledCards[0].rank = "J";
+        } else if (this.shuffledCards[0].rank == 12) {
+          this.shuffledCards[0].rank = "Q";
+        } else if (this.shuffledCards[0].rank == 13) {
+          this.shuffledCards[0].rank = "K";
+        } else if (this.shuffledCards[0].rank == 1) {
+          this.shuffledCards[0].rank = "A";
+        };
+    this.c.fillText(this.shuffledCards[0].suit, 35, 110);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText("2", 20, 60);
-
-    this.c.font = "60px Roboto-Black, sans-serif";
+    this.c.fillText(this.shuffledCards[0].rank, 35, 60);
+    // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
-    this.c.fillText("♠", -280, -360);
-
+    this.c.font = "60px Roboto-Black, sans-serif";
+    this.c.fillText(this.shuffledCards[0].suit, -265, -360);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText("2", -280, -410);
+    this.c.fillText(this.shuffledCards[0].rank, -265, -410);
+  }
+  
+  // Plays the next card when the user clicks the button to do so
+  next() {
+    // Checks if the deck is either used up or if the user has flipped the first card
+    if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
+      // Adds the card to the played cards array
+      this.deckComponent.playedCards.push(this.shuffledCards[0]);
+      // Removes the card from the shuffled cards array
+      this.shuffledCards.splice(0, 1);
+      // Checks if the deck is used up
+      if (this.shuffledCards.length === 0) {
+        // If the deck is used up, the user can no longer play the game
+        this.deckComponent.isOver = true;
+      }
+    }
+    // Describes the rule, checking it from the mock-rules.ts file.
+    this.curRule = this.rules[this.deckComponent.shuffledCards[0].rank - 1].rule;
+    // Describes the rule header, checking it from the mock-rules.ts file.
+    this.curRuleHeader = this.rules[this.shuffledCards[0].rank - 1].name;
+    // Increases the card count
+    this.deckComponent.cardCount++;
+    return this.curRule;
+  }
+
+  // Switches to next card
+  nextCard() {
+      this.next();
+      this.cardFrontside();
+      this.addSuitRank();
+    }
+  
+
+  // When page loads
+  ngOnInit(): void {
+
+    this.c = this.canvas.nativeElement.getContext('2d');
+    this.cardBackside();
   }
 }
