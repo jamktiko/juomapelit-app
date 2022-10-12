@@ -14,7 +14,7 @@ export class DeckComponent implements OnInit {
   rules = RULES;
 
   cardCount = 0; // How many cards have been played
-  curRule = 'zz';
+  curRule = '';
 
 
   shuffledCards: any[] = []; // Shuffled cards

@@ -9,11 +9,7 @@
 }
 
 #logo {
-    width: 200px;
-    height: 200px;
     margin: 5em auto;
-    /* background: url('src/app/assets/images/logo.png') no-repeat 0 0; */
-    background-size: 200px 200px;
 }
 
 main {
