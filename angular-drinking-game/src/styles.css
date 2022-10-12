@@ -81,6 +81,14 @@ nav {
     margin-top: 0.5em;
   }
 
+/* Disable text selection  */
+.disableSelection {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
 
 /* Roboto-font */
 @font-face { font-family: 'Roboto'; src: url('Roboto/Roboto-Regular.ttf'); } 
