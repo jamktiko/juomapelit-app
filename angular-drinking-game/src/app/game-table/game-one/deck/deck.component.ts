@@ -12,13 +12,10 @@ export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   cards = CARDS;
   rules = RULES;
-<<<<<<< Updated upstream
-  cardCount = 1; // How many cards have been played
-  curRule = 'template';
-=======
+
   cardCount = 0; // How many cards have been played
   curRule = 'zz';
->>>>>>> Stashed changes
+
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
