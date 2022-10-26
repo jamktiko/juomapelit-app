@@ -9,11 +9,7 @@
 }
 
 #logo {
-    width: 200px;
-    height: 200px;
     margin: 5em auto;
-    /* background: url('src/app/assets/images/logo.png') no-repeat 0 0; */
-    background-size: 200px 200px;
 }
 
 main {
@@ -44,6 +40,9 @@ h1 {
 nav {
     display:flex;
     justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding:0;
 }
 
 .button1 {
@@ -88,6 +87,27 @@ nav {
     -webkit-user-select: none;
     -ms-user-select: none;
   }
+
+
+/* Form CSS */
+
+  .formItem {
+    margin-bottom:1em;
+    text-align:center;
+    font-size:2em;
+    padding:0.5em;
+    letter-spacing:0.03em;
+    border: 2px solid #BDBDBD;
+    color: #303030;
+    font-family: "Roboto-Medium";
+    width: 300px;
+}
+
+.formLabel {
+    font-size: 2em;
+    color:white;
+    font-family: "Roboto-Medium"
+}
 
 
 /* Roboto-font */

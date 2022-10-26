@@ -1,30 +1,29 @@
-<h2>Sinun vuorosi!</h2>
+<h2>Vesiputous</h2>
 <!--Cards-component-->
 <app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards">
 </app-cards>
-{{this.shuffledCards[0].suit}} {{this.shuffledCards[0].rank}}
+<div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
 
-<p>{{cardCount}}/52</p>
+<!-- After all the cards has been played, the game shall ask if you want to play again. -->
+<div *ngIf="cardCount == 52" class="cardsClass">
+  <button id="newGame" type="button" class="button1" (click)="reloadPage()">Uusi peli</button>
+</div>
 
 
 <button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
 
-<!-- After all the cards has been played, the game shall ask if you want to play again. -->
-<div *ngIf="cardCount == 52" class="cardsClass">
-  <h2>Peli on päättynyt</h2>
-  <p>Aloitetaanko uusi peli?</p>
-  <button type="button" class="button2" (click)="reloadPage()">Uusi peli</button>
-</div>
 
-<!-- Things under this line is only here for the development time -->
+<!--
+ Things under this line is only here for the development time
 <table>
   <td>
-    <h3>Käytetty</h3> <!-- Not used deck -->
+    <h3>Käytetty</h3>
     <tr *ngFor="let card of this.playedCards">{{this.card.suit}} {{this.card.rank}}</tr>
   </td>
   <td>
-    <h3>Jäljellä</h3> <!-- Used deck -->
+    <h3>Jäljellä</h3>
     <tr *ngFor="let card of shuffledCards">{{card.suit}} {{card.rank}}</tr>
   </td>
 
 </table>
+-->

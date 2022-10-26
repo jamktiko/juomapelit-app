@@ -9,6 +9,8 @@ import { CreateLobbyComponent } from './join-table/create-lobby/create-lobby.com
 import { TestingComponent } from './testing/testing.component';
 
 
+import { ModalModule } from './_modal';
+
 @NgModule({
   declarations: [
     AppComponent,

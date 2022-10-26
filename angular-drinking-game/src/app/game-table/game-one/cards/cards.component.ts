@@ -15,7 +15,6 @@ export class CardsComponent implements OnInit {
   @Input() shuffledCards: any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
   rules = RULES;
-  playing = false
   curRuleHeader: any;
 
   constructor (public deckComponent : DeckComponent) {};
@@ -37,10 +36,42 @@ export class CardsComponent implements OnInit {
     // Colors canvas red
     this.c.fillStyle = "#f64747";
     this.c.fillRect(0, 0, 300, 470);
-    // Creates and draws the logo
-    let img = new Image();
-    img.src = "https://meemi.info/images/f/fc/Mutsis.jpg";
-    this.c.drawImage(img, 100, 200, 150, 150);
+
+    // Details:
+    // left line
+    this.c.beginPath();
+    this.c.moveTo(30,30);
+    this.c.lineTo(30, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // right line
+    this.c.beginPath();
+    this.c.moveTo(270, 30)
+    this.c.lineTo(270, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // top line
+    this.c.beginPath();
+    this.c.moveTo(270, 30)
+    this.c.lineTo(30, 30);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // bottom line
+    this.c.beginPath();
+    this.c.moveTo(30, 440)
+    this.c.lineTo(270, 440);
+    this.c.lineWidth = 2,5;
+    this.c.strokeStyle = "white";
+    this.c.stroke();
+    // circle
+    this.c.beginPath();
+    this.c.arc(150, 235, 50, 0, 2 * Math.PI);
+    this.c.lineWidth = 5,5;
+    this.c.stroke();
+    this.c.fill();
   }
 
   // Draw upward card to canvas
@@ -83,9 +114,9 @@ export class CardsComponent implements OnInit {
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
     this.c.font = "60px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0].suit, -295, -360);
+    this.c.fillText(this.shuffledCards[0].suit, -265, -360);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0].rank, -295, -410);
+    this.c.fillText(this.shuffledCards[0].rank, -265, -410);
   }
   
   // Plays the next card when the user clicks the button to do so
