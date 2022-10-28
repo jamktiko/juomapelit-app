@@ -12,7 +12,7 @@ import { DeckComponent } from '../deck/deck.component';
 export class CardsComponent implements OnInit {
   // Inputs
   @Input() curRule: any;
-  @Input() shuffledCards:any; // Shuffled cards
+  @Input() shuffledCards:any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
   
   //rules = RULES;
@@ -140,9 +140,9 @@ export class CardsComponent implements OnInit {
     // Checks if the deck is either used up or if the user has flipped the first card
     if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
       // Adds the card to the played cards array
-      this.deckComponent.playedCards.push(this.shuffledCards[0][0]);
+      this.playedCards.push(this.card)
       // Removes the card from the shuffled cards array
-      this.shuffledCards.slice(0, 0);
+      this.shuffledCards[0].splice(this.shuffledCards[0].indexOf(this.card), 1)
       // Checks if the deck is used up
       if (this.shuffledCards.length === 0) {
         // If the deck is used up, the user can no longer play the game
@@ -164,8 +164,8 @@ export class CardsComponent implements OnInit {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
-      console.log("s" + this.shuffledCards.length)
-      console.log("p" + this.playedCards[0])
+      console.log("s" + this.shuffledCards[0])
+      console.log("p" + this.playedCards[0][2])
     }
   
 
