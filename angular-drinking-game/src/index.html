@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>AngularDrinkingGame</title>
+  <title>BrewDeck</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,6 +14,58 @@
   <main>
     <app-root></app-root>
   </main>
-</body>
 
+<!--Animated background code begins-->
+  <div id="background">
+
+<!-- This is code for the animated background. Waves code used: https://codepen.io/goodkatz/pen/LYPGxQz -->
+  <!--Wave-->
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffffff" />
+  </g>
+  </svg>
+
+  <!--Second wave-->
+  <svg class="waves2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax2">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="#ffffff" />
+  </g>
+  </svg>
+<!--Waves code ends here-->
+
+<div class="foam"></div>
+
+<!--Beer-div for animated background-->
+<div id="beer">
+  <div id="beertint"></div>
+
+<!--Bubbles-->
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+    <div class="bubble bubble6"></div>
+    <div class="bubble bubble7"></div>
+    <div class="bubble bubble8"></div>
+    <div class="bubble bubble9"></div>
+    <div class="bubble bubble10"></div>
+    <div class="bubble bubble11"></div>
+    <div class="bubble bubble12"></div>
+</div>
+<!--Beer-div ends here-->
+
+</div>
+<!--Background code ends here-->
+
+</body>
 </html>
