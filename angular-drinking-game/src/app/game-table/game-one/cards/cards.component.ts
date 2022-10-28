@@ -140,9 +140,9 @@ export class CardsComponent implements OnInit {
     // Checks if the deck is either used up or if the user has flipped the first card
     if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
       // Adds the card to the played cards array
-      this.deckComponent.playedCards.push(this.shuffledCards[0]);
+      this.deckComponent.playedCards.push(this.shuffledCards[0][0]);
       // Removes the card from the shuffled cards array
-      this.shuffledCards.splice(0, 1);
+      this.shuffledCards.slice(0, 0);
       // Checks if the deck is used up
       if (this.shuffledCards.length === 0) {
         // If the deck is used up, the user can no longer play the game
@@ -164,7 +164,8 @@ export class CardsComponent implements OnInit {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
-      console.log(this.shuffledCards)
+      console.log("s" + this.shuffledCards.length)
+      console.log("p" + this.playedCards[0])
     }
   
 
