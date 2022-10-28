@@ -23,7 +23,8 @@
         "angulardrinkinggame": {}
       },
       "storage": {
-        "gameDb": {}
+        "gameDb": {},
+        "cardsDb": {}
       },
       "api": {
         "gameApi": {}
