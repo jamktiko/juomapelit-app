@@ -202,10 +202,19 @@ body {
   position:absolute;
   width: 100%;
   height:2rem;
+  z-index: -5;
+  bottom: 27%;
+  transform: rotate(180deg) scaleX(-1);
+} 
+
+.foam {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 2px;
   z-index: -1;
   bottom: 30%;
-  transform: rotate(180deg);
-} 
+}
   /* Animation */
   
   .parallax > use {
