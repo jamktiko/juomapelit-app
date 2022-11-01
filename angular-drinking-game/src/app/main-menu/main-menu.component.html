@@ -1,6 +1,6 @@
 <!--Logo-->
 <div id="logo">
-    <img src="https://gameassetsbucket.s3.us-east-1.amazonaws.com/bd_logo.png" alt="Logo" style="width:350px">
+  <img src="https://gameassetsbucket.s3.us-east-1.amazonaws.com/bd_logo.png" alt="Logo" style="width:350px">
 </div>
 
 <!--Navigation-->
@@ -11,12 +11,12 @@
 
 
 
-  
+
 <!-- Modal -->
 <div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="guide" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content d-block">
-        <h1 class="modal-title text-center" id="guide">Ohjeet</h1>
+      <h1 class="modal-title text-center" id="guide">Ohjeet</h1>
       <div class="modal-body">
         Kuinka pelaan BrewDeckiä?
         <p>
@@ -27,3 +27,6 @@
     </div>
   </div>
 </div>
+<button id="instructions" class="button2" [routerLink]="['/Guide']">Ohjeet</button><br>
+<button id="settings" class="button2" [routerLink]="['/Settings']"
+  routerLinkActive="router-link-active">Asetukset</button>
