@@ -1,0 +1,145 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-angulardrinkinggame-dev-93038-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
+      "UnauthRoleName": "amplify-angulardrinkinggame-dev-93038-unauthRole",
+      "StackName": "amplify-angulardrinkinggame-dev-93038",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-angulardrinkinggame-dev-93038/3b71e3b0-4477-11ed-8cbf-0e05c2f1c26d",
+      "AmplifyAppId": "dlhe82lz9l1gz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    }
+  },
+  "storage": {
+    "gameDb": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/storage/gameDb-cloudformation-template.json",
+        "logicalId": "storagegameDb"
+      },
+      "lastPushTimeStamp": "2022-10-28T07:02:48.034Z",
+      "output": {
+        "PartitionKeyName": "id",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:dynamodb:us-east-1:845860726746:table/gameDb-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:845860726746:table/gameDb-dev/stream/2022-10-05T07:37:49.958",
+        "PartitionKeyType": "S",
+        "Name": "gameDb-dev"
+      },
+      "lastPushDirHash": "nk8HnnURVilaWgCMV7lx3Te6EvM="
+    }
+  },
+  "function": {
+    "angulardrinkinggame2e254d54": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "gameDb",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2022-10-10T09:14:06.261Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-10-10T09:14:07.127Z",
+      "distZipFilename": "angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
+        "s3Key": "amplify-builds/angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/function/angulardrinkinggame2e254d54-cloudformation-template.json",
+        "logicalId": "functionangulardrinkinggame2e254d54"
+      },
+      "lastPushTimeStamp": "2022-10-28T07:02:48.043Z",
+      "output": {
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:845860726746:function:angulardrinkinggame2e254d54-dev",
+        "Name": "angulardrinkinggame2e254d54-dev",
+        "LambdaExecutionRole": "angulardrinkinggameLambdaRoledc4fc713-dev"
+      },
+      "lastPushDirHash": "f/2HlR87U/gUufWN25Wuh62golE="
+    }
+  },
+  "auth": {
+    "angulardrinkinggame": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/auth/angulardrinkinggame-cloudformation-template.json",
+        "logicalId": "authangulardrinkinggame"
+      },
+      "lastPushTimeStamp": "2022-10-28T07:02:48.050Z",
+      "output": {
+        "UserPoolId": "us-east-1_jLUkiVt94",
+        "AppClientIDWeb": "5i50v7v4bhanniojcp9eigeq9l",
+        "AppClientID": "3s37k3krrmobpfsa179nfku88a",
+        "IdentityPoolId": "us-east-1:6f09292f-8bf0-4515-ae7b-c3ee6ca9fbaf",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:845860726746:userpool/us-east-1_jLUkiVt94",
+        "IdentityPoolName": "angulardrinkinggame_identitypool_7072380c__dev",
+        "UserPoolName": "angulardrinkinggame_userpool_7072380c"
+      },
+      "lastPushDirHash": "1L8IJNgW2CbQUc84H2FoANd3at0="
+    }
+  },
+  "api": {
+    "gameApi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "angulardrinkinggame2e254d54",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/gameApi-cloudformation-template.json",
+        "logicalId": "apigameApi"
+      },
+      "lastPushTimeStamp": "2022-10-28T07:02:48.058Z",
+      "output": {
+        "ApiName": "gameApi",
+        "RootUrl": "https://2klib4qth6.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "2klib4qth6"
+      },
+      "lastPushDirHash": "CPBb5ugMIJz7xXfmbC1DpwW9GiA="
+    }
+  }
+}

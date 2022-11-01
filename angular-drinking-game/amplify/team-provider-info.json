@@ -1,0 +1,34 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-angulardrinkinggame-dev-93038-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
+      "UnauthRoleName": "amplify-angulardrinkinggame-dev-93038-unauthRole",
+      "StackName": "amplify-angulardrinkinggame-dev-93038",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-angulardrinkinggame-dev-93038/3b71e3b0-4477-11ed-8cbf-0e05c2f1c26d",
+      "AmplifyAppId": "dlhe82lz9l1gz",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "angulardrinkinggame2e254d54": {
+          "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
+          "s3Key": "amplify-builds/angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip"
+        }
+      },
+      "auth": {
+        "angulardrinkinggame": {}
+      },
+      "storage": {
+        "gameDb": {},
+        "cardsDb": {}
+      },
+      "api": {
+        "gameApi": {}
+      }
+    }
+  }
+}

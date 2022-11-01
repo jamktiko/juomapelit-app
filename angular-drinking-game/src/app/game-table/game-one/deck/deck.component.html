@@ -6,8 +6,10 @@
 
 <!-- After all the cards has been played, the game shall ask if you want to play again. -->
 <div *ngIf="cardCount == 52" class="cardsClass">
-  <button id="newGame" type="button" class="button1" (click)="reloadPage()">Uusi peli</button>
+  <button id="newGame" type="button" class="button1" (click)="newGame()">Uusi peli</button>
 </div>
+
+<button (click)="consolelog()">Console log</button>
 
 
 <button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
