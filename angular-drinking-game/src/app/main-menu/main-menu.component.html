@@ -5,5 +5,25 @@
 
 <!--Navigation-->
 <button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button><br>
-<button id="instructions" class="button2" [routerLink]="['/Guide']">Ohjeet</button><br>
+<!-- Ohjeet-modaali button -->
+<button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button><br>
 <button id="contact" class="button2" [routerLink]="['/Guide']">Ota yhteyttä</button><br>
+
+
+
+  
+<!-- Modal -->
+<div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="guide" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content d-block">
+        <h1 class="modal-title text-center" id="guide">Ohjeet</h1>
+      <div class="modal-body">
+        Kuinka pelaan BrewDeckiä?
+        <p>
+          ja tähän niitä ohjeita :)
+        </p>
+        <p><button type="button" class="btn btn-primary" data-dismiss="modal">Sulje</button></p>
+      </div>
+    </div>
+  </div>
+</div>
