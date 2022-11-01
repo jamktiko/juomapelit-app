@@ -203,8 +203,8 @@ body {
   width: 100%;
   height:2rem;
   z-index: -1;
-  bottom: 27%;
-  transform: rotate(180deg) scaleX(-1);
+  bottom: 29%;
+  transform: rotate(180deg);
 } 
   /* Animation */
   
