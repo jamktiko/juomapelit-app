@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CARDS } from 'src/app/game-table/game-shareable/mock-cards';
 import { Card } from 'src/app/game-table/game-shareable/card';
 import { RULES } from 'src/app/game-table/game-shareable/mock-rules';
 import { API } from 'aws-amplify';
@@ -33,7 +32,6 @@ export class DeckComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-      //this.shuffledCards = this.shuffle(this.cards); // Shuffles the cards when the app is started
       this.getCards();
   }
 
@@ -52,10 +50,17 @@ export class DeckComponent implements OnInit {
       .then((response) => {
         // console.log(response.data);
         this.shuffledCards.push(response.data)
+        this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
       })
       .catch((error) => {
         console.log(error.response);
       });
+  }
+
+  consolelog() {
+    //console.log(this.shuffledCards);
+    console.log(this.shuffledCards[0]);
+    console.log(this.shuffledCards[0][0]['rank']);
   }
 
    // This function gets random object from the randCards array (random indexing)
@@ -64,17 +69,13 @@ export class DeckComponent implements OnInit {
   
   // Starts a new game when the user clicks the button to do so, this isn't used at the moment,
   // but it might be used in the future instead of reloadPage();
- /* newGame() {
+newGame() {
+    this.cardCount = 0;
     this.isOver = false;
-    this.playedCards.push(this.shuffledCards[0]);
-    this.shuffledCards.splice(0, 1);
-    this.cardCount = 1;
-    this.shuffledCards = this.shuffle(this.playedCards);
-    this.playedCards = [];
-    // console.log(this.cards);
-    // this.curRule = this.rules[this.shuffledCards[0].rank - 1].rule;
-    return this.curRule;
- */ 
+    this.shuffle(this.shuffledCards[0]);
+    this.curRule = this.shuffledCards[0][0]['rule'];
+}
+
  // Restarts the page
   reloadPage() {
     window.location.reload();

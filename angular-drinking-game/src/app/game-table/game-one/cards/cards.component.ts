@@ -95,30 +95,30 @@ export class CardsComponent implements OnInit {
     // Adds suit and rank to top
     this.c.font = "60px Roboto-Black, sans-serif";
         // Hearts and diamonds color red, spades and clubs black
-        if (this.card[1] === "♦" || this.card[1] === "♥") {
+        if (this.shuffledCards[0][0]['suit'] === "♦" || this.shuffledCards[0][0]['suit'] === "♥") {
           this.c.fillStyle = "red";
         } else {
           this.c.fillStyle = "black";
         };
         // Changes ranks 11/12/13/1 to J/Q/K/A
-        if (this.card[2] == 11) {
-          this.card[2] = "J";
-        } else if (this.card[2] == 12) {
-          this.card[2] = "Q";
-        } else if (this.card[2] == 13) {
-          this.card[2] = "K";
-        } else if (this.card[2] == 1) {
-          this.card[2] = "A";
+        if (this.shuffledCards[0][0]['rank'] == 11) {
+          this.shuffledCards[0][0]['rank'] = "J";
+        } else if (this.shuffledCards[0][0]['rank'] == 12) {
+          this.shuffledCards[0][0]['rank'] = "Q";
+        } else if (this.shuffledCards[0][0]['rank'] == 13) {
+          this.shuffledCards[0][0]['rank'] = "K";
+        } else if (this.shuffledCards[0][0]['rank'] == 1) {
+          this.shuffledCards[0][0]['rank'] = "A";
         };
-    this.c.fillText(this.card[0], 35, 110);
+    this.c.fillText(this.shuffledCards[0][0]['suit'], 35, 110);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.card[3], 35, 60);
+    this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
     this.c.font = "60px Roboto-Black, sans-serif";
-    this.c.fillText(this.card[0], -265, -360);
+    this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.card[3], -265, -410);
+    this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
   }
 /*  getRandomCard() {
     // Get random card from array
@@ -133,39 +133,38 @@ export class CardsComponent implements OnInit {
    */
   // Plays the next card when the user clicks the button to do so
   
-  
+  //this.playedCards.indexOf(this.card) === -1
   next() {
-
-     this.card = Object.values(this.shuffledCards[0][Math.floor(Math.random() * 52  )])
-    // Checks if the deck is either used up or if the user has flipped the first card
-    if (this.deckComponent.cardCount <= 52 && this.deckComponent.cardCount != 0) {
-      // Adds the card to the played cards array
-      this.playedCards.push(this.card)
-      // Removes the card from the shuffled cards array
-      this.shuffledCards[0].splice(this.shuffledCards[0].indexOf(this.card), 1)
-      // Checks if the deck is used up
-      if (this.shuffledCards.length === 0) {
-        // If the deck is used up, the user can no longer play the game
+    if (this.deckComponent.cardCount < 52) {
+        // Adds the card to the played cards array
+        let temp = this.shuffledCards[0][0];
+        this.shuffledCards[0].splice(0, 1);
+        this.shuffledCards[0].push(temp);
+        this.curRule = this.shuffledCards[0][0]['rule'];
+        this.curRuleHeader = this.shuffledCards[0][0]['name'];
+        // Increases the card count
+        this.deckComponent.cardCount++;
+      } else {
+        // If the deck is empty, the game is over
         this.deckComponent.isOver = true;
       }
-    }
-    // Describes the rule, checking it from the mock-rules.ts file.
-    this.curRule = this.card[4];
-    // Describes the rule header, checking it from the mock-rules.ts file.
-    this.curRuleHeader = this.card[2];
-    // Increases the card count
-    this.deckComponent.cardCount++;
-    return this.curRule;
-  
   }
  
   // Switches to next card
   nextCard() {
+    if (this.deckComponent.cardCount === 0){
+      this.cardFrontside();
+      this.addSuitRank();
+      this.curRule = this.shuffledCards[0][0]['rule'];
+      this.curRuleHeader = this.shuffledCards[0][0]['name'];
+      this.deckComponent.cardCount++;
+    } else {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
-      console.log("s" + this.shuffledCards[0])
-      console.log("p" + this.playedCards[0][2])
+    }
+//      console.log("s " + JSON.stringify(this.shuffledCards[0]))
+//      console.log("p " + this.playedCards[0])
     }
   
 
@@ -175,6 +174,6 @@ export class CardsComponent implements OnInit {
     this.c = this.canvas.nativeElement.getContext('2d');
     this.cardBackside();
 
-    console.log(this.shuffledCards)
+    //console.log(this.shuffledCards)
   }
 }

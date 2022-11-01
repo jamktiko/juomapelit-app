@@ -1,4 +1,4 @@
-import { Card } from './card';
+/*import { Card } from './card';
 
 export const CARDS: Card[] = [
   { id: 1, suit: '♦', rank: 1 },
@@ -54,3 +54,4 @@ export const CARDS: Card[] = [
   { id: 51, suit: '♣', rank: 12 },
   { id: 52, suit: '♣', rank: 13 }
 ];
+*/

@@ -1,5 +1,7 @@
 export interface Card {
-  id: number;
   suit: string;
+  id: number;
+  name: string;
   rank: number | string;
+  rule: string;
 }
