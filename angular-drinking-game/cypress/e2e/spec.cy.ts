@@ -28,7 +28,7 @@ describe('Testataan pelin luomista', () => {
 describe('Testataan että kortteja voidaan klikata', () => {
   it('passes', () => {
     cy.visit('http://localhost:4200/GameOne')
-    cy.wait(1000)
+    cy.wait(3000)
     cy.get('canvas#cardBack').click({multiple: true, force: true})
   })
 })
