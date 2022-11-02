@@ -21,7 +21,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/storage/gameDb-cloudformation-template.json",
         "logicalId": "storagegameDb"
       },
-      "lastPushTimeStamp": "2022-11-02T10:36:14.277Z",
+      "lastPushTimeStamp": "2022-11-02T11:20:46.225Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "us-east-1",
@@ -52,19 +52,19 @@
           }
         }
       ],
-      "lastBuildTimeStamp": "2022-10-10T09:14:06.261Z",
+      "lastBuildTimeStamp": "2022-11-02T11:20:55.585Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-10-10T09:14:07.127Z",
-      "distZipFilename": "angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip",
+      "lastPackageTimeStamp": "2022-11-02T11:20:59.225Z",
+      "distZipFilename": "angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-        "s3Key": "amplify-builds/angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip"
+        "s3Key": "amplify-builds/angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/function/angulardrinkinggame2e254d54-cloudformation-template.json",
         "logicalId": "functionangulardrinkinggame2e254d54"
       },
-      "lastPushTimeStamp": "2022-11-02T10:36:14.285Z",
+      "lastPushTimeStamp": "2022-11-02T11:21:01.476Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:845860726746:function:angulardrinkinggame2e254d54-dev",
@@ -102,7 +102,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/auth/angulardrinkinggame-cloudformation-template.json",
         "logicalId": "authangulardrinkinggame"
       },
-      "lastPushTimeStamp": "2022-11-02T10:36:14.294Z",
+      "lastPushTimeStamp": "2022-11-02T11:20:46.243Z",
       "output": {
         "UserPoolId": "us-east-1_jLUkiVt94",
         "AppClientIDWeb": "5i50v7v4bhanniojcp9eigeq9l",
@@ -133,7 +133,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/gameApi-cloudformation-template.json",
         "logicalId": "apigameApi"
       },
-      "lastPushTimeStamp": "2022-11-02T10:36:14.302Z",
+      "lastPushTimeStamp": "2022-11-02T11:20:46.252Z",
       "output": {
         "ApiName": "gameApi",
         "RootUrl": "https://2klib4qth6.execute-api.us-east-1.amazonaws.com/dev",

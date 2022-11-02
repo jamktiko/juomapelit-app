@@ -1,5 +1,5 @@
 {
-  "Description": "Root Stack for AWS Amplify CLI",
+  "Description": "Root Stack for AWS Amplify Console",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "DeploymentBucketName": {
@@ -191,7 +191,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/function/angulardrinkinggame2e254d54-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-          "s3Key": "amplify-builds/angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip",
+          "s3Key": "amplify-builds/angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip",
           "storagegameDbName": {
             "Fn::GetAtt": [
               "storagegameDb",
