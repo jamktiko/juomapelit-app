@@ -1,14 +1,14 @@
 <!--Logo-->
 <div id="logo">
-  <img src="https://gameassetsbucket.s3.us-east-1.amazonaws.com/bd_logo.png" alt="Logo" style="width:350px">
+  <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:100%;height:auto;">
 </div>
 
 <!--Navigation-->
-<button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button><br>
-<!-- Ohjeet-modaali button -->
-<button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button><br>
-<button id="contact" class="button2" [routerLink]="['/Guide']">Ota yhteyttä</button><br>
-
+<div class="navi">
+      <div><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
+      <div><button id="guide" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
+      <div><button id="contact" class="button2" [routerLink]="['/Guide']">Ota yhteyttä</button></div>
+</div>
 
 
 
@@ -27,6 +27,3 @@
     </div>
   </div>
 </div>
-<button id="instructions" class="button2" [routerLink]="['/Guide']">Ohjeet</button><br>
-<button id="settings" class="button2" [routerLink]="['/Settings']"
-  routerLinkActive="router-link-active">Asetukset</button>

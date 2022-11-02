@@ -1,8 +1,10 @@
 <!--Logo-->
 <div id="logo">
-    <img src="https://gameassetsbucket.s3.us-east-1.amazonaws.com/bd_logo.png" alt="Logo" style="width:350px">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:100%;height:auto;">
 </div>
 
-<button id="joinGameButton" class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button><br>
-<button id="createGame" class="button1" [routerLink]="['/CreateLobby']" >Luo peli</button><br>
-<button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button><br>
+<div id="navi">
+<div><button id="joinGameButton" class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button></div>
+<div><button id="createGame" class="button1" [routerLink]="['/CreateLobby']" >Luo peli</button></div>
+<div><button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button></div>
+</div>
