@@ -6,24 +6,24 @@
 <!--Navigation-->
 <div class="navi">
       <div><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
-      <div><button id="guide" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
-      <div><button id="contact" class="button2" [routerLink]="['/Guide']">Ota yhteyttä</button></div>
+      <div><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
+      <div><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
 </div>
 
+<!--Guide modal-->
+<div id="guide" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-
-<!-- Modal -->
-<div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="guide" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content d-block">
-      <h1 class="modal-title text-center" id="guide">Ohjeet</h1>
+    <!-- Modal content-->
+    <div class="modal-content">
+        <h4 class="modal-title" style="text-align:center">Ohjeet</h4>
       <div class="modal-body">
-        Kuinka pelaan BrewDeckiä?
-        <p>
-          ja tähän niitä ohjeita :)
-        </p>
-        <p><button type="button" class="btn btn-primary" data-dismiss="modal">Sulje</button></p>
+        <p>Tähän ohjeet, kuinka sovellusta käytetään.</p>
+      </div>
+      <div style="text-align:center; margin:0.5em;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
       </div>
     </div>
+
   </div>
 </div>

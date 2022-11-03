@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ModalService } from './_modal';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,5 +25,5 @@ export class AppModule { }
 export class AppComponent {
   title = 'angular-drinking-game';
 
-  constructor(public modalService: ModalService) {}
+  constructor() {}
 }

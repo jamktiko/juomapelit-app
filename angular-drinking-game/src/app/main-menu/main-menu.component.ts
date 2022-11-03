@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalService } from '../_modal';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,7 +6,7 @@ import { ModalService } from '../_modal';
   styleUrls: ['./main-menu.component.css'],
 })
 export class MainMenuComponent implements OnInit {
-  constructor(public modalService: ModalService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }
