@@ -48,7 +48,7 @@ export class DeckComponent implements OnInit {
   getCards() {
     API.get('juomapeliApi', '/cards', this.params)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         
         // console.log(response.data);
       //  this.shuffledCards.push(response.data)
