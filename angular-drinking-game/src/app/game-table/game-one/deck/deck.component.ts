@@ -48,11 +48,10 @@ export class DeckComponent implements OnInit {
   getCards() {
     API.get('juomapeliApi', '/cards', this.params)
       .then((response) => {
-        console.log(response.data);
-        
+        console.log(response.data);   
         // console.log(response.data);
-      //  this.shuffledCards.push(response.data)
-      //  this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+      this.shuffledCards.push(response.data)
+      this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
       })
       .catch((error) => {
         console.log(error.response);
@@ -60,7 +59,7 @@ export class DeckComponent implements OnInit {
   }
 
   consolelog() {
-    //console.log(this.shuffledCards);
+    console.log(this.shuffledCards);
     console.log(this.shuffledCards[0]);
     console.log(this.shuffledCards[0][0]['rank']);
   }
