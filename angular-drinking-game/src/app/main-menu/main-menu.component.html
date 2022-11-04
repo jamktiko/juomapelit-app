@@ -1,13 +1,13 @@
 <!--Logo-->
 <div id="logo">
-  <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:100%;height:auto;">
+  <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo">
 </div>
 
 <!--Navigation-->
 <div class="navi">
-      <div><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
-      <div><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
-      <div><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
+      <div class="naviItem"><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
+      <div class="naviItem"><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
+      <div class="naviItem"><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
 </div>
 
 <!--Guide modal-->
@@ -16,12 +16,20 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-        <h4 class="modal-title" style="text-align:center">Ohjeet</h4>
-      <div class="modal-body">
-        <p>Tähän ohjeet, kuinka sovellusta käytetään.</p>
+        <h1 class="modal-title" style="text-align:center;margin-top: 0.5em;">Ohjeet</h1>
+      <div class="modal-body" style="text-align:left">
+        <h4 style="text-align:center">Kuinka pelaan BrewDeckiä?</h4>
+        <p><b>Unohtuiko korttipakka kotiin? Ei hätää, onhan meillä BrewDeck!</b></p>
+        <p>BrewDeck on ilmainen verkkoselaimessa toimiva sovellus, jolla voit pelata niin perinteisiä kuin uusia juomapelejä.
+          Sovellus korvaa fyysisen korttipakan ja on helppo ja nopea käyttää.
+        </p>
+        <p>BrewDeckillä luot pelin nopeasti ilman sisäänkirjautumista, ja kaikki pelaajat voivat pelata peliä omilta laitteiltaan.
+          Liittyäksesi peliin, tarvitset vain huoneen koodin. Koodi on näkyvillä sillä pelaajalla, joka on luonut pelin ja huoneen.
+        </p>
+        <p>Luo siis vain peli ja jaa huoneen koodi ystävillesi, niin peli voi alkaa!</p>
       </div>
       <div style="text-align:center; margin:0.5em;">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+        <button type="button" class="button2" data-dismiss="modal" style="width: 30%">Sulje</button>
       </div>
     </div>
 

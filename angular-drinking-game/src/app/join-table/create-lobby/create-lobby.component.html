@@ -1,14 +1,17 @@
 <h1>Luo huone</h1>
 <form id="createLobby">
-  <label for="roomcode" class="formLabel">Huoneen koodi</label>
-  <div id="codeClass" style="font-size: 2em">{{this.koodi}}</div>
-  <br>
-  <br>
-  <label for="name" class="formLabel">Nimimerkkisi</label><br>
+  <h3>Nimimerkkisi</h3>
   <input type="text" id="name" name="name" class="formItem" placeholder="pelaaja1" maxlength="15">
 </form>
 
-<h1>Valitse peli</h1>
-<button id="vesiputous" class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Vesiputous</button><br>
+<h3>Huoneen koodi</h3>
+<div id="codeClass" style="font-size: 2em">{{this.koodi}}</div>
+
+<h3>Valitse peli</h3>
+
+[x] Vesiputous
+
+
+<button id="vesiputous" class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Luo huone</button><br>
 
 <button id="back" class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>

@@ -83,7 +83,7 @@ export class CardsComponent implements OnInit {
     // Colors canvas white
     this.c.beginPath();
     this.c.rect(0, 0, 300, 470);
-    this.c.fillStyle = "#ffffff";
+    this.c.fillStyle = "#fff";
     this.c.fill();
     // Adds suits and ranks
     this.addSuitRank();

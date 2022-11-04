@@ -32,20 +32,12 @@ body {
     font-weight: bold;
 }
 
-#cardBack {
+#canvas {
     width: 300px;
     height: 470px;
     border-radius:25px;
-    border: 3px solid white;
     margin: 0 auto;
-}
-
-#cardFront {
-    width: 300px;
-    height: 470px;
-    background-color:white;
-    border-radius:25px;
-    margin: 0 auto;
+    border: 2px solid #333333;
 }
 
 /* Responsive layout */

@@ -1,7 +1,7 @@
 <div id="cardBox">
     <!--Backside of card-->
     <div (click)="nextCard()">
-        <canvas #canvas id="cardBack" width="300" height="470"></canvas>
+        <canvas #canvas id="canvas" width="300" height="470"></canvas>
     </div>
     <div (click)="nextCard()" id="rule" class="disableSelection">{{this.curRule}}</div>
     <div (click)="nextCard()" id="ruleHeader" class="disableSelection">{{this.curRuleHeader}}</div>
