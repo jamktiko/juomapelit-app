@@ -46,11 +46,13 @@ export class DeckComponent implements OnInit {
 
   // This function gets cards from the API and pushes them to an empty array on initialization
   getCards() {
-    API.get('gameApi', '/items', this.params)
+    API.get('juomapeliApi', '/cards', this.params)
       .then((response) => {
+        console.log(response);
+        
         // console.log(response.data);
-        this.shuffledCards.push(response.data)
-        this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+      //  this.shuffledCards.push(response.data)
+      //  this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
       })
       .catch((error) => {
         console.log(error.response);

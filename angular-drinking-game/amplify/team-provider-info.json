@@ -1,33 +1,32 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-angulardrinkinggame-dev-93038-authRole",
-      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-authRole",
+      "AuthRoleName": "amplify-juomapeliapp-dev-83818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-      "UnauthRoleName": "amplify-angulardrinkinggame-dev-93038-unauthRole",
-      "StackName": "amplify-angulardrinkinggame-dev-93038",
-      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-angulardrinkinggame-dev-93038/3b71e3b0-4477-11ed-8cbf-0e05c2f1c26d",
-      "AmplifyAppId": "dlhe82lz9l1gz",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
+      "UnauthRoleName": "amplify-juomapeliapp-dev-83818-unauthRole",
+      "StackName": "amplify-juomapeliapp-dev-83818",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-juomapeliapp-dev-83818/46b42480-5c0b-11ed-a3a1-12dd9142426f",
+      "AmplifyAppId": "do1h3s391252d",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
-        "angulardrinkinggame2e254d54": {
-          "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-          "s3Key": "amplify-builds/angulardrinkinggame2e254d54-4d4961734a4165734c57-build.zip"
+        "juomapeliLambda": {
+          "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
+          "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip"
         }
       },
       "auth": {
-        "angulardrinkinggame": {}
+        "juomapeliapp": {}
       },
       "storage": {
-        "gameDb": {},
-        "cardsDb": {}
+        "juomapeliDb": {}
       },
       "api": {
-        "gameApi": {}
+        "juomapeliApi": {}
       }
     }
   }

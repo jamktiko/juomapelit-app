@@ -11,7 +11,7 @@
     "env": {
       "Type": "String"
     },
-    "gameApi": {
+    "juomapeliApi": {
       "Type": "String"
     }
   },
@@ -52,7 +52,7 @@
                       },
                       ":",
                       {
-                        "Ref": "gameApi"
+                        "Ref": "juomapeliApi"
                       },
                       "/",
                       {
@@ -64,7 +64,7 @@
                           }
                         ]
                       },
-                      "/*/items/*"
+                      "/*/cards/*"
                     ]
                   ]
                 },
@@ -82,7 +82,7 @@
                       },
                       ":",
                       {
-                        "Ref": "gameApi"
+                        "Ref": "juomapeliApi"
                       },
                       "/",
                       {
@@ -94,7 +94,7 @@
                           }
                         ]
                       },
-                      "/*/items"
+                      "/*/cards"
                     ]
                   ]
                 }
@@ -135,7 +135,7 @@
                       },
                       ":",
                       {
-                        "Ref": "gameApi"
+                        "Ref": "juomapeliApi"
                       },
                       "/",
                       {
@@ -147,7 +147,7 @@
                           }
                         ]
                       },
-                      "/GET/items/*"
+                      "/GET/cards/*"
                     ]
                   ]
                 },
@@ -165,7 +165,7 @@
                       },
                       ":",
                       {
-                        "Ref": "gameApi"
+                        "Ref": "juomapeliApi"
                       },
                       "/",
                       {
@@ -177,7 +177,7 @@
                           }
                         ]
                       },
-                      "/GET/items"
+                      "/GET/cards"
                     ]
                   ]
                 }

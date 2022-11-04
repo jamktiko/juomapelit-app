@@ -155,7 +155,7 @@
     "APIGatewayAuthStack": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
         "Parameters": {
           "authRoleName": {
             "Ref": "AuthRoleName"
@@ -164,43 +164,43 @@
             "Ref": "UnauthRoleName"
           },
           "env": "dev",
-          "gameApi": {
+          "juomapeliApi": {
             "Fn::GetAtt": [
-              "apigameApi",
+              "apijuomapeliApi",
               "Outputs.ApiId"
             ]
           }
         }
       }
     },
-    "storagegameDb": {
+    "storagejuomapeliDb": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/storage/gameDb-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/storage/juomapeliDb-cloudformation-template.json",
         "Parameters": {
-          "tableName": "gameDb",
+          "tableName": "juomapeliDb",
           "partitionKeyName": "id",
-          "partitionKeyType": "S",
+          "partitionKeyType": "N",
           "env": "dev"
         }
       }
     },
-    "functionangulardrinkinggame2e254d54": {
+    "functionjuomapeliLambda": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/function/angulardrinkinggame2e254d54-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/function/juomapeliLambda-cloudformation-template.json",
         "Parameters": {
-          "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-          "s3Key": "amplify-builds/angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip",
-          "storagegameDbName": {
+          "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
+          "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip",
+          "storagejuomapeliDbName": {
             "Fn::GetAtt": [
-              "storagegameDb",
+              "storagejuomapeliDb",
               "Outputs.Name"
             ]
           },
-          "storagegameDbArn": {
+          "storagejuomapeliDbArn": {
             "Fn::GetAtt": [
-              "storagegameDb",
+              "storagejuomapeliDb",
               "Outputs.Arn"
             ]
           },
@@ -208,15 +208,15 @@
         }
       }
     },
-    "authangulardrinkinggame": {
+    "authjuomapeliapp": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/auth/angulardrinkinggame-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/auth/juomapeliapp-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "angulardrinkinggame_identitypool_7072380c",
+          "identityPoolName": "juomapeliapp_identitypool_7fefb741",
           "allowUnauthenticatedIdentities": true,
-          "resourceNameTruncated": "angula7072380c",
-          "userPoolName": "angulardrinkinggame_userpool_7072380c",
+          "resourceNameTruncated": "juomap7fefb741",
+          "userPoolName": "juomapeliapp_userpool_7fefb741",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -233,11 +233,11 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "angula7072380c_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "juomap7fefb741_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
           "authSelections": "identityPoolAndUserPool",
-          "resourceName": "angulardrinkinggame",
-          "sharedId": "7072380c",
+          "resourceName": "juomapeliapp",
+          "sharedId": "7fefb741",
           "serviceName": "Cognito",
           "useDefault": "manual",
           "authRoleArn": {
@@ -259,20 +259,20 @@
         }
       }
     },
-    "apigameApi": {
+    "apijuomapeliApi": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/gameApi-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/juomapeliApi-cloudformation-template.json",
         "Parameters": {
-          "functionangulardrinkinggame2e254d54Name": {
+          "functionjuomapeliLambdaName": {
             "Fn::GetAtt": [
-              "functionangulardrinkinggame2e254d54",
+              "functionjuomapeliLambda",
               "Outputs.Name"
             ]
           },
-          "functionangulardrinkinggame2e254d54Arn": {
+          "functionjuomapeliLambdaArn": {
             "Fn::GetAtt": [
-              "functionangulardrinkinggame2e254d54",
+              "functionjuomapeliLambda",
               "Outputs.Arn"
             ]
           },
@@ -284,7 +284,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authangulardrinkinggame"
+        "authjuomapeliapp"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -379,7 +379,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authangulardrinkinggame",
+            "authjuomapeliapp",
             "Outputs.IdentityPoolId"
           ]
         },

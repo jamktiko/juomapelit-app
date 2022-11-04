@@ -1,47 +1,47 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-angulardrinkinggame-dev-93038-authRole",
-      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-angulardrinkinggame-dev-93038-authRole",
+      "AuthRoleName": "amplify-juomapeliapp-dev-83818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-      "UnauthRoleName": "amplify-angulardrinkinggame-dev-93038-unauthRole",
-      "StackName": "amplify-angulardrinkinggame-dev-93038",
-      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-angulardrinkinggame-dev-93038/3b71e3b0-4477-11ed-8cbf-0e05c2f1c26d",
-      "AmplifyAppId": "dlhe82lz9l1gz",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
+      "UnauthRoleName": "amplify-juomapeliapp-dev-83818-unauthRole",
+      "StackName": "amplify-juomapeliapp-dev-83818",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-juomapeliapp-dev-83818/46b42480-5c0b-11ed-a3a1-12dd9142426f",
+      "AmplifyAppId": "do1h3s391252d",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     }
   },
   "storage": {
-    "gameDb": {
+    "juomapeliDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/storage/gameDb-cloudformation-template.json",
-        "logicalId": "storagegameDb"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/storage/juomapeliDb-cloudformation-template.json",
+        "logicalId": "storagejuomapeliDb"
       },
-      "lastPushTimeStamp": "2022-11-02T11:20:46.225Z",
+      "lastPushTimeStamp": "2022-11-04T07:11:29.548Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "us-east-1",
-        "Arn": "arn:aws:dynamodb:us-east-1:845860726746:table/gameDb-dev",
-        "StreamArn": "arn:aws:dynamodb:us-east-1:845860726746:table/gameDb-dev/stream/2022-10-05T07:37:49.958",
-        "PartitionKeyType": "S",
-        "Name": "gameDb-dev"
+        "Arn": "arn:aws:dynamodb:us-east-1:845860726746:table/juomapeliDb-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:845860726746:table/juomapeliDb-dev/stream/2022-11-04T06:46:28.417",
+        "PartitionKeyType": "N",
+        "Name": "juomapeliDb-dev"
       },
-      "lastPushDirHash": "nk8HnnURVilaWgCMV7lx3Te6EvM="
+      "lastPushDirHash": "34j3lwhQAqU9CzaM51JyRZcurpg="
     }
   },
   "function": {
-    "angulardrinkinggame2e254d54": {
+    "juomapeliLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "gameDb",
+          "resourceName": "juomapeliDb",
           "attributes": [
             "Name",
             "Arn"
@@ -52,30 +52,30 @@
           }
         }
       ],
-      "lastBuildTimeStamp": "2022-11-02T11:20:55.585Z",
+      "lastBuildTimeStamp": "2022-11-04T07:09:44.250Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-11-02T11:20:59.225Z",
-      "distZipFilename": "angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip",
+      "lastPackageTimeStamp": "2022-11-04T07:09:45.108Z",
+      "distZipFilename": "juomapeliLambda-52496c72365871336836-build.zip",
       "s3Bucket": {
-        "deploymentBucketName": "amplify-angulardrinkinggame-dev-93038-deployment",
-        "s3Key": "amplify-builds/angulardrinkinggame2e254d54-6d413770645a6b716549-build.zip"
+        "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
+        "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/function/angulardrinkinggame2e254d54-cloudformation-template.json",
-        "logicalId": "functionangulardrinkinggame2e254d54"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/function/juomapeliLambda-cloudformation-template.json",
+        "logicalId": "functionjuomapeliLambda"
       },
-      "lastPushTimeStamp": "2022-11-02T11:21:01.476Z",
+      "lastPushTimeStamp": "2022-11-04T07:11:30.387Z",
       "output": {
         "Region": "us-east-1",
-        "Arn": "arn:aws:lambda:us-east-1:845860726746:function:angulardrinkinggame2e254d54-dev",
-        "Name": "angulardrinkinggame2e254d54-dev",
-        "LambdaExecutionRole": "angulardrinkinggameLambdaRoledc4fc713-dev"
+        "Arn": "arn:aws:lambda:us-east-1:845860726746:function:juomapeliLambda-dev",
+        "Name": "juomapeliLambda-dev",
+        "LambdaExecutionRole": "juomapeliappLambdaRolec4755ca6-dev"
       },
-      "lastPushDirHash": "f/2HlR87U/gUufWN25Wuh62golE="
+      "lastPushDirHash": "BYXgJ5BUoEE6k0J8CCeBkhpA++E="
     }
   },
   "auth": {
-    "angulardrinkinggame": {
+    "juomapeliapp": {
       "service": "Cognito",
       "serviceType": "managed",
       "providerPlugin": "awscloudformation",
@@ -99,30 +99,30 @@
         ]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/auth/angulardrinkinggame-cloudformation-template.json",
-        "logicalId": "authangulardrinkinggame"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/auth/juomapeliapp-cloudformation-template.json",
+        "logicalId": "authjuomapeliapp"
       },
-      "lastPushTimeStamp": "2022-11-02T11:20:46.243Z",
+      "lastPushTimeStamp": "2022-11-04T07:11:29.570Z",
       "output": {
-        "UserPoolId": "us-east-1_jLUkiVt94",
-        "AppClientIDWeb": "5i50v7v4bhanniojcp9eigeq9l",
-        "AppClientID": "3s37k3krrmobpfsa179nfku88a",
-        "IdentityPoolId": "us-east-1:6f09292f-8bf0-4515-ae7b-c3ee6ca9fbaf",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:845860726746:userpool/us-east-1_jLUkiVt94",
-        "IdentityPoolName": "angulardrinkinggame_identitypool_7072380c__dev",
-        "UserPoolName": "angulardrinkinggame_userpool_7072380c"
+        "UserPoolId": "us-east-1_AMXDiV1ZK",
+        "AppClientIDWeb": "42t70oebclev51p5oqrkjtocrt",
+        "AppClientID": "40p8lhr6a50lo5hbbg184vtsa0",
+        "IdentityPoolId": "us-east-1:1d62d762-adf8-46aa-a55f-efec40ff2894",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:845860726746:userpool/us-east-1_AMXDiV1ZK",
+        "IdentityPoolName": "juomapeliapp_identitypool_7fefb741__dev",
+        "UserPoolName": "juomapeliapp_userpool_7fefb741"
       },
-      "lastPushDirHash": "1L8IJNgW2CbQUc84H2FoANd3at0="
+      "lastPushDirHash": "zB9mdB9jJw2oC1V7AO47k2phyfM="
     }
   },
   "api": {
-    "gameApi": {
+    "juomapeliApi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "angulardrinkinggame2e254d54",
+          "resourceName": "juomapeliLambda",
           "attributes": [
             "Name",
             "Arn"
@@ -130,16 +130,16 @@
         }
       ],
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-angulardrinkinggame-dev-93038-deployment/amplify-cfn-templates/api/gameApi-cloudformation-template.json",
-        "logicalId": "apigameApi"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/juomapeliApi-cloudformation-template.json",
+        "logicalId": "apijuomapeliApi"
       },
-      "lastPushTimeStamp": "2022-11-02T11:20:46.252Z",
+      "lastPushTimeStamp": "2022-11-04T07:11:29.593Z",
       "output": {
-        "ApiName": "gameApi",
-        "RootUrl": "https://2klib4qth6.execute-api.us-east-1.amazonaws.com/dev",
-        "ApiId": "2klib4qth6"
+        "ApiName": "juomapeliApi",
+        "RootUrl": "https://1hy4iwdp82.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "1hy4iwdp82"
       },
-      "lastPushDirHash": "CPBb5ugMIJz7xXfmbC1DpwW9GiA="
+      "lastPushDirHash": "gs6W5lUVmv9N7QWMRzMokj0tNh8="
     }
   }
 }

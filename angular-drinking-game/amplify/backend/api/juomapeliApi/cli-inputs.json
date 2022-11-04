@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/items": {
-      "name": "/items",
-      "lambdaFunction": "angulardrinkinggame2e254d54",
+    "/cards": {
+      "name": "/cards",
+      "lambdaFunction": "juomapeliLambda",
       "permissions": {
         "setting": "protected",
         "auth": [
