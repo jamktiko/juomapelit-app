@@ -1,9 +1,9 @@
 {
-  "resourceName": "gameDb",
-  "tableName": "gameDb",
+  "resourceName": "juomapeliDb",
+  "tableName": "juomapeliDb",
   "partitionKey": {
     "fieldName": "id",
-    "fieldType": "string"
+    "fieldType": "number"
   },
   "gsi": [],
   "triggerFunctions": []

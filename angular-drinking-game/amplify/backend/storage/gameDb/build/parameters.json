@@ -1,5 +1,0 @@
-{
-  "tableName": "gameDb",
-  "partitionKeyName": "id",
-  "partitionKeyType": "S"
-}

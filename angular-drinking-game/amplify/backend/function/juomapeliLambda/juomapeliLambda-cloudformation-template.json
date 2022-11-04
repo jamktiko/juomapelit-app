@@ -16,13 +16,13 @@
     "s3Key": {
       "Type": "String"
     },
-    "storagegameDbName": {
+    "storagejuomapeliDbName": {
       "Type": "String",
-      "Default": "storagegameDbName"
+      "Default": "storagejuomapeliDbName"
     },
-    "storagegameDbArn": {
+    "storagejuomapeliDbArn": {
       "Type": "String",
-      "Default": "storagegameDbArn"
+      "Default": "storagejuomapeliDbArn"
     }
   },
   "Conditions": {
@@ -55,12 +55,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "angulardrinkinggame2e254d54",
+            "juomapeliLambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "angulardrinkinggame2e254d54",
+                  "juomapeliLambda",
                   "-",
                   {
                     "Ref": "env"
@@ -97,12 +97,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "angulardrinkinggameLambdaRoledc4fc713",
+            "juomapeliappLambdaRolec4755ca6",
             {
               "Fn::Join": [
                 "",
                 [
-                  "angulardrinkinggameLambdaRoledc4fc713",
+                  "juomapeliappLambdaRolec4755ca6",
                   "-",
                   {
                     "Ref": "env"
@@ -182,14 +182,14 @@
               ],
               "Resource": [
                 {
-                  "Ref": "storagegameDbArn"
+                  "Ref": "storagejuomapeliDbArn"
                 },
                 {
                   "Fn::Join": [
                     "/",
                     [
                       {
-                        "Ref": "storagegameDbArn"
+                        "Ref": "storagejuomapeliDbArn"
                       },
                       "index/*"
                     ]
