@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "storage": {
-        "gameDb": {
+        "juomapeliDb": {
             "Name": "string",
             "Arn": "string",
             "StreamArn": "string",
@@ -10,7 +10,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "angulardrinkinggame2e254d54": {
+        "juomapeliLambda": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -18,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "angulardrinkinggame": {
+        "juomapeliapp": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -29,7 +29,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "gameApi": {
+        "juomapeliApi": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

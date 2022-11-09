@@ -1,19 +1,19 @@
 {
   "storage": {
-    "gameDb": {
+    "juomapeliDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
   },
   "function": {
-    "angulardrinkinggame2e254d54": {
+    "juomapeliLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "gameDb",
+          "resourceName": "juomapeliDb",
           "attributes": [
             "Name",
             "Arn"
@@ -27,7 +27,7 @@
     }
   },
   "auth": {
-    "angulardrinkinggame": {
+    "juomapeliapp": {
       "service": "Cognito",
       "serviceType": "managed",
       "providerPlugin": "awscloudformation",
@@ -53,13 +53,13 @@
     }
   },
   "api": {
-    "gameApi": {
+    "juomapeliApi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "angulardrinkinggame2e254d54",
+          "resourceName": "juomapeliLambda",
           "attributes": [
             "Name",
             "Arn"

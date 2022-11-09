@@ -4,14 +4,8 @@
     font-size:2em;
     padding:0.5em;
     letter-spacing:0.03em;
-    border: 2px solid #BDBDBD;
+    border: 2px solid #9b9b9b;
     color: #303030;
     font-family: "Roboto-Medium";
     width: 300px;
-}
-
-.formLabel {
-    font-size: 2em;
-    color:white;
-    font-family: "Roboto-Medium"
 }

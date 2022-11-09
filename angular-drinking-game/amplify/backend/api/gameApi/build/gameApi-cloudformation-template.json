@@ -408,7 +408,7 @@
         }
       }
     },
-    "DeploymentAPIGWgameApib25efaf8": {
+    "DeploymentAPIGWgameApi545e5e58": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {

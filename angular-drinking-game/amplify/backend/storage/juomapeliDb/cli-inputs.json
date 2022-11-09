@@ -1,0 +1,10 @@
+{
+  "resourceName": "juomapeliDb",
+  "tableName": "juomapeliDb",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
