@@ -2,12 +2,11 @@
   <form id="joinGameForm">
     <h3>Huoneen koodi</h3>
     <input type="text" id="roomcode" class="formItem" name="roomcode" placeholder="ABCD" maxlength="4">
-    <br>
     <h3>Nimimerkkisi</h3>
     <input type="text" id="name" name="name" class="formItem" placeholder="pelaaja1" maxlength="15">
   </form>
 
 <div class="navi" style="margin-top: 4em">
-  <div><button class="button1" [routerLink]="['/GameLobby']" routerLinkActive="router-link-active">Liity</button></div>
-  <div><button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button></div>
+  <div class="navitem"><button class="button1" [routerLink]="['/GameLobby']" routerLinkActive="router-link-active">Liity</button></div>
+  <div class="navitem"><button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button></div>
 </div>

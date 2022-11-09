@@ -5,9 +5,9 @@
 
 <!--Navigation-->
 <div class="navi">
-      <div><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
-      <div><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
-      <div><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
+      <div class="navitem"><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
+      <div class="navitem"><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
+      <div class="navitem"><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
 </div>
 
 <!--Guide modal-->
@@ -18,7 +18,7 @@
     <div class="modal-content">
         <h1 class="modal-title" style="text-align:center;margin-top: 0.5em;">Ohjeet</h1>
       <div class="modal-body" style="text-align:left">
-        <h4 style="text-align:center">Kuinka pelaan BrewDeckiä?</h4>
+
         <p><b>Unohtuiko korttipakka kotiin? Ei hätää, onhan meillä BrewDeck!</b></p>
         <p>BrewDeck on ilmainen verkkoselaimessa toimiva sovellus, jolla voit pelata niin perinteisiä kuin uusia juomapelejä.
           Sovellus korvaa fyysisen korttipakan ja on helppo ja nopea käyttää.
@@ -29,7 +29,7 @@
         <p>Luo siis vain peli ja jaa huoneen koodi ystävillesi, niin peli voi alkaa!</p>
       </div>
       <div style="text-align:center; margin:0.5em;">
-        <button type="button" class="button2" data-dismiss="modal" style="width: 30%">Sulje</button>
+        <button type="button" class="button3" data-dismiss="modal">Sulje</button>
       </div>
     </div>
 
