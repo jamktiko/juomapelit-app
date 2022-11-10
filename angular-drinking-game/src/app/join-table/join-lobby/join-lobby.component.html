@@ -1,9 +1,10 @@
 <h1>Liity huoneeseen</h1>
   <form id="joinGameForm">
-    <h3>Huoneen koodi</h3>
-    <input type="text" id="roomcode" class="formItem" name="roomcode" placeholder="ABCD" maxlength="4">
-    <h3>Nimimerkkisi</h3>
-    <input type="text" id="name" name="name" class="formItem" placeholder="pelaaja1" maxlength="15">
+    <label for="lobbyCode" class="form-label"><h3>Huoneen koodi</h3></label>
+    <input class="form-control form-control-lg" type="text" maxlength="4" style="text-align:center" placeholder="ABCD" aria-label="lobbyCode">
+
+    <label for="playerName" class="form-label"><h3>Nimimerkkisi</h3></label>
+    <input class="form-control form-control-lg" type="text" maxlength="15" style="text-align:center" placeholder="pelaaja1" aria-label="playerName">
   </form>
 
 <div class="navi" style="margin-top: 4em">

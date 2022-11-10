@@ -33,17 +33,18 @@
 </div>
 <br>
 
-<form id="contactForm" style="text-align:left;margin-bottom: 15px;" class="collapse was-validated" no-validation>
+<form action="https://mailthis.to/brewdeckgames@gmail.com"
+method="POST" encType="multipart/form-data" id="contactForm" style="text-align:left;margin-bottom: 15px;" class="collapse was-validated" no-validation>
 
 <!--Title of form-->
-<input class="form-control" type="text" placeholder="Otsikko" aria-label="title" required>
+<input class="form-control" type="text" name="Otsikko" placeholder="Otsikko" aria-label="title" required>
 <div class="invalid-feedback">
     Kirjoita otsikko.
 </div>
 <br>
 
 <!--Dropdown menu-->
-<select class="form-select form-control" aria-label="topic" required>
+<select class="form-select form-control" aria-label="topic" name="Aihe" required>
     <option selected disabled value>Mitä asiasi koskee?</option>
     <option value="1">Bugi</option>
     <option value="2">Palaute</option>
@@ -59,7 +60,7 @@
 <!--Textarea-->
 <div class="mb-3">
     <label for="msg" class="form-label">Kerro, miten voimme auttaa.</label>
-    <textarea class="form-control" id="msg" rows="3" required></textarea>
+    <textarea class="form-control" id="msg" rows="3" name="Viesti" required></textarea>
     <div class="invalid-feedback">
         Tämä kenttä ei voi olla tyhjä.
     </div>
@@ -69,18 +70,21 @@
 <!--File input-->
 <div class="mb-3">
     <label for="formFileMultiple" class="form-label">Esim. kuvakaappaus (ei pakollinen)</label>
-    <input class="form-control" type="file" id="formFileMultiple" multiple>
+    <input class="form-control" type="file" id="formFileMultiple" name="Tiedostot" multiple>
 </div>
 
 
 <!--Sender's email -form-->
   <div class="mb-3">
     <label for="emailMsg" class="form-label">Jos haluat, että vastaamme viestiisi, annathan sähköpostiosoitteesi.</label>
-    <input type="email" class="form-control" id="emailMsg" placeholder="name@example.com">
+    <input type="email" class="form-control" id="emailMsg" name="Lähettäjän sähköposti" placeholder="name@example.com">
   </div>
 
+<!--Spam prevention field (not shown to regular users)-->
+  <input type="hidden" name="_honeypot" value="">
+
 <div style="text-align: center;">
-  <button type="submit" style="margin-right:3px" class="btn btn-primary btn-lg">Lähetä</button>
+  <button type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" disabled>Lähetä</button>
   <button type="reset" class="btn btn-secondary btn-lg">Tyhjennä</button>
 </div>
 </form>
