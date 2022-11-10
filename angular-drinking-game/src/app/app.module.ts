@@ -7,6 +7,7 @@ import { DeckComponent } from './game-table/game-one/deck/deck.component';
 import { CardsComponent } from './game-table/game-one/cards/cards.component';
 import { CreateLobbyComponent } from './join-table/create-lobby/create-lobby.component';
 import { ContactComponent } from './contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { ContactComponent } from './contact/contact.component';
     CreateLobbyComponent,
     ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
