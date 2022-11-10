@@ -9,6 +9,15 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
+  collapsed: boolean = true;
+
+  openForm() {
+    this.collapsed = false;
+  }
+
+  closeForm() {
+    this.collapsed = true;
+  }
   ngOnInit(): void {
   }
 

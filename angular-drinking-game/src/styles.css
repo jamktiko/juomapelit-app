@@ -4,50 +4,37 @@
     font-family: 'Roboto';
 }
 
-#joinGame {
-    margin: 5em;
+footer {
+  font-size: 0.9em;
+  margin-top:auto;
+  text-align:center;
+  padding-top:10px;
 }
 
-#socialmedias {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2em;
-  max-height: 60px;
-
-  max-width: 370px;
-}
-
-#socialmedias .somepic {
-  max-width: 60px;
-  height: auto;
-  margin: 0.5em;
-}
-
-main #logo {
-    margin: 1em;
-
+#logo {
+    margin: 0 auto;
+    padding-bottom: 30px;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 main {
   display: flex;
-justify-content: center;
-  align-content: flex-start;
-  align-items: center;
+  align-items:center;
+  align-content: center;
   flex-direction: column;
   width: 70%;
   height: 100%;
   margin: 0 auto;
-  padding: 3em;
   text-align: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
-
+  padding-top: 30px;
 }
 
 ul {
@@ -58,23 +45,25 @@ ul {
 
 .navi {
   display: flex;
+  flex-wrap: wrap;
+  align-items:stretch;
+  justify-content: space-around;
   flex-direction: column;
-  margin: 0 auto;
-  margin-bottom: 1em;
   max-width: 370px;
+  margin: 0 auto;
+}
 
+.navitem {
+  margin: 5px;
 }
 
 h1 {
     font-family: 'Roboto-Black';
-    font-size: 3em !important;
+    font-size: 2.5em !important;
     line-height: 47px;
     color: #FFFFFF;
     -webkit-text-stroke: 2px rgb(49, 49, 49);
     margin: 0.5em;
-    background: -webkit-linear-gradient(white, rgb(214, 214, 214));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 h3 {
@@ -90,7 +79,6 @@ h3 {
     font-family: 'Roboto-Black';
     color: white;
     font-size: 2em;
-    line-height: 38px;
     letter-spacing: 0.08em;
     background: #FFB800;
     border: 3.5px solid #4A2D00;
@@ -100,7 +88,6 @@ h3 {
     height: 2.5em;
     text-shadow: 0px 1.5px 1px #4A2D00;
     text-shadow: -2px 0 1px #4A2D00, 0 3.5px 1px #4A2D00, 2px 0 1px #4A2D00, 0 -2px #4A2D00;
-    margin-bottom: 0.5em;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -146,12 +133,89 @@ h3 {
     border-radius: 24px;
     text-shadow: 0px 1.5px 1px rgba(22, 8, 0, 0.8);
     text-shadow: -2px 0 1px #772B00, 0 4px 1px #772B00, 2px 0 1px #772B00, 0 -1.5px #772B00;
-    margin-top: 0.5em;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
   }
+
+  .button3 {
+    font-family: 'Roboto-Black';
+    color: white;
+    font-size: 1.7em;
+    letter-spacing: 0.08em;
+    background: #FFB800;
+    border: 3.5px solid #4A2D00;
+    box-shadow: inset 1px -40px 1px rgba(200, 88, 88, 0.2), inset 0px 3px 1px #FFFFFF, inset 0px -5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 100%;
+    height: 2em;
+    margin: 3px;
+    text-shadow: 0px 1.5px 1px #4A2D00;
+    text-shadow: -2px 0 1px #4A2D00, 0 2px 1px #4A2D00, 2px 0 1px #4A2D00, 0 -2px #4A2D00;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.button3:hover {
+  letter-spacing: 0.11em;
+  border: 3.5px solid black;
+}
+
+.button3:active {
+border: 3.5px solid rgb(27, 27, 27);
+box-shadow: inset 1px -40px 0px rgba(200, 88, 88, 0.2), inset 0px 5px 0px #f2f2f2, inset 0px -10px 0px rgba(0, 0, 0, 0.25);
+box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
+          1px 1px 15px 0px rgba(154, 137, 164, 0.1);
+}
+
+
+/* Responsive layout (width) */
+@media screen and (max-width: 650px) {
+  main {
+    width: 97%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navi {
+    max-width: 300px;
+  }
+  body {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Responsive layout (height) */
+@media screen and (max-height: 775px) {
+  #logo {
+    width: 90%;
+  }
+  main {
+    height: 100%;
+  }
+}
+@media screen and (max-height: 690px) {
+  main {
+    margin:0 auto;
+  }
+  #logo {
+    max-width: 90%;
+  }
+}
+@media screen and (max-height: 645px) {
+  #logo {
+    max-width: 70%;
+  }
+}
+@media screen and (max-height: 580px) {
+  #background {
+    display:none;
+  }
+}
+
 
 /* Disable text selection  */
 .disableSelection {
@@ -178,7 +242,8 @@ h3 {
     font-size: 2em;
     color:white;
     font-family: "Roboto-Medium"
-}
+
+  }
 
 
 /* Roboto-font */
@@ -194,14 +259,18 @@ h3 {
 /* This is code for the animated background. Code used: https://codepen.io/goodkatz/pen/LYPGxQz */
 body {
     height:95vh;
+    padding:0;
     margin:0;
+    display:flex;
+    flex-direction: column;
+    min-height:100vh;
   }
 
 #background {
-  position:absolute;
+  position:fixed;
   margin:0;
   width:100%;
-  height: 30%;
+  height: 30vh;
   bottom:0;
   z-index: -9999;
 }
@@ -213,6 +282,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1000;
+  overflow: hidden;
 }
 
 #beer #beertint {
@@ -225,6 +295,7 @@ body {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   height: 100%;
+  overflow: hidden;
 }
 
 #background .waves {
@@ -234,6 +305,7 @@ body {
     z-index: -999;
     bottom: 100%;
     margin-bottom:-7px; /*Fix for safari gap*/
+    overflow: hidden;
 }
 
   /* Animation */
