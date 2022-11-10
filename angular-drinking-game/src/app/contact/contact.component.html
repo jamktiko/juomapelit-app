@@ -20,13 +20,13 @@
 <div class="navi" style="align-items: center;">
     
 <div class="navitem" style="width: 70%" *ngIf="collapsed == true" >
-    <button class="button3" (click)="openForm()" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
+    <button class="button3" id="formOpen" (click)="openForm()" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
     Avaa
     </button>
 </div>
 
 <div class="navitem" style="width: 70%" *ngIf="collapsed == false">
-    <button class="button3" (click)="closeForm()" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
+    <button class="button3" id="formClose"  (click)="closeForm()" type="button" data-toggle="collapse" data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
         Sulje
     </button>
 </div>
@@ -36,14 +36,14 @@
 <form id="contactForm" style="text-align:left;margin-bottom: 15px;" class="collapse was-validated" no-validation>
 
 <!--Title of form-->
-<input class="form-control" type="text" placeholder="Otsikko" aria-label="title" required>
+<input class="form-control" id="formHeader" type="text" placeholder="Otsikko" aria-label="title" required>
 <div class="invalid-feedback">
     Kirjoita otsikko.
 </div>
 <br>
 
 <!--Dropdown menu-->
-<select class="form-select form-control" aria-label="topic" required>
+<select class="form-select form-control" id="formSelect" aria-label="topic" required>
     <option selected disabled value>Mitä asiasi koskee?</option>
     <option value="1">Bugi</option>
     <option value="2">Palaute</option>
@@ -80,8 +80,8 @@
   </div>
 
 <div style="text-align: center;">
-  <button type="submit" style="margin-right:3px" class="btn btn-primary btn-lg">Lähetä</button>
-  <button type="reset" class="btn btn-secondary btn-lg">Tyhjennä</button>
+  <button type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit">Lähetä</button>
+  <button type="reset" class="btn btn-secondary btn-lg" id="">Tyhjennä</button>
 </div>
 </form>
   
