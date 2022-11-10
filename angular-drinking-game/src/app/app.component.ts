@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { delay } from 'rxjs';
 
 @NgModule({
   imports: [
@@ -23,7 +24,14 @@ export class AppModule { }
   ]
 })
 export class AppComponent {
-  title = 'angular-drinking-game';
-
+  title = 'BrewDeck';
+  ngOnInit() {
+    this.openModal();
+  }
+  openModal() {
+    document.getElementById('modalButton')?.click();
+    console.log('modal opened');
+  }
   constructor() {}
+
 }

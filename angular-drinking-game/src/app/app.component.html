@@ -1,2 +1,27 @@
 <router-outlet></router-outlet>
 <!--Routerd views go here-->
+<button [style.display]="'none'" type="button" id="modalButton" data-toggle="modal" data-target="#myModal"></button>
+<!-- Responsible drinking modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>You must be over 18!!! And drink responses!!<img
+            src="https://c8.alamy.com/comp/2BWXC24/angry-emoji-emoticon-showing-a-punch-fist-gesture-2BWXC24.jpg"
+            alt="angry"> </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="button3" data-dismiss="modal">I understand<p><img
+              src="https://i.etsystatic.com/21680765/r/il/a6aa46/2787475545/il_794xN.2787475545_m4ft.jpg" alt="angel">
+          </p></button>
+      </div>
+    </div>
+
+  </div>
+</div>
