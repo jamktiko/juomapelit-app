@@ -4,13 +4,13 @@
 
 <!--Social medias-->
 <a href="https://www.instagram.com/brewdeckgames/">
-    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_instagram.png" id="imgInstagram" alt="Instagram"
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_instagram.png" alt="Instagram"
         style="width: 60px; margin:10px;"></a>
 <a href="https://www.tiktok.com/@brewdeck">
-    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_tiktok.png" id="imgTiktok" alt="Tiktok"
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_tiktok.png" alt="Tiktok"
         style="width: 60px;margin:10px;"></a>
 <a href="https://twitter.com/brew_deck">
-    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_twitter.png" id="imgTwitter" alt="Twitter"
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_twitter.png" alt="Twitter"
         style="width: 60px;margin:10px;"></a>
 
 <p>brewdeckgames@gmail.com</p>
@@ -39,18 +39,19 @@
 </div>
 <br>
 
-<form method="POST" encType="multipart/form-data" id="contactForm" style="text-align:left;margin-bottom: 15px;"
-    class="collapse was-validated" no-validation>
+<form id="contactForm" style="text-align:left;margin-bottom: 15px;" class="collapse was-validated contact-form"
+    (submit)="sendEmail($event)" no-validation>
 
     <!--Title of form-->
-    <input class="form-control" id="formHeader" type="text" placeholder="Otsikko" aria-label="title" required>
+    <input class="form-control" id="formHeader" type="text" name="topic" placeholder="Otsikko" aria-label="title"
+        required>
     <div class="invalid-feedback">
         Kirjoita otsikko.
     </div>
     <br>
 
     <!--Dropdown menu-->
-    <select class="form-select form-control" id="formSelect" aria-label="topic" required>
+    <select class="form-select form-control" id="formSelect" aria-label="specifictopic" name="specifictopic" required>
         <option selected disabled value>Mitä asiasi koskee?</option>
         <option value="Bugi">Bugi</option>
         <option value="Palaute">Palaute</option>
@@ -66,35 +67,36 @@
     <!--Textarea-->
     <div class="mb-3">
         <label for="msg" class="form-label">Kerro, miten voimme auttaa.</label>
-        <textarea class="form-control" id="msg" rows="3" name="Viesti" required></textarea>
+        <textarea class="form-control" id="msg" rows="3" name="message" required></textarea>
         <div class="invalid-feedback">
             Tämä kenttä ei voi olla tyhjä.
         </div>
 
     </div>
 
-    <!--File input-->
+    <!--File input
     <div class="mb-3">
         <label for="formFileMultiple" class="form-label">Esim. kuvakaappaus (ei pakollinen)</label>
-        <input class="form-control" type="file" id="formFileMultiple" name="Tiedostot" multiple>
+        <input class="form-control" type="file" id="formFileMultiple" name="files" multiple>
     </div>
-
+    -->
 
     <!--Sender's email -form-->
     <div class="mb-3">
         <label for="emailMsg" class="form-label">Jos haluat, että vastaamme viestiisi, annathan
             sähköpostiosoitteesi.</label>
-        <input type="email" class="form-control" id="emailMsg" name="Lähettäjän sähköposti"
-            placeholder="name@example.com">
+        <input type="email" class="form-control" id="emailMsg" name="user_email" placeholder="name@example.com">
     </div>
 
     <!--Spam prevention field (not shown to regular users)-->
     <input type="hidden" name="_honeypot" value="">
 
     <div style="text-align: center;">
-        <button type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit">Lähetä</button>
-        <button type=" reset" class="btn btn-secondary btn-lg" id="">Tyhjennä</button>
+        <input type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit" value="Send"
+            (click)="submitAndReturn()">
+        <button type="reset" class="btn btn-secondary btn-lg" id="">Tyhjennä</button>
     </div>
+
 </form>
 
 
@@ -102,3 +104,10 @@
     <div class="navitem" style="margin-top: 30px;"><button id="back" class="button2" [routerLink]="['/MainMenu']"
             routerLinkActive="router-link-active">Takaisin</button></div>
 </div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("VvNpmdrxMAxW2nvcX");
+    })();
+</script>

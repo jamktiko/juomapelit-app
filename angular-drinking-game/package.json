@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@aws-amplify/ui-angular": "^2.4.23",
+    "@emailjs/browser": "^3.9.1",
     "aws-amplify": "^4.3.37",
     "bootstrap": "^5.2.2",
     "cypress": "^11.0.0",
