@@ -1,6 +1,7 @@
 <router-outlet></router-outlet>
 <!--Routerd views go here-->
-<button [style.display]="'none'" type="button" id="modalButton" data-toggle="modal" data-target="#drinkResponsibly"></button>
+<button [style.display]="'none'" type="button" id="modalButton" data-toggle="modal"
+  data-target="#drinkResponsibly"></button>
 
 
 <!--
@@ -8,50 +9,41 @@
 <div id="drinkResponsibly" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-     <!--Modal content-->
+    <!--Modal content-->
     <div class="modal-content">
-        <h1 class="modal-title" style="text-align:center; padding:20px;">Ennen kuin aloitat</h1>
+      <h1 class="modal-title" style="text-align:center; padding:20px;">Ennen kuin aloitat</h1>
       <div class="modal-body">
 
         <div class="form-check" style="text-align:left;margin-bottom: 1em;padding-left:2em;">
-          <input class="form-check-input" type="checkbox" value="" id="over18" (click)="validate()">
-          <label class="form-check-label" for="flexCheckDefault" >
-            Olen yli 18-vuotias
-          </label>
+          Olen yli 18-vuotias
           <br>
+          Juon vastuullisesti
           <br>
-
-          <input class="form-check-input" type="checkbox" value="" id="respDrink" (click)="validate()">
-          <label class="form-check-label" for="flexCheckDefault">
-            Juon vastuullisesti
-          </label>
-          <br>
-          <br>
-
-          <input class="form-check-input" type="checkbox" value="" id="drinkWater" (click)="validate()">
-          <label class="form-check-label" for="flexCheckDefault">
-            Muistan juoda välillä myös vettä
-          </label>
+          Muistan juoda välillä myös vettä
           <br>
         </div>
 
-      <div style="padding:5px;text-align:left;font-size: 0.9em;">
-      <h5 style="margin-top:2em;margin-bottom:1em;">Tarvitsetko apua päihdeongelmaan?</h5>
-      <p>Se on ok. Näiltä verkkosivuilta löydät tietoa vastuullisesta alkoholinkäytöstä, sekä auttavia palveluja (myös anonyymisti).</p>
-      
-      <li>
-        <ul><a href="https://www.kohtuullisesti.fi/">kohtuullisesti.fi</a> - tietoa vastuullisesta alkoholinkäytöstä</ul>
-        <ul><a href="https://paihdelinkki.fi/fi/mista-apua/internetpalvelut">päihdelinkki.fi</a> - nimetöntä ja luottamuksellista apua</ul>
-        <ul>Valtakunnallinen päihdeneuvonta 24/7 (maksuton ja anonyymi) p. <b>0800 900 45</b></ul>
-      </li>
-      </div>
+        <div style="padding:5px;text-align:left;font-size: 0.9em;">
+          <h5 style="margin-top:2em;margin-bottom:1em;">Tarvitsetko apua päihdeongelmaan?</h5>
+          <p>Se on ok. Näiltä verkkosivuilta löydät tietoa vastuullisesta alkoholinkäytöstä, sekä auttavia palveluja
+            (myös anonyymisti).</p>
+
+          <li>
+            <ul><a href="https://www.kohtuullisesti.fi/">kohtuullisesti.fi</a> - tietoa vastuullisesta alkoholinkäytöstä
+            </ul>
+            <ul><a href="https://paihdelinkki.fi/fi/mista-apua/internetpalvelut">päihdelinkki.fi</a> - nimetöntä ja
+              luottamuksellista apua</ul>
+            <ul>Valtakunnallinen päihdeneuvonta 24/7 (maksuton ja anonyymi) p. <b>0800 900 45</b></ul>
+          </li>
+        </div>
 
 
 
-        
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="button3" data-dismiss="modal" [disabled]="this.valid == false" (click)="validate()">Ymmärrän<p>
+        <button type="button" class="button3" data-dismiss="modal">Olen
+          lukenut yllä olevat asiat ja ymmärrän lukemani<p>
           </p></button>
       </div>
     </div>

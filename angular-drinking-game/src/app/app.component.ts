@@ -35,11 +35,7 @@ export class AppComponent {
     document.getElementById('modalButton')?.click();
     console.log('modal opened');
   }
-  validate() {
-    if (this.over18?.checked == true && this.respDrink?.checked == true && this.drinkWater?.checked == true) {
-      this.valid === true;
-    }
-  }
+
   constructor() {}
 
 }
