@@ -39,19 +39,20 @@
 </div>
 <br>
 
-<form id="contactForm" style="text-align:left;margin-bottom: 15px;" class="collapse was-validated contact-form"
-    (submit)="sendEmail($event)" no-validation>
+<form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;"
+    class="collapse was-validated contact-form" (submit)="sendEmail($event)" no-validation>
 
     <!--Title of form-->
     <input class="form-control" id="formHeader" type="text" name="topic" placeholder="Otsikko" aria-label="title"
-        required>
+        required formControlName="header">
     <div class="invalid-feedback">
         Kirjoita otsikko.
     </div>
     <br>
 
     <!--Dropdown menu-->
-    <select class="form-select form-control" id="formSelect" aria-label="specifictopic" name="specifictopic" required>
+    <select class="form-select form-control" id="formSelect" aria-label="specifictopic" name="specifictopic" required
+        formControlName="type">
         <option selected disabled value>Mitä asiasi koskee?</option>
         <option value="Bugi">Bugi</option>
         <option value="Palaute">Palaute</option>
@@ -67,7 +68,7 @@
     <!--Textarea-->
     <div class="mb-3">
         <label for="msg" class="form-label">Kerro, miten voimme auttaa.</label>
-        <textarea class="form-control" id="msg" rows="3" name="message" required></textarea>
+        <textarea class="form-control" id="msg" rows="3" name="message" required formControlName="problem"></textarea>
         <div class="invalid-feedback">
             Tämä kenttä ei voi olla tyhjä.
         </div>
@@ -85,7 +86,8 @@
     <div class="mb-3">
         <label for="emailMsg" class="form-label">Jos haluat, että vastaamme viestiisi, annathan
             sähköpostiosoitteesi.</label>
-        <input type="email" class="form-control" id="emailMsg" name="user_email" placeholder="name@example.com">
+        <input type="email" class="form-control" id="emailMsg" name="user_email" placeholder="name@example.com"
+            formControlName="email">
     </div>
 
     <!--Spam prevention field (not shown to regular users)-->
@@ -93,7 +95,8 @@
 
     <div style="text-align: center;">
         <input type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit" value="Send"
-            (click)="submitAndReturn()">
+            [disabled]="!contactionForm.valid">
+
         <button type="reset" class="btn btn-secondary btn-lg" id="">Tyhjennä</button>
     </div>
 

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { timeout } from 'rxjs';
+import { MainMenuComponent } from '../main-menu/main-menu.component';
+import { FormGroup, FormControl } from '@angular/forms';
+import {setTimeout } from 'timers';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +14,13 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
   submitted = false;
+  contactionForm = new FormGroup({
+    header: new FormControl(''),
+    type: new FormControl(''),
+    problem: new FormControl(''),
+    email: new FormControl(''),
+  })
+  
   public sendEmail(e: Event) {
     e.preventDefault();
     emailjs.sendForm('service_nzqqia9', 'template_pkkwgxn', e.target as HTMLFormElement, 'VvNpmdrxMAxW2nvcX')
@@ -31,9 +42,6 @@ export class ContactComponent implements OnInit {
     this.collapsed = true;
   }
 
-  submitAndReturn() {
-    this.submitted = true;
-  }
   ngOnInit(): void {
   }
 
