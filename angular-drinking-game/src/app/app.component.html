@@ -6,25 +6,26 @@
 
 <!--
  Responsible drinking modal-->
-<div id="drinkResponsibly" class="modal fade" role="dialog">
+ <form [formGroup]="agreedCheck" name="agreedCheck" id="agreedCheck">
+  <div id="drinkResponsibly" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog">
   <div class="modal-dialog">
 
     <!--Modal content-->
     <div class="modal-content">
       <h1 class="modal-title" style="text-align:center; padding:20px;">Ennen kuin aloitat</h1>
-      <div class="modal-body">
+      <div class="modal-body" style="text-align:left">
 
-        <div class="form-check" style="text-align:left;margin-bottom: 1em;padding-left:2em;">
-          Olen yli 18-vuotias
-          <br>
-          Juon vastuullisesti
-          <br>
-          Muistan juoda välillä myös vettä
-          <br>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input form-control" formControlName="iUnderstand" type="checkbox" value="" id="flexCheckDefault" required/>
+            <label class="form-check-label" for="flexCheckDefault">Olen yli 18-vuotias</label><br><br>
+            <input class="form-check-input form-control" formControlName="drinkResp" type="checkbox" value="" id="flexCheckDefault" required/>
+            <label class="form-check-label" for="flexCheckDefault">Juon vastuullisesti</label><br><br>
+            <input class="form-check-input form-control" formControlName="drinkWater" type="checkbox" value="" id="flexCheckDefault" required/>
+            <label class="form-check-label" for="flexCheckDefault">Muistan juoda välillä myös vettä</label><br>
+          </div>
 
         <div style="padding:5px;text-align:left;font-size: 0.9em;">
-          <h5 style="margin-top:2em;margin-bottom:1em;">Tarvitsetko apua päihdeongelmaan?</h5>
+          <h5 style="margin-top:2em;margin-bottom:1em;">Tarvitsetko tukea?</h5>
           <p>Se on ok. Näiltä verkkosivuilta löydät tietoa vastuullisesta alkoholinkäytöstä, sekä auttavia palveluja
             (myös anonyymisti).</p>
 
@@ -42,12 +43,13 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="button3" data-dismiss="modal">Olen
-          lukenut yllä olevat asiat ja ymmärrän lukemani<p>
+        <button type="button" class="button3" data-dismiss="modal" [disabled]="!agreedCheck.valid">Hyväksy<p>
           </p></button>
       </div>
+
     </div>
 
 
   </div>
 </div>
+</form>
