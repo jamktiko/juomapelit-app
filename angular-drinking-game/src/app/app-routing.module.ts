@@ -21,7 +21,8 @@ const routes: Routes = [
   { path: 'JoinLobby', component: JoinLobbyComponent },
   { path: 'GameLobby', component: GameLobbyComponent },
   { path: 'CreateLobby', component: CreateLobbyComponent },
-  { path: 'Contact', component: ContactComponent }
+  { path: 'Contact', component: ContactComponent },
+  { path: 'Settings', component: SettingsComponent }
 ];
 
 @NgModule({

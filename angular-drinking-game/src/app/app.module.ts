@@ -8,6 +8,7 @@ import { CardsComponent } from './game-table/game-one/cards/cards.component';
 import { CreateLobbyComponent } from './join-table/create-lobby/create-lobby.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     routingComponents,
     CreateLobbyComponent,
     ContactComponent,
+    SettingsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

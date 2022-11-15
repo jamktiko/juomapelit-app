@@ -172,6 +172,19 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
           1px 1px 15px 0px rgba(154, 137, 164, 0.1);
 }
 
+.button3:disabled {
+  opacity: 0.5;
+}
+
+.button3:disabled:hover {
+  letter-spacing: 0.08em;
+  border: 3.5px solid #4A2D00;
+}
+
+.button3:disabled:active {
+  box-shadow: inset 1px -40px 1px rgba(200, 88, 88, 0.2), inset 0px 3px 1px #FFFFFF, inset 0px -5px 1px rgba(0, 0, 0, 0.25);
+}
+
 
 /* Responsive layout (width) */
 @media screen and (max-width: 650px) {
@@ -248,13 +261,13 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
 
 
 /* Roboto-font */
-@font-face { font-family: 'Roboto'; src: url('Roboto/Roboto-Regular.ttf'); } 
-@font-face { font-family: 'Roboto-Bold'; src: url('Roboto/Roboto-Bold.ttf'); } 
-@font-face { font-family: 'Roboto-Black'; src: url('Roboto/Roboto-Black.ttf'); } 
-@font-face { font-family: 'Roboto-Italic'; src: url('Roboto/Roboto-Italic.ttf'); } 
-@font-face { font-family: 'Roboto-Light'; src: url('Roboto/Roboto-Light.ttf'); } 
-@font-face { font-family: 'Roboto-Medium'; src: url('Roboto/Roboto-Medium.ttf'); } 
-@font-face { font-family: 'Roboto-Thin'; src: url('Roboto/Roboto-Thin.ttf'); } 
+@font-face { font-family: 'Roboto'; src: url('Roboto/Roboto-Regular.ttf'); }
+@font-face { font-family: 'Roboto-Bold'; src: url('Roboto/Roboto-Bold.ttf'); }
+@font-face { font-family: 'Roboto-Black'; src: url('Roboto/Roboto-Black.ttf'); }
+@font-face { font-family: 'Roboto-Italic'; src: url('Roboto/Roboto-Italic.ttf'); }
+@font-face { font-family: 'Roboto-Light'; src: url('Roboto/Roboto-Light.ttf'); }
+@font-face { font-family: 'Roboto-Medium'; src: url('Roboto/Roboto-Medium.ttf'); }
+@font-face { font-family: 'Roboto-Thin'; src: url('Roboto/Roboto-Thin.ttf'); }
 
 
 /* This is code for the animated background. Code used: https://codepen.io/goodkatz/pen/LYPGxQz */
@@ -333,7 +346,7 @@ body {
     0% {
      transform: translate3d(-90px,0,0);
     }
-    100% { 
+    100% {
       transform: translate3d(85px,0,0);
     }
   }

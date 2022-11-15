@@ -28,7 +28,6 @@ export class AppComponent {
 
   submitted = false;
   agreedCheck = new FormGroup({
-    iUnderstand: new FormControl(''),
     over18: new FormControl(''),
     drinkResp: new FormControl(''),
     drinkWater: new FormControl('')
