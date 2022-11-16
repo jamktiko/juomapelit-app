@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormGroup, FormControl } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -24,10 +25,14 @@ export class AppModule { }
 })
 export class AppComponent {
   title = 'BrewDeck';
-  valid = false;
-  over18 = document.getElementById("over18") as HTMLInputElement | null;
-  respDrink = document.getElementById("respDrink") as HTMLInputElement | null;
-  drinkWater = document.getElementById("drinkWater") as HTMLInputElement | null;
+
+  submitted = false;
+  agreedCheck = new FormGroup({
+    over18: new FormControl(''),
+    drinkResp: new FormControl(''),
+    drinkWater: new FormControl('')
+  })
+
   ngOnInit() {
     this.openModal();
   }
