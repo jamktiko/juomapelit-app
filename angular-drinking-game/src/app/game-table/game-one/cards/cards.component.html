@@ -3,7 +3,10 @@
     <div (click)="nextCard()">
         <canvas #canvas id="canvas" width="300" height="470"></canvas>
     </div>
-    <div (click)="nextCard()" id="rule" class="disableSelection">{{this.curRule}}</div>
-    <div (click)="nextCard()" id="ruleHeader" class="disableSelection">{{this.curRuleHeader}}</div>
 
+    <div (click)="nextCard()" id="rule" class="disableSelection" *ngIf="this.numcount % 2 === 0">{{this.curRule}}</div>
+
+    <div (click)="nextCard()" id="ruleHeader" class="disableSelection" *ngIf="this.numcount % 2 === 0">
+        {{this.curRuleHeader}}
+    </div>
 </div>

@@ -132,7 +132,7 @@ export class CardsComponent implements OnInit {
    };
    */
   // Plays the next card when the user clicks the button to do so
-  
+  numcount = 0;
   //this.playedCards.indexOf(this.card) === -1
   next() {
     if (this.deckComponent.cardCount < 52) {
@@ -158,11 +158,18 @@ export class CardsComponent implements OnInit {
       this.curRule = this.shuffledCards[0][0]['rule'];
       this.curRuleHeader = this.shuffledCards[0][0]['name'];
       this.deckComponent.cardCount++;
+    } else { 
+    if (this.numcount % 2 === 0 || this.numcount === 0) {
+      this.clearCanvas();
+      this.cardBackside();
+      this.numcount++;
     } else {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
-    }
+      this.numcount++;
+
+    }}
 //      console.log("s " + JSON.stringify(this.shuffledCards[0]))
 //      console.log("p " + this.playedCards[0])
     }

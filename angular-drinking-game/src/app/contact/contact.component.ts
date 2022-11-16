@@ -3,7 +3,6 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { timeout } from 'rxjs';
 import { MainMenuComponent } from '../main-menu/main-menu.component';
 import { FormGroup, FormControl } from '@angular/forms';
-import {setTimeout } from 'timers';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +12,7 @@ import {setTimeout } from 'timers';
 export class ContactComponent implements OnInit {
 
   constructor() { }
+
   submitted = false;
   contactionForm = new FormGroup({
     header: new FormControl(''),
