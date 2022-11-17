@@ -13,9 +13,10 @@ export class CardsComponent implements OnInit {
   @Input() shuffledCards:any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
   
-  //rules = RULES;
   curRuleHeader: any;
   card: any;
+
+  
 
   constructor (public deckComponent : DeckComponent) {};
   
@@ -24,7 +25,6 @@ export class CardsComponent implements OnInit {
   canvas: ElementRef<HTMLCanvasElement>|ElementRef;
   // @ts-ignore
   c: CanvasRenderingContext2D|CanvasRenderingContext2D;
-
 
   // Empty the canvas
   clearCanvas() {
@@ -164,11 +164,13 @@ export class CardsComponent implements OnInit {
     if (this.numcount % 2 === 0 || this.numcount === 0) {
       this.clearCanvas();
       this.cardBackside();
+
       this.numcount++;
     } else {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
+
       this.numcount++;
 
     }}
