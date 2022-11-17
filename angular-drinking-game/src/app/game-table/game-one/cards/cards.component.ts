@@ -1,6 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
-import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
 
   @Component({
@@ -133,6 +131,9 @@ export class CardsComponent implements OnInit {
    */
   // Plays the next card when the user clicks the button to do so
   numcount = 0;
+
+
+  // Plays the next card when the user clicks the card
   //this.playedCards.indexOf(this.card) === -1
   next() {
     if (this.deckComponent.cardCount < 52) {
@@ -152,6 +153,7 @@ export class CardsComponent implements OnInit {
  
   // Switches to next card
   nextCard() {
+
     if (this.deckComponent.cardCount === 0){
       this.cardFrontside();
       this.addSuitRank();

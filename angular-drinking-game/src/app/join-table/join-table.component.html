@@ -6,5 +6,33 @@
 <div class="navi">
     <div class="navitem"><button id="joinGameButton" class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button></div>
     <div class="navitem"><button id="createGame" class="button1" [routerLink]="['/CreateLobby']" >Luo peli</button></div>
+    <div class="navitem"><button type="button" class="button2" data-toggle="modal" data-target="#guide" style="margin-bottom:20px">Ohjeet</button></div>
     <div class="navitem"><button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button></div>
 </div>
+
+<!--Guide modal-->
+<div id="guide" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <h1 class="modal-title" style="text-align:center;margin-top: 0.5em;">Ohjeet</h1>
+        <div class="modal-body" style="text-align:left">
+          <p><b>Unohtuiko korttipakka kotiin? Ei hätää!</b></p>
+          <p>BrewDeck on ilmainen verkkoselaimessa toimiva sovellus, jolla voit pelata porukalla juomapelejä fyysisen korttipakan tavoin.
+            Sovellus on helppo ja nopea käyttää.
+          </p>
+          <p>BrewDeckillä luot pelin nopeasti ilman sisäänkirjautumista, ja kaikki pelaajat voivat pelata peliä omilta
+            laitteiltaan.
+            Liittyäksesi peliin, tarvitset vain huoneen koodin. Koodi on näkyvillä sillä pelaajalla, joka on luonut pelin
+            ja huoneen.
+          </p>
+          <p>Luo siis vain huone ja jaa huoneen koodi ystävillesi, niin peli voi alkaa!</p>
+        </div>
+        <div style="text-align:center; margin:0.5em;">
+          <button type="button" class="button3" data-dismiss="modal">Sulje</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>

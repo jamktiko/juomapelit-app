@@ -15,21 +15,21 @@
 
 <p>brewdeckgames@gmail.com</p>
 
-
-<!--Contact form-->
+<!--Contact form begins here-->
 <h3>Palaute</h3>
+<div *ngIf="submitClicked == false">
 <p>Voit ottaa meihin yhteyttä nopeasti myös alla olevalla lomakkeella, joka avautuu Avaa-painikkeella. Viestisi saapuu
     meille sähköpostiin.</p>
+</div>
 
-<div class="navi" style="align-items: center;">
-
+<!--Open and close form buttons-->
+<div class="navi" style="align-items: center;" *ngIf="submitClicked == false">
     <div class="navitem" style="width: 70%" *ngIf="collapsed == true">
         <button class="button3" id="formOpen" (click)="openForm()" type="button" data-toggle="collapse"
             data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
             Avaa
         </button>
     </div>
-
     <div class="navitem" style="width: 70%" *ngIf="collapsed == false">
         <button class="button3" id="formClose" (click)="closeForm()" type="button" data-toggle="collapse"
             data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
@@ -39,8 +39,11 @@
 </div>
 <br>
 
-<form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;"
-    class="collapse was-validated contact-form" (submit)="sendEmail($event)" no-validation>
+<!--Form has not yet been submitted, so form is visible on page-->
+<div *ngIf="submitClicked == false">
+
+    <form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;"
+    class="collapse was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
 
     <!--Title of form-->
     <input class="form-control" id="formHeader" type="text" name="topic" placeholder="Otsikko" aria-label="title"
@@ -62,8 +65,6 @@
         Valitse aihe.
     </div>
 
-
-
     <br>
     <!--Textarea-->
     <div class="mb-3">
@@ -74,13 +75,6 @@
         </div>
 
     </div>
-
-    <!--File input
-    <div class="mb-3">
-        <label for="formFileMultiple" class="form-label">Esim. kuvakaappaus (ei pakollinen)</label>
-        <input class="form-control" type="file" id="formFileMultiple" name="files" multiple>
-    </div>
-    -->
 
     <!--Sender's email -form-->
     <div class="mb-3">
@@ -93,20 +87,33 @@
     <!--Spam prevention field (not shown to regular users)-->
     <input type="hidden" name="_honeypot" value="">
 
+    <!--Send or reset form buttons-->
     <div style="text-align: center;">
-        <input type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit" value="Send"
-            [disabled]="!contactionForm.valid">
+        <input type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit" value="Lähetä"
+            [disabled]="!contactionForm.valid" (click)="submittedFunction()">
 
-        <button type="reset" class="btn btn-secondary btn-lg" id="">Tyhjennä</button>
+        <button type="reset" class="btn btn-secondary btn-lg" id="formReset">Tyhjennä</button>
     </div>
 
 </form>
+</div>
+<!--Form div ends here-->
 
 
+
+<!--When form has been submitted, form resets and shows this message-->
+<div *ngIf="submitClicked == true">
+    <p><b>Kiitos viestistäsi! Luemme sen mahdollisimman pian.</b></p>
+</div>
+
+
+<!--Go back to main menu-->
 <div class="navi">
     <div class="navitem" style="margin-top: 30px;"><button id="back" class="button2" [routerLink]="['/MainMenu']"
             routerLinkActive="router-link-active">Takaisin</button></div>
 </div>
+
+<!--Code for the form data to go to our email-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
 <script type="text/javascript">

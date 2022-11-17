@@ -8,5 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
   constructor() {}
 
+  bgON = true;
+
+  turnON() {
+    this.bgON = true;
+  }
+  turnOFF() {
+    this.bgON = false;
+  }
+
   ngOnInit(): void {}
 }

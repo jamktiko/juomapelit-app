@@ -21,9 +21,10 @@ export class ContactComponent implements OnInit {
     email: new FormControl(''),
   })
   
+  
   public sendEmail(e: Event) {
     e.preventDefault();
-    emailjs.sendForm('service_nzqqia9', 'template_pkkwgxn', e.target as HTMLFormElement, 'VvNpmdrxMAxW2nvcX')
+    emailjs.sendForm('service_nzqqia9(x)', 'template_pkkwgxn', e.target as HTMLFormElement, 'VvNpmdrxMAxW2nvcX')
       .then((result: EmailJSResponseStatus) => {
         console.log(result.text);
         console.log("tämä onnistui");
@@ -32,7 +33,15 @@ export class ContactComponent implements OnInit {
         console.log("tämä epäonnistui");
       });
     }
+
   collapsed: boolean = true;
+
+  submitClicked: boolean = false;
+
+  submittedFunction() {
+    this.submitClicked = true;
+    this.contactionForm.reset();
+  }
 
   openForm() {
     this.collapsed = false;
@@ -41,6 +50,7 @@ export class ContactComponent implements OnInit {
   closeForm() {
     this.collapsed = true;
   }
+
 
   ngOnInit(): void {
   }
