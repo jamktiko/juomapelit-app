@@ -1,4 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
+import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
 
   @Component({
@@ -12,6 +14,7 @@ export class CardsComponent implements OnInit {
   @Input() curRule: any;
   @Input() shuffledCards:any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
+  @Input() loading: boolean = true;
   
   //rules = RULES;
   curRuleHeader: any;
@@ -131,9 +134,6 @@ export class CardsComponent implements OnInit {
    */
   // Plays the next card when the user clicks the button to do so
   numcount = 0;
-
-
-  // Plays the next card when the user clicks the card
   //this.playedCards.indexOf(this.card) === -1
   next() {
     if (this.deckComponent.cardCount < 52) {
@@ -153,13 +153,16 @@ export class CardsComponent implements OnInit {
  
   // Switches to next card
   nextCard() {
-
+    if (this.deckComponent.loading) {
+      return}
     if (this.deckComponent.cardCount === 0){
       this.cardFrontside();
       this.addSuitRank();
       this.curRule = this.shuffledCards[0][0]['rule'];
       this.curRuleHeader = this.shuffledCards[0][0]['name'];
       this.deckComponent.cardCount++;
+      //This is the part where the app chooses to either show the card or its backside
+      //also check the html file, there is a ngif that checks if the card should have rules drawn on top of it or not. The code is somewhat funky at this point.
     } else { 
     if (this.numcount % 2 === 0 || this.numcount === 0) {
       this.clearCanvas();

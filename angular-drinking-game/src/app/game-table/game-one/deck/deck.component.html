@@ -1,6 +1,7 @@
 <h1>Vesiputous</h1>
 <!--Cards-component-->
-<app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards">
+<app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards"
+  [loading]="this.loading">
 </app-cards>
 <div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
 
@@ -9,7 +10,7 @@
   <button id="newGame" type="button" class="button1" (click)="newGame()">Uusi peli</button>
 </div>
 
-<!--<button (click)="consolelog()">Console log (DeBugiing)</button> -->
+<!--<button (click)="consolelog()">Console log (DeBugiing)</button>-->
 
 
 <button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
