@@ -3,7 +3,7 @@
   "paths": {
     "/cards": {
       "name": "/cards",
-      "lambdaFunction": "juomapeliLambda",
+      "lambdaFunction": "brewdeckLambda",
       "permissions": {
         "setting": "protected",
         "auth": [

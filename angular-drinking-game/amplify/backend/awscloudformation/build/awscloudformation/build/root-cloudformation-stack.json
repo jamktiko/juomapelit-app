@@ -1,5 +1,5 @@
 {
-  "Description": "Root Stack for AWS Amplify Console",
+  "Description": "Root Stack for AWS Amplify CLI",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "DeploymentBucketName": {
@@ -155,7 +155,7 @@
     "APIGatewayAuthStack": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
         "Parameters": {
           "authRoleName": {
             "Ref": "AuthRoleName"
@@ -164,43 +164,43 @@
             "Ref": "UnauthRoleName"
           },
           "env": "dev",
-          "juomapeliApi": {
+          "brewdeckApi": {
             "Fn::GetAtt": [
-              "apijuomapeliApi",
+              "apibrewdeckApi",
               "Outputs.ApiId"
             ]
           }
         }
       }
     },
-    "storagejuomapeliDb": {
+    "storagebrewdeckDb": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/storage/juomapeliDb-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/storage/brewdeckDb-cloudformation-template.json",
         "Parameters": {
-          "tableName": "juomapeliDb",
+          "tableName": "brewdeckDb",
           "partitionKeyName": "id",
           "partitionKeyType": "N",
           "env": "dev"
         }
       }
     },
-    "functionjuomapeliLambda": {
+    "functionbrewdeckLambda": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/function/juomapeliLambda-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/function/brewdeckLambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
-          "s3Key": "amplify-builds/brewdeckLambda-45386e77435156647463-build.zip",
+          "s3Key": "amplify-builds/brewdeckLambda-4f56574543737655704c-build.zip",
           "storagebrewdeckDbName": {
             "Fn::GetAtt": [
-              "storagejuomapeliDb",
+              "storagebrewdeckDb",
               "Outputs.Name"
             ]
           },
-          "storagejuomapeliDbArn": {
+          "storagebrewdeckDbArn": {
             "Fn::GetAtt": [
-              "storagejuomapeliDb",
+              "storagebrewdeckDb",
               "Outputs.Arn"
             ]
           },
@@ -208,15 +208,15 @@
         }
       }
     },
-    "authjuomapeliapp": {
+    "authbrewdeck": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/auth/juomapeliapp-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/auth/brewdeck-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "juomapeliapp_identitypool_7fefb741",
+          "identityPoolName": "brewdeck_identitypool_0b6a959f",
           "allowUnauthenticatedIdentities": true,
-          "resourceNameTruncated": "juomap7fefb741",
-          "userPoolName": "juomapeliapp_userpool_7fefb741",
+          "resourceNameTruncated": "brewde0b6a959f",
+          "userPoolName": "brewdeck_userpool_0b6a959f",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -233,11 +233,11 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "juomap7fefb741_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "brewde0b6a959f_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
           "authSelections": "identityPoolAndUserPool",
-          "resourceName": "juomapeliapp",
-          "sharedId": "7fefb741",
+          "resourceName": "brewdeck",
+          "sharedId": "0b6a959f",
           "serviceName": "Cognito",
           "useDefault": "manual",
           "authRoleArn": {
@@ -259,20 +259,20 @@
         }
       }
     },
-    "apijuomapeliApi": {
+    "apibrewdeckApi": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/juomapeliApi-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/brewdeckApi-cloudformation-template.json",
         "Parameters": {
-          "functionjuomapeliLambdaName": {
+          "functionbrewdeckLambdaName": {
             "Fn::GetAtt": [
-              "functionjuomapeliLambda",
+              "functionbrewdeckLambda",
               "Outputs.Name"
             ]
           },
-          "functionjuomapeliLambdaArn": {
+          "functionbrewdeckLambdaArn": {
             "Fn::GetAtt": [
-              "functionjuomapeliLambda",
+              "functionbrewdeckLambda",
               "Outputs.Arn"
             ]
           },
@@ -295,7 +295,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authjuomapeliapp"
+        "authbrewdeck"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -390,7 +390,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authjuomapeliapp",
+            "authbrewdeck",
             "Outputs.IdentityPoolId"
           ]
         },

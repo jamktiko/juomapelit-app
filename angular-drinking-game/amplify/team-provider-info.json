@@ -1,38 +1,32 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-juomapeliapp-dev-83818-authRole",
-      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-authRole",
+      "AuthRoleName": "amplify-brewdeck-dev-90235-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-brewdeck-dev-90235-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-brewdeck-dev-90235-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
-      "UnauthRoleName": "amplify-juomapeliapp-dev-83818-unauthRole",
-      "StackName": "amplify-juomapeliapp-dev-83818",
-      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-juomapeliapp-dev-83818/46b42480-5c0b-11ed-a3a1-12dd9142426f",
-      "AmplifyAppId": "do1h3s391252d",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
+      "UnauthRoleName": "amplify-brewdeck-dev-90235-unauthRole",
+      "StackName": "amplify-brewdeck-dev-90235",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-brewdeck-dev-90235/fbe11a30-670e-11ed-9d2d-0e22ccdff659",
+      "AmplifyAppId": "d2hglbtt4qs1gs",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
-        "juomapeliLambda": {
-          "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
-          "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip"
+        "brewdeckLambda": {
+          "deploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
+          "s3Key": "amplify-builds/brewdeckLambda-4f56574543737655704c-build.zip"
         }
       },
       "auth": {
-        "juomapeliapp": {}
+        "brewdeck": {}
       },
       "storage": {
-        "juomapeliDb": {}
+        "brewdeckDb": {}
       },
       "api": {
         "brewdeckApi": {}
-      },
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d2hglbtt4qs1gs",
-          "type": "manual"
-        }
       }
     }
   }

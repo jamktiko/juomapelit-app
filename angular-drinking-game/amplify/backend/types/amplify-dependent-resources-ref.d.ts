@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "storage": {
-        "juomapeliDb": {
+        "brewdeckDb": {
             "Name": "string",
             "Arn": "string",
             "StreamArn": "string",
@@ -10,7 +10,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "juomapeliLambda": {
+        "brewdeckLambda": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -18,7 +18,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "juomapeliapp": {
+        "brewdeck": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -29,7 +29,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "juomapeliApi": {
+        "brewdeckApi": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
