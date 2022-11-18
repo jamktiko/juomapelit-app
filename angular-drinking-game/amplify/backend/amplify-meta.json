@@ -21,7 +21,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/storage/juomapeliDb-cloudformation-template.json",
         "logicalId": "storagejuomapeliDb"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.548Z",
+      "lastPushTimeStamp": "2022-11-18T08:36:29.002Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "us-east-1",
@@ -30,7 +30,7 @@
         "PartitionKeyType": "N",
         "Name": "juomapeliDb-dev"
       },
-      "lastPushDirHash": "34j3lwhQAqU9CzaM51JyRZcurpg="
+      "lastPushDirHash": "O4QHdDUqneol3sayMzEwHPTdg4Y="
     }
   },
   "function": {
@@ -52,26 +52,26 @@
           }
         }
       ],
-      "lastBuildTimeStamp": "2022-11-04T07:09:44.250Z",
+      "lastBuildTimeStamp": "2022-11-18T08:25:33.942Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-11-04T07:09:45.108Z",
-      "distZipFilename": "juomapeliLambda-52496c72365871336836-build.zip",
+      "lastPackageTimeStamp": "2022-11-18T08:25:34.932Z",
+      "distZipFilename": "brewdeckLambda-45386e77435156647463-build.zip",
       "s3Bucket": {
-        "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
-        "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip"
+        "deploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
+        "s3Key": "amplify-builds/brewdeckLambda-45386e77435156647463-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/function/juomapeliLambda-cloudformation-template.json",
         "logicalId": "functionjuomapeliLambda"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:30.387Z",
+      "lastPushTimeStamp": "2022-11-18T08:36:29.005Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:845860726746:function:juomapeliLambda-dev",
         "Name": "juomapeliLambda-dev",
         "LambdaExecutionRole": "juomapeliappLambdaRolec4755ca6-dev"
       },
-      "lastPushDirHash": "BYXgJ5BUoEE6k0J8CCeBkhpA++E="
+      "lastPushDirHash": "uDYJUbkl9gPRpd75UyxPNnbKGT0="
     }
   },
   "auth": {
@@ -102,7 +102,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/auth/juomapeliapp-cloudformation-template.json",
         "logicalId": "authjuomapeliapp"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.570Z",
+      "lastPushTimeStamp": "2022-11-18T08:36:29.018Z",
       "output": {
         "UserPoolId": "us-east-1_AMXDiV1ZK",
         "AppClientIDWeb": "42t70oebclev51p5oqrkjtocrt",
@@ -112,7 +112,7 @@
         "IdentityPoolName": "juomapeliapp_identitypool_7fefb741__dev",
         "UserPoolName": "juomapeliapp_userpool_7fefb741"
       },
-      "lastPushDirHash": "zB9mdB9jJw2oC1V7AO47k2phyfM="
+      "lastPushDirHash": "FlhZyo7ncZ7jYLc0lUbqJfGoakM="
     }
   },
   "api": {
@@ -133,13 +133,27 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/juomapeliApi-cloudformation-template.json",
         "logicalId": "apijuomapeliApi"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.593Z",
+      "lastPushTimeStamp": "2022-11-18T08:36:29.027Z",
       "output": {
         "ApiName": "juomapeliApi",
         "RootUrl": "https://1hy4iwdp82.execute-api.us-east-1.amazonaws.com/dev",
         "ApiId": "1hy4iwdp82"
       },
-      "lastPushDirHash": "gs6W5lUVmv9N7QWMRzMokj0tNh8="
+      "lastPushDirHash": "3JaxLSumXxz1wq7ubEFCFeIVvmw="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2022-11-18T08:36:29.034Z",
+      "output": {},
+      "lastPushDirHash": "mwDEPdfv12dnh4QxWjHhBs6m1QI="
     }
   }
 }

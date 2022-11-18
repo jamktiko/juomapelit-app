@@ -26,7 +26,13 @@
         "juomapeliDb": {}
       },
       "api": {
-        "juomapeliApi": {}
+        "brewdeckApi": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2hglbtt4qs1gs",
+          "type": "manual"
+        }
       }
     }
   }
