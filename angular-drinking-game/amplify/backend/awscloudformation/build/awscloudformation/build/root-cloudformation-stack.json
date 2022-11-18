@@ -191,7 +191,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/function/brewdeckLambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
-          "s3Key": "amplify-builds/brewdeckLambda-45386e77435156647463-build.zip",
+          "s3Key": "amplify-builds/brewdeckLambda-4f56574543737655704c-build.zip",
           "storagebrewdeckDbName": {
             "Fn::GetAtt": [
               "storagebrewdeckDb",

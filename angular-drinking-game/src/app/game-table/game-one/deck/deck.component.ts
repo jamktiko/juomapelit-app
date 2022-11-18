@@ -50,9 +50,8 @@ export class DeckComponent implements OnInit {
       .then((response) => {
         console.log(response.data);   
         // console.log(response.data);
-     this.shuffledCards.push(response.data)
-     this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
-     this.loading = false;
+     // this.shuffledCards.push(response.data)
+     // this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
       })
       .catch((error) => {
         console.log(error.response);
