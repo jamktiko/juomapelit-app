@@ -34,7 +34,7 @@ export class DeckComponent implements OnInit {
   ngOnInit(): void {
       this.getCards();
   }
-
+  loading = true;
   // Fisher-Yates shuffle algorithm
   shuffle(cards: Card[]) {
     for (let i = cards.length - 1; i > 0; i--) {
@@ -50,8 +50,9 @@ export class DeckComponent implements OnInit {
       .then((response) => {
         console.log(response.data);   
         // console.log(response.data);
-      this.shuffledCards.push(response.data)
-      this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+     this.shuffledCards.push(response.data)
+     this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+     this.loading = false;
       })
       .catch((error) => {
         console.log(error.response);
