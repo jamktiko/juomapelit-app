@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "juomapeliapp_identitypool_7fefb741",
+    "identityPoolName": "brewdeck_identitypool_0b6a959f",
     "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "juomap7fefb741",
-    "userPoolName": "juomapeliapp_userpool_7fefb741",
+    "resourceNameTruncated": "brewde0b6a959f",
+    "userPoolName": "brewdeck_userpool_0b6a959f",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,11 +31,11 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "juomap7fefb741_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "brewde0b6a959f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "authSelections": "identityPoolAndUserPool",
-    "resourceName": "juomapeliapp",
-    "sharedId": "7fefb741",
+    "resourceName": "brewdeck",
+    "sharedId": "0b6a959f",
     "serviceName": "Cognito",
     "useDefault": "manual"
   }
