@@ -18,12 +18,17 @@ footer {
 }
 
 #logo {
-    margin: 0 auto;
-    padding-bottom: 30px;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  position:relative;
+  width: 350px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -228,6 +233,11 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
 
 /* Responsive layout (width) */
 @media screen and (max-width: 650px) {
+  #beer #beertint {
+    display:none;
+  }
+}
+@media screen and (max-width: 650px) {
   main {
     width: 97%;
   }
@@ -309,194 +319,394 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
 @font-face { font-family: 'Roboto-Medium'; src: url('Roboto/Roboto-Medium.ttf'); }
 @font-face { font-family: 'Roboto-Thin'; src: url('Roboto/Roboto-Thin.ttf'); }
 
-
-/* This is code for the animated background. Code used: https://codepen.io/goodkatz/pen/LYPGxQz */
 body {
-    height:95vh;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-direction: column;
-    min-height:100vh;
-  }
+  height:95vh;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction: column;
+  min-height:100vh;
+}
 
 #background {
-  position:fixed;
-  margin:0;
-  width:100%;
-  height: 30vh;
-  bottom:0;
-  z-index: -9999;
+position:fixed;
+margin:0;
+width:100%;
+height: 35vh;
+bottom:0;
+z-index: -9999;
 }
 
 #background #beer {
-  position: absolute;
-  bottom: 0;
-  background-color: #f2c025;
-  width: 100%;
-  height: 100%;
-  z-index: -1000;
-  overflow: hidden;
+position: absolute;
+bottom: 0;
+background-color: #f2c025;
+width: 100%;
+height: 100%;
+z-index: -1000;
+overflow: hidden;
+border-left: 20px solid #f2c025;
+animation: 3s slideup 2s linear;
+animation-fill-mode: backwards;
+}
+
+@keyframes slideup {
+  0% {
+    height:0px;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes slideup-foam {
+  0% {
+    bottom:0;
+  }
+  100% {
+    bottom:32vh;
+  }
 }
 
 #beer #beertint {
+  background-color: #ffd34f;
+  bottom: 0;
+  left: 0;
+  height: 40vh;
+  position:absolute;
+  width: 50px;
+}
+
+#beer:after {
+  bottom: 0;
+  content: '';
+  height: 60vh;
+  left: -20%;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(15deg);
+  width: 50%;
+  background-color: #ffd34f;
+}
+
+
+.top {
+  position: absolute;
+  bottom: 32vh;
+  width: 100%;
+  height: 10vh;
   background-color: white;
-  opacity: 13%;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  height: 100%;
-  overflow: hidden;
+  overflow:hidden;
+  animation: wave 3s ease-in-out infinite, 3s  slideup-foam 2s linear;
+  z-index: -1;
+  animation-fill-mode: backwards;
 }
 
-#background .waves {
-    position:absolute;
-    width: 100%;
-    height:10vh;
-    z-index: -999;
-    bottom: 100%;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    overflow: hidden;
+/* Wavy animation copyright below: */
+
+/* Copyright (c) 2022 by abisai7 (https://codepen.io/abisai7/pen/rNJmXNL)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
 }
-
-  /* Animation */
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-  }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
-    }
-    100% {
-      transform: translate3d(85px,0,0);
-    }
-  }
-
-
-/* Animated background code ends here */
+/*Copied code ends here*/
 
 .bubble {
   position: absolute;
   animation: rising linear infinite;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background: white;
   opacity: 25%;
   border-radius: 100%;
   overflow: hidden;
+  display:flex;
 }
-
-.bubble1 {
-  width: 10px;
-  height: 10px;
-left: 5%;
-animation-duration: 5s;
-}
-
-.bubble2 {
-  width: 10px;
-  height: 10px;
-  left: 25%;
-  animation-duration: 2s;
-  }
-
-.bubble3 {
-  width: 30px;
-  height: 30px;
-    left: 50%;
-    animation-duration: 3s;
-    }
 
 .bubble4 {
-  left: 75%;
-  animation-duration: 5s;
-  }
-
+  left:30%;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+  animation-duration: 2s;
+}
 .bubble5 {
-  left: 95%;
-  width: 30px;
-  height: 30px;
-  animation-duration: 4s;
+  left:45%;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+  animation-duration: 2s;
 }
-
 .bubble6 {
-  width: 10px;
-  height: 10px;
-  left: 70%;
-  animation-duration: 3.5s;
+  left:50%;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+  animation-duration: 1.5s;
 }
-
 .bubble7 {
-  left: 33%;
-  animation-duration: 3s;
+  right:45%;
+  animation-duration: 1s;
 }
-
 .bubble8 {
-  left: 55%;
-  width: 30px;
-  height: 30px;
+  right:40%;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+  animation-duration: 1.5s;
+}
+.bubble9 {
+  right:30%;
   animation-duration: 2s;
 }
 
-.bubble9 {
-  left: 65%;
-  animation-duration: 1.7s;
-}
-
-.bubble10 {
-  left: 15%;
-  animation-duration: 3.5s;
-}
-
-.bubble11 {
-  left: 47%;
-  animation-duration: 5s;
-  width: 20px;
-  height: 20px;
-}
-
-.bubble12 {
-  left: 40%;
-  animation-duration: 6s;
-  width: 25px;
-  height: 25px;
-}
 
 @keyframes rising {
   0% {
     bottom: 0%;
     opacity: 0;
+    width: 10px;
+    height: 10px;
   }
   25% {
     opacity: 0.5;
+    width: 15px;
+    height: 15px;
   }
   50% {
     opacity: 1;
+    width: 20px;
+    height: 20px;
   }
   75% {
     opacity: 0.5;
+    width: 25px;
+    height: 25px;
   }
   100% {
     bottom: 80%;
     opacity: 0;
+    width: 30px;
+    height: 30px;
   }
+}
+
+/* THIS CODE IS BY https://github.com/pestbarn/starburst.css */
+
+/*  STARBURST.CSS V 0.1
+	Using the SCSS version is highly recommended,
+	but if you feel you can handle this by
+	yourself, then you're in the right place!
+	USAGE:
+	<div class="starburst starburst--[top|bottom|both] [starburst--circular]">
+	You may set your colors below. Project defaults are:
+	#ff8c00
+	and
+	#d2691e
+	The angles are generated defaults. You may fiddle around with them
+	as much as you like. Generating your own using SCSS is preferable.
+*/
+
+div.burst {
+  animation: rotation 30s infinite linear;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.starburst {
+	/* GLOBAL */
+	position: relative;
+	background-repeat: no-repeat;
+	z-index: 0;
+
+}
+.starburst * {
+	/* CHILDREN */
+	position: relative;
+	z-index: 1;
+}
+.starburst--circular {
+	border-radius: 50%;
+}
+.starburst--top {
+	/* ALIGNMENT TOP */
+
+	background-image:
+	linear-gradient(180deg, transparent 50%, #ffffff 50%),
+	linear-gradient(192deg, transparent 50%, #d2691e 50%),
+	linear-gradient(204deg, transparent 50%, #ffffff 50%),
+	linear-gradient(216deg, transparent 50%, #d2691e 50%),
+	linear-gradient(228deg, transparent 50%, #ffffff 50%),
+	linear-gradient(240deg, transparent 50%, #d2691e 50%),
+	linear-gradient(252deg, transparent 50%, #ffffff 50%),
+	linear-gradient(264deg, transparent 50%, #d2691e 50%),
+	linear-gradient(276deg, transparent 50%, #ffffff 50%),
+	linear-gradient(288deg, transparent 50%, #d2691e 50%),
+	linear-gradient(300deg, transparent 50%, #ffffff 50%),
+	linear-gradient(312deg, transparent 50%, #d2691e 50%),
+	linear-gradient(324deg, transparent 50%, #ffffff 50%),
+	linear-gradient(336deg, transparent 50%, #d2691e 50%),
+	linear-gradient(348deg, transparent 50%, #ffffff 50%),
+	linear-gradient(360deg, transparent 50%, #d2691e 50%);
+	position: relative;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+.starburst--bottom {
+	/* ALIGNMENT BOTTOM */
+
+	background-image:
+	linear-gradient(0deg, transparent 50%, #d2691e 50%),
+	linear-gradient(12deg, transparent 50%, #ffffff 50%),
+	linear-gradient(24deg, transparent 50%, #d2691e 50%),
+	linear-gradient(36deg, transparent 50%, #ffffff 50%),
+	linear-gradient(48deg, transparent 50%, #d2691e 50%),
+	linear-gradient(60deg, transparent 50%, #ffffff 50%),
+	linear-gradient(72deg, transparent 50%, #d2691e 50%),
+	linear-gradient(84deg, transparent 50%, #ffffff 50%),
+	linear-gradient(96deg, transparent 50%, #d2691e 50%),
+	linear-gradient(108deg, transparent 50%, #ffffff 50%),
+	linear-gradient(120deg, transparent 50%, #d2691e 50%),
+	linear-gradient(132deg, transparent 50%, #ffffff 50%),
+	linear-gradient(144deg, transparent 50%, #d2691e 50%),
+	linear-gradient(156deg, transparent 50%, #ffffff 50%),
+	linear-gradient(168deg, transparent 50%, #d2691e 50%),
+	linear-gradient(180deg, transparent 50%, #ffffff 50%);
+	position: relative;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+.starburst--top::before,
+.starburst--top::after,
+.starburst--bottom::before,
+.starburst--bottom::after {
+	z-index: 1;
+}
+.starburst--both {
+	/* ALIGNMENT BOTH */
+
+	overflow: hidden;
+	background-image:
+	linear-gradient(0deg, transparent 50%, #ffffff 50%),
+	linear-gradient(11deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(22deg, transparent 50%, #ffffff 50%),
+	linear-gradient(33deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(44deg, transparent 50%, #ffffff 50%),
+	linear-gradient(55deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(66deg, transparent 50%, #ffffff 50%),
+	linear-gradient(77deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(88deg, transparent 50%, #ffffff 50%),
+	linear-gradient(99deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(110deg, transparent 50%, #ffffff 50%),
+	linear-gradient(121deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(132deg, transparent 50%, #ffffff 50%),
+	linear-gradient(143deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(154deg, transparent 50%, #ffffff 50%),
+	linear-gradient(165deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(176deg, transparent 50%, #ffffff 50%),
+	linear-gradient(187deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(198deg, transparent 50%, #ffffff 50%),
+	linear-gradient(209deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(220deg, transparent 50%, #ffffff 50%),
+	linear-gradient(231deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(242deg, transparent 50%, #ffffff 50%),
+	linear-gradient(253deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(264deg, transparent 50%, #ffffff 50%),
+	linear-gradient(275deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(286deg, transparent 50%, #ffffff 50%),
+	linear-gradient(297deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(308deg, transparent 50%, #ffffff 50%),
+	linear-gradient(319deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(330deg, transparent 50%, #ffffff 50%),
+	linear-gradient(341deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(352deg, transparent 50%, #ffffff 50%);
+}
+.starburst--both::before {
+	background-image:
+	linear-gradient(180deg, transparent 50%, #ffffff 50%),
+	linear-gradient(191deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(202deg, transparent 50%, #ffffff 50%),
+	linear-gradient(213deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(224deg, transparent 50%, #ffffff 50%),
+	linear-gradient(235deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(246deg, transparent 50%, #ffffff 50%),
+	linear-gradient(257deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(268deg, transparent 50%, #ffffff 50%),
+	linear-gradient(279deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(290deg, transparent 50%, #ffffff 50%),
+	linear-gradient(301deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(312deg, transparent 50%, #ffffff 50%),
+	linear-gradient(323deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(334deg, transparent 50%, #ffffff 50%),
+	linear-gradient(345deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(356deg, transparent 50%, #ffffff 50%);
+}
+.starburst--both::after {
+	top: 50% !important;
+	background-position: 0 100%;
+	background-size: 100% 200%;
+	background-image:
+	linear-gradient(0deg, transparent 50%, #ffffff 50%),
+	linear-gradient(11deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(22deg, transparent 50%, #ffffff 50%),
+	linear-gradient(33deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(44deg, transparent 50%, #ffffff 50%),
+	linear-gradient(55deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(66deg, transparent 50%, #ffffff 50%),
+	linear-gradient(77deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(88deg, transparent 50%, #ffffff 50%),
+	linear-gradient(99deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(110deg, transparent 50%, #ffffff 50%),
+	linear-gradient(121deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(132deg, transparent 50%, #ffffff 50%),
+	linear-gradient(143deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(154deg, transparent 50%, #ffffff 50%),
+	linear-gradient(165deg, transparent 50%, #45B4D9 50%),
+	linear-gradient(176deg, transparent 50%, #ffffff 50%);
+}
+.starburst--both::before,
+.starburst--both::after {
+	top: 0;
+	left: 0;
+	content: "";
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
