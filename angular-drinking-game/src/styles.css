@@ -12,7 +12,7 @@
   max-width: 60vh;
   flex-direction: row;
   align-items:center;
-  border:1px solid red;
+  border:0px solid red;
   margin:0 auto;
 }
 
