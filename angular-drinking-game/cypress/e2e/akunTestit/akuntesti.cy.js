@@ -7,7 +7,7 @@ describe("Testataan että käyttäjä pääsee peliin", () => {
     cy.visit("http://brewdeck.click");
   });
 
-  it("Testataan että käyttäjä pääsee peliin", () => {
+  it("Testataan että käyttäjä pääsee peliin ja pois pelistä", () => {
     cy.wait(1500);
     cy.get("button.button1").scrollIntoView();
     cy.wait(1500);
@@ -19,10 +19,4 @@ describe("Testataan että käyttäjä pääsee peliin", () => {
     cy.wait(1000);
     cy.get("canvas#canvas").click({ force: true });
   });
-
-  beforeEach(() => {
-    cy.visit("http://brewdeck.click");
-  });
-
-  it("Testataan että somelinkit toimii", () => {});
 });
