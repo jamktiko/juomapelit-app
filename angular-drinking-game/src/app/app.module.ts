@@ -18,7 +18,7 @@ import { SettingsComponent } from './settings/settings.component';
     routingComponents,
     CreateLobbyComponent,
     ContactComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

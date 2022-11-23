@@ -3,6 +3,7 @@ import { Card } from 'src/app/game-table/game-shareable/card';
 import { RULES } from 'src/app/game-table/game-shareable/mock-rules';
 import { API } from 'aws-amplify';
 import { Type } from '@angular/compiler';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-deck',
@@ -17,7 +18,6 @@ export class DeckComponent implements OnInit {
   cardCount = 0; // How many cards have been played
   curRule = '';
 
-
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
 
@@ -27,12 +27,11 @@ export class DeckComponent implements OnInit {
     response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
     queryStringParameters: {}, // OPTIONAL
   };
-  
 
-  constructor() {}
+  constructor(public wsService: WebsocketService) {}
 
   ngOnInit(): void {
-      this.getCards();
+    this.getCards();
   }
   loading = true;
   // Fisher-Yates shuffle algorithm
@@ -48,11 +47,11 @@ export class DeckComponent implements OnInit {
   getCards() {
     API.get('brewdeckApi', '/cards', this.params)
       .then((response) => {
-        console.log(response.data);   
+        console.log(response.data);
         // console.log(response.data);
-     this.shuffledCards.push(response.data)
-     this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
-     this.loading = false;
+        this.shuffledCards.push(response.data);
+        this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+        this.loading = false;
       })
       .catch((error) => {
         console.log(error.response);
@@ -65,23 +64,20 @@ export class DeckComponent implements OnInit {
     console.log(this.shuffledCards[0][0]['rank']);
   }
 
-   // This function gets random object from the randCards array (random indexing)
-  // Card object values: index 0 = suit, index 1 = Id, index 2 = Name, index 3 = rank, and index 4 = Rule 
-    
-  
+  // This function gets random object from the randCards array (random indexing)
+  // Card object values: index 0 = suit, index 1 = Id, index 2 = Name, index 3 = rank, and index 4 = Rule
+
   // Starts a new game when the user clicks the button to do so, this isn't used at the moment,
   // but it might be used in the future instead of reloadPage();
-newGame() {
+  newGame() {
     this.cardCount = 0;
     this.isOver = false;
     this.shuffle(this.shuffledCards[0]);
     this.curRule = this.shuffledCards[0][0]['rule'];
-}
+  }
 
- // Restarts the page
+  // Restarts the page
   reloadPage() {
     window.location.reload();
   }
-
 }
-

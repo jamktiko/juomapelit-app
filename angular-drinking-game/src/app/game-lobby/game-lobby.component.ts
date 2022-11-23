@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsocketService } from '../services/websocket.service';
 
 @Component({
   selector: 'app-game-lobby',
   templateUrl: './game-lobby.component.html',
-  styleUrls: ['./game-lobby.component.css']
+  styleUrls: ['./game-lobby.component.css'],
 })
 export class GameLobbyComponent implements OnInit {
+  constructor(public wsService: WebsocketService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

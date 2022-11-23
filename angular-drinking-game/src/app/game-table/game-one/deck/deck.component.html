@@ -13,7 +13,8 @@
 <!--<button (click)="consolelog()">Console log (DeBugiing)</button>-->
 
 
-<button class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
+<button (click)="wsService.closeServer()" class="button2" [routerLink]="['/JoinTable']"
+  routerLinkActive="router-link-active">Takaisin</button>
 
 
 <!--
