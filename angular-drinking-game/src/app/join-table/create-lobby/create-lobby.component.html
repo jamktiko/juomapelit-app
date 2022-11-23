@@ -1,13 +1,11 @@
 <h1>Luo huone</h1>
-<h3>Valitse peli</h3>
 
-[x] Vesiputous
 <br>
 <br>
 
 <form id="createGameForm">
   <label for="playerName" class="form-label"><h3>Nimimerkkisi</h3></label>
-  <input class="form-control form-control-lg" type="text" maxlength="15" style="text-align:center" placeholder="pelaaja1" aria-label="playerName">
+  <input class="form-control form-control-lg" #box (keyup)="getUserInput(box.value)" type="text" maxlength="15" style="text-align:center" placeholder="pelaaja1" aria-label="playerName">
 </form>
 
 <h3>Huoneen koodi</h3>

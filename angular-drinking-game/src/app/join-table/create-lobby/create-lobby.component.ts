@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-create-lobby',
   templateUrl: './create-lobby.component.html',
@@ -12,6 +13,7 @@ export class CreateLobbyComponent implements OnInit {
   ngOnInit(): void {
   this.randomFourLetterCode();}
 
+
   randomFourLetterCode() {
     let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -23,4 +25,18 @@ export class CreateLobbyComponent implements OnInit {
   }
 
   koodi = this.randomFourLetterCode();
+
+  getUserInput(val:string) {
+    this.admin.info.name = val;
+    console.log(this.admin);
+  }
+  
+  admin = {
+    action: 'admin',
+    info: { path: 'hostLobby', lobbyCode: this.koodi, name: 'Aku' },
+  };
+
+   
+  
+  
 }

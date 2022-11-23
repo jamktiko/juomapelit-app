@@ -21,7 +21,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/storage/brewdeckDb-cloudformation-template.json",
         "logicalId": "storagebrewdeckDb"
       },
-      "lastPushTimeStamp": "2022-11-18T08:36:29.002Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.743Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "us-east-1",
@@ -64,7 +64,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/function/brewdeckLambda-cloudformation-template.json",
         "logicalId": "functionbrewdeckLambda"
       },
-      "lastPushTimeStamp": "2022-11-18T08:36:29.005Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.750Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:845860726746:function:brewdeckLambda-dev",
@@ -102,7 +102,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/auth/brewdeck-cloudformation-template.json",
         "logicalId": "authbrewdeck"
       },
-      "lastPushTimeStamp": "2022-11-18T08:36:29.018Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.758Z",
       "output": {
         "UserPoolId": "us-east-1_zyMNiHRxN",
         "AppClientIDWeb": "4iae33mrq98e6dc7bou6hlor6k",
@@ -133,7 +133,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/brewdeckApi-cloudformation-template.json",
         "logicalId": "apibrewdeckApi"
       },
-      "lastPushTimeStamp": "2022-11-18T08:36:29.027Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.766Z",
       "output": {
         "ApiName": "brewdeckApi",
         "RootUrl": "https://dkfyn9kpji.execute-api.us-east-1.amazonaws.com/dev",
@@ -151,7 +151,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2022-11-18T08:36:29.034Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.774Z",
       "output": {},
       "lastPushDirHash": "mwDEPdfv12dnh4QxWjHhBs6m1QI="
     }
