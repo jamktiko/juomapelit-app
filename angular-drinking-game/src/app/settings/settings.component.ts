@@ -9,6 +9,7 @@ export class SettingsComponent implements OnInit {
   constructor() {}
 
   bgON = true;
+  background = document.getElementById('background');
 
   turnON() {
     this.bgON = true;

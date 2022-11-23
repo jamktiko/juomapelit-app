@@ -40,9 +40,8 @@
 <br>
 
 <!--Form has not yet been submitted, so form is visible on page-->
-<div *ngIf="submitClicked == false">
-
-    <form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;"
+<div *ngIf="submitClicked == false" style="display:flex;justify-content:center;align-items:center">
+    <form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;max-width: 600px;"
     class="collapse was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
 
     <!--Title of form-->

@@ -42,10 +42,7 @@
         {
           "category": "storage",
           "resourceName": "brewdeckDb",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
+          "attributes": ["Name", "Arn"],
           "attributeEnvMap": {
             "Name": "TABLE_NAME",
             "Arn": "TABLE_ARN"
@@ -83,20 +80,14 @@
       "frontendAuthConfig": {
         "socialProviders": [],
         "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL"
-        ],
+        "signupAttributes": ["EMAIL"],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
+        "mfaTypes": ["SMS"],
+        "verificationMechanisms": ["EMAIL"]
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/auth/brewdeck-cloudformation-template.json",
@@ -123,10 +114,7 @@
         {
           "category": "function",
           "resourceName": "brewdeckLambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "attributes": ["Name", "Arn"]
         }
       ],
       "providerMetadata": {
