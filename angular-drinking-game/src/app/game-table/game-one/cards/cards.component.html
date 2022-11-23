@@ -1,6 +1,12 @@
+<!--Loading data-->
+
 <div id="loading" *ngIf="this.deckComponent.loading">
-    <h2>Loading</h2>
+    <div class="spinner-border" style="width:3rem;height:3rem;color:yellow" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
 </div>
+
+
 <div id="cardBox">
     <!--Backside of card-->
     <div (click)="nextCard()">
