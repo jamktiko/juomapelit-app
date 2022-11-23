@@ -15,11 +15,6 @@
 </app-cards>
 <div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
 
-<!-- After all the cards has been played, the game shall ask if you want to play again. -->
-<div *ngIf="cardCount == 52" class="cardsClass">
-  <button id="newGame" type="button" class="button1" (click)="newGame()">Uusi peli</button>
-</div>
-
 <!--<button (click)="consolelog()">Console log (DeBugiing)</button>-->
 
 
