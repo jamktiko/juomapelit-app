@@ -1,5 +1,11 @@
 <!--Bar on top of page for round buttons-->
-<div class="iconBar"></div>
+<div class="iconBar">
+    <div class="iconBtn" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">
+  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+  </svg>
+</div>
+</div>
 
 <h1>Ota yhteyttä</h1>
 
@@ -20,32 +26,9 @@
 
 <!--Contact form begins here-->
 <h3>Palaute</h3>
-<div *ngIf="submitClicked == false">
-<p>Voit ottaa meihin yhteyttä nopeasti myös alla olevalla lomakkeella, joka avautuu Avaa-painikkeella. Viestisi saapuu
-    meille sähköpostiin.</p>
-</div>
-
-<!--Open and close form buttons-->
-<div class="navi" style="align-items: center;" *ngIf="submitClicked == false">
-    <div class="navitem" style="width: 70%" *ngIf="collapsed == true">
-        <button class="button3" id="formOpen" (click)="openForm()" type="button" data-toggle="collapse"
-            data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
-            Avaa
-        </button>
-    </div>
-    <div class="navitem" style="width: 70%" *ngIf="collapsed == false">
-        <button class="button3" id="formClose" (click)="closeForm()" type="button" data-toggle="collapse"
-            data-target="#contactForm" aria-expanded="false" aria-controls="contactForm">
-            Sulje
-        </button>
-    </div>
-</div>
-<br>
-
-<!--Form has not yet been submitted, so form is visible on page-->
-<div *ngIf="submitClicked == false" style="display:flex;justify-content:center;align-items:center">
-    <form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;max-width: 600px;"
-    class="collapse was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
+<div id="contactFormDiv">
+<form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;max-width: 600px;"
+    class="was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
 
     <!--Title of form-->
     <input class="form-control" id="formHeader" type="text" name="topic" placeholder="Otsikko" aria-label="title"
@@ -69,7 +52,7 @@
 
     <br>
     <!--Textarea-->
-    <div class="mb-3">
+    <div class="mb-3" style="width:100%">
         <label for="msg" class="form-label">Kerro, miten voimme auttaa.</label>
         <textarea class="form-control" id="msg" rows="3" name="message" required formControlName="problem"></textarea>
         <div class="invalid-feedback">
@@ -79,7 +62,7 @@
     </div>
 
     <!--Sender's email -form-->
-    <div class="mb-3">
+    <div class="mb-3" style="width:100%">
         <label for="emailMsg" class="form-label">Jos haluat, että vastaamme viestiisi, annathan
             sähköpostiosoitteesi.</label>
         <input type="email" class="form-control" id="emailMsg" name="user_email" placeholder="name@example.com"
@@ -101,18 +84,9 @@
 </div>
 <!--Form div ends here-->
 
-
-
 <!--When form has been submitted, form resets and shows this message-->
 <div *ngIf="submitClicked == true">
     <p><b>Kiitos viestistäsi! Luemme sen mahdollisimman pian.</b></p>
-</div>
-
-
-<!--Go back to main menu-->
-<div class="navi">
-    <div class="navitem" style="margin-top: 30px;"><button id="back" class="button2" [routerLink]="['/MainMenu']"
-            routerLinkActive="router-link-active">Takaisin</button></div>
 </div>
 
 <!--Code for the form data to go to our email-->

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import { timeout } from 'rxjs';
-import { MainMenuComponent } from '../main-menu/main-menu.component';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -34,21 +32,11 @@ export class ContactComponent implements OnInit {
       });
     }
 
-  collapsed: boolean = true;
-
   submitClicked: boolean = false;
 
   submittedFunction() {
     this.submitClicked = true;
     this.contactionForm.reset();
-  }
-
-  openForm() {
-    this.collapsed = false;
-  }
-
-  closeForm() {
-    this.collapsed = true;
   }
 
 
