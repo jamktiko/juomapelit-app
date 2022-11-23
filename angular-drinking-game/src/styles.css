@@ -122,17 +122,6 @@ h1 {
     margin: 0.5em;
 }
 
-h2 {
-  font-family: Roboto-Bold;
-  background-color: orange;
-  width: 100%;
-  text-align:center;
-  color:white;
-  border-radius: 30px;
-  font-size: 1.5em !important;
-  padding: 3px;
-}
-
 h3 {
   font-family: "Roboto-Black";
   margin: 0.5em;
