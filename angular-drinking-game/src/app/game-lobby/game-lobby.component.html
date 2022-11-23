@@ -1,26 +1,7 @@
 <h1>Lobby ABCD</h1>
 <!--List of players-->
-<table id="players" style="margin-bottom: 30px">
-    <tr>
-        <h3>Pelaajat (5)</h3>
-    </tr>
-    <tr>
-        <td>dragonslayer999</td>
-    <tr>
-        <td>HyperCarry645</td>
-    </tr>
-    <tr>
-        <td>theLegend333</td>
-    </tr>
-    <tr>
-        <td>FuriousStrawberry</td>
-    </tr>
-    <tr>
-        <td>beautiful_curry67</td>
-    </tr>
-    <tr>
-        <button class="button3">Säännöt</button>
-    </tr>
+<table id="players" style="margin-bottom: 30px" *ngFor="let player of players">
+    {{player}}
 </table>
 
 
@@ -29,6 +10,10 @@
 
 <!--Navigation-->
 <div class="navi">
-    <div class="navitem"><button id="chooseGame" class="button1" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Aloita peli</button></div>
-    <div class="navitem"><button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Poistu</button></div>
+    <div class="navitem"><button id="chooseGame" class="button1" [routerLink]="['/GameOne']"
+            routerLinkActive="router-link-active">Aloita peli</button></div>
+    <div class="navitem"><button id="back" class="button2" [routerLink]="['/MainMenu']"
+            routerLinkActive="router-link-active">Poistu</button></div>
+
+    <!-- <button id="testplayers" class="" (click)="testPlayers()">Test players</button>-->
 </div>
