@@ -1,20 +1,28 @@
-<h1>Asetukset</h1>
-<div id="settingsDiv" class="disableSelection">
-  <div id="bgAnimationON" *ngIf="bgON == true" (click)="turnOFF()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"/>
-    </svg>
-    Tausta-animaatio
-    </div>
-  <div id="bganimationOFF" *ngIf="bgON == false" (click)="turnON()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-    </svg>
-    Tausta-animaatio
-  </div>
+<!--Bar on top of page for round buttons-->
+<div class="iconBar"></div>
+
+<h1>Krediitit</h1>
+<h3>Mikä on BrewDeck?</h3>
+<div class="textbox">
+<p>BrewDeck on neljän tietojenkäsittelyopiskelijan projekti, tarkemmin Jyväskylän ammattikorkeakoulu JAMKin Ticorporate-opintojakson työ.</p>
+<p>Opintojakson tarkoitus on luoda tiimeissä sovellus, joka julkaistaan opintojakson päätteeksi. Itse sovelluksen idea on tiimin vastuulla.</p>
+<p>BrewDeckin tarkoitus on olla hauska, värikäs ja helppokäyttöinen sovellus, jota kaikki voivat pelata yhdessä illanvietossa vaikkapa 
+  omilta kännyköiltään. </p>
+
+
+<h5>Keitä tiimiin kuuluu?</h5>
+
+<p>Järvinen Aku<br>
+tekniikka, testaus</p>
+<p>Kelja Julius<br>
+UI/UX-suunnittelija, Scrum Master</p>
+<p>Matela Janne<br>
+tekniikka, marketointi, Product Owner</p>
+<p>Virta Toni<br>
+tekniikka</p>
 
 </div>
 
-<div class="navi">
+<div class="navi" style="margin-top:1em">
 <div class="navitem"><button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button></div>
 </div>
