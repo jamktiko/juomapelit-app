@@ -1,4 +1,12 @@
-<h1>Vesiputous</h1>
+<!--Bar on top of page for round buttons-->
+<div class="iconBar">
+  <div class="iconBtn iconRight iconRed" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">
+    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2" class="bi bi-x-lg" viewBox="0 0 16 16">
+      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+    </svg>
+  </div>
+</div>
+
 <!--Cards-component-->
 <app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards"
   [loading]="this.loading">
@@ -11,13 +19,6 @@
 </div>
 
 <!--<button (click)="consolelog()">Console log (DeBugiing)</button>-->
-
-<div class="iconBtn iconBtn--right" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">
-  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2" class="bi bi-x-lg" viewBox="0 0 16 16">
-    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-  </svg>
-</div>
-
 
 <!--
  Things under this line is only here for the development time
