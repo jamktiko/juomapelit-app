@@ -18,14 +18,13 @@
 }
 
 .iconBar {
+  position:absolute;
+  top:0;
   display:flex;
-  padding:1em;
-  height: 6em;
-  width: 100%;
-  max-width: 60vh;
+  width:100%;
   flex-direction: row;
-  align-items:center;
   margin:0 auto;
+  padding-top:0.5em;
 }
 
 .iconRight {
@@ -38,6 +37,10 @@
 
 .iconBlue {
   background: #184c86 !important;
+}
+
+.iconGreen {
+  background: #118C4F !important;
 }
 
 .iconBtn {
@@ -76,7 +79,6 @@ footer {
 }
 
 #logo {
-  padding-bottom: 30px;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -94,14 +96,13 @@ img {
 main {
   display: flex;
   align-items:stretch;
-  align-content: space-between;
-  justify-content: flex-start;
   flex-direction: column;
-  max-width: 70%;
+  max-width: 50%;
   max-height: 95vh;
-  margin:auto;
+  margin:0 auto;
   text-align: center;
   position:relative;
+  padding-top:3em;
 }
 
 li, ul {
@@ -112,6 +113,7 @@ li, ul {
 }
 
 .navi {
+  padding-top: 3em;
   display: flex;
   align-items:center;
   justify-content: space-around;
@@ -296,7 +298,6 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
   main {
     max-width:95vh;
     height: 100vh;
-    padding-top: 0;
   }
   body {
     height: 100%;
@@ -305,7 +306,7 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
 }
 @media screen and (max-width:630px) {
   main {
-    max-width:95vh;
+    max-width:95%;
   }
 }
 
@@ -313,7 +314,7 @@ box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4),
 @media screen and (max-height: 2160px) {
 
 }
-@media screen and (max-height: 775px) {
+@media screen and (max-height:775px) {
   main {
     height: 100%
 }
@@ -792,8 +793,6 @@ div.burst {
 100% { transform: rotate(0deg); }
 }
 
-
-
 .speech-bubble:before {
   content: "";
   width: 0px;
@@ -817,4 +816,65 @@ div.burst {
   border-bottom: 10px solid transparent;
   left:30%;
   bottom:-20px;
+}
+
+
+/* Speech bubble 2 */
+.speech-bubble2 {
+  border: 2px solid #121212;
+  font-size: 0.9em;
+  border-radius:0.5em;
+  position:absolute;
+  right:0;
+  margin-right:5.5em;
+  margin-top:2em;
+  padding:0.5em;
+  min-width: 100px;
+  min-height: 30px;
+  background:white;
+  box-shadow:4px 4px 1px rgb(0, 0, 0, 0.5);
+  animation: 1s disappear 10s, 2s wiggle infinite;
+  animation-fill-mode: backwards;
+  opacity: 0;
+  font-family:Roboto-Medium;
+}
+@keyframes disappear {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(2deg); }
+ 95% { transform: rotate(-2deg); }
+100% { transform: rotate(0deg); }
+}
+
+.speech-bubble2:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 8px solid black;
+  border-right: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  right:-18px;
+  bottom:10px;
+}
+.speech-bubble2:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 8px solid white;
+  border-right: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  right:-16px;
+  bottom:10px;
 }

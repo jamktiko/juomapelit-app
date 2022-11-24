@@ -7,3 +7,84 @@
   -webkit-text-stroke: 2px black;
   font-family:'Roboto-Black';
 }
+
+.tipjar {
+  position:relative;
+  height: 4.5em;
+  width: 3.5em;
+  background-color: #A5C4D4;
+  opacity: 0.8;
+  border-right: 2px solid #80959f;
+  border-bottom: 2px solid #80959f;
+  border-left: 2px solid #80959f;
+  border-top: none;
+  border-radius:10px;
+}
+.coin {
+  border-radius:100%;
+  background: rgba(255,192,1,1);
+  border: 1.5px solid #c79600;
+  height: 1.1em;
+  width: 1.1em;
+  left:30%;
+  bottom:0;
+  position:absolute;
+  animation:0.8s drop linear, 2s rollRight 0.9s;
+}
+.coin:before {
+  content:'';
+  top:20%;
+  height: 60%;
+  width: 2px;
+  background: #c79600;
+  left: 45%;
+  position:absolute;
+}
+@keyframes rollRight {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(90deg);
+    left:40%;
+  }
+}
+@keyframes drop {
+  0% {
+    top: -1em;
+  }
+  1% {
+    top:0;
+  }
+  5% {
+    top:5%;
+  }
+  10% {
+    top:10%;
+  }
+  20% {
+    top:20%;
+  }
+  30% {
+    top:30%;
+  }
+  40% {
+    top:40%;
+  }
+  50% {
+    top:50%;
+  }
+  60% {
+    top:60%;
+  }
+
+  80% {
+    top:80%;
+  }
+  90% {
+    bottom:10%;
+  }
+  100% {
+    bottom:0;
+  }
+}
