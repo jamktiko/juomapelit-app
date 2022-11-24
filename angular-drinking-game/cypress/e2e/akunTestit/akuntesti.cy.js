@@ -2,21 +2,35 @@
 
 const { describe } = require("mocha");
 
-describe("Testataan että käyttäjä pääsee peliin", () => {
+describe("Pelitesti", () => {
   beforeEach(() => {
     cy.visit("http://brewdeck.click");
   });
 
-  it("Testataan että käyttäjä pääsee peliin ja pois pelistä", () => {
+  it("Testataan että päästään peliin, peli tomii ja että pelaaja voi aloittaa uuden pelin.", () => {
     cy.wait(1500);
     cy.get("button.button1").scrollIntoView();
     cy.wait(1500);
     cy.get("button.button1").click();
     cy.wait(5000);
-    cy.get("canvas#canvas").click({ force: true });
+    for (let i = 0; i <= 102; i++) {
+      cy.get("canvas#canvas").click({ force: true });
+      cy.wait(25);
+    }
+    cy.get("button.button1").scrollIntoView();
+    cy.wait(1500);
+    cy.get("button.button1").click();
+    cy.url().should("include", "https://brewdeck.click/GameOne");
     cy.wait(1000);
-    cy.get("canvas#canvas").click({ force: true });
+  });
+
+  it("Testataan että päästään takaisin etusivulle", () => {
+    cy.wait(1500);
+    cy.visit("https://brewdeck.click/GameOne");
+    cy.wait(5000);
+    cy.get("div#exit.iconBtn.iconRight.iconRed").click();
+    cy.wait(1500);
+    cy.url().should("include", "https://brewdeck.click/");
     cy.wait(1000);
-    cy.get("canvas#canvas").click({ force: true });
   });
 });
