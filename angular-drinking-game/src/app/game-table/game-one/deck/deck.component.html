@@ -1,6 +1,7 @@
 <!--Bar on top of page for round buttons-->
 <div class="iconBar">
-  <div class="iconBtn iconRight iconRed" id="exit" [routerLink]="['/MainMenu']" (click)="wsService.closeServer()" routerLinkActive="router-link-active">
+  <div class="iconBtn iconRight iconRed" id="exit" [routerLink]="['/MainMenu']" (click)="wsService.closeServer()"
+    routerLinkActive="router-link-active">
     <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2"
       class="bi bi-x-lg" viewBox="0 0 16 16">
       <path
@@ -9,11 +10,20 @@
   </div>
 </div>
 
+
+
 <!--Cards-component-->
 <app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards"
   [loading]="this.loading">
 </app-cards>
 <div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
+<div class="underConstruction">
+  <p style="user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;" *ngIf="this.cardCount===52">Peli ohi, palaa takaisin ruksista</p>
+</div>
+<button style="width:200px" class="button1" *ngIf="this.cardCount===52" (click)="reloadPage()">Uusi peli</button>
 
 <!--<button (click)="consolelog()">Console log (DeBugiing)</button>-->
 

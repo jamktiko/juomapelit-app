@@ -19,8 +19,6 @@ export class CardsComponent implements OnInit {
   curRuleHeader: any;
   card: any;
 
-  
-
   constructor (public deckComponent : DeckComponent) {};
   
   @ViewChild('canvas', { static: true }) 
@@ -153,7 +151,7 @@ export class CardsComponent implements OnInit {
  
   // Switches to next card
   nextCard() {
-    if (this.deckComponent.loading) {
+    if (this.deckComponent.loading || this.deckComponent.cardCount >= 52) {
       return}
     if (this.deckComponent.cardCount === 0){
       this.cardFrontside();

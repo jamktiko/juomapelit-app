@@ -43,6 +43,7 @@ export class DeckComponent implements OnInit {
     return cards;
   } // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
+
   // This function gets cards from the API and pushes them to an empty array on initialization
   getCards() {
     API.get('brewdeckApi', '/cards', this.params)
