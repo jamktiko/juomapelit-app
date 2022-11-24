@@ -548,6 +548,7 @@ div.burst {
   margin:0;
   padding:0;
   position:fixed;
+  margin-top: -100px;
 }
 
 
