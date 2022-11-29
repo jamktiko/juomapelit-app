@@ -17,6 +17,7 @@ describe("Pelitesti", () => {
       cy.get("canvas#canvas").click({ force: true });
       cy.wait(25);
     }
+    cy.wait(1500);
     cy.get("button#newGame.button1").scrollIntoView().click();
     cy.wait(1500);
     cy.url().should("include", "https://dev.brewdeck.click/GameOne");
