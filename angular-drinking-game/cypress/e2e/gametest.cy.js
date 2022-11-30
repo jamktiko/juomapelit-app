@@ -3,7 +3,7 @@ describe("Pelitesti", () => {
     cy.visit("https://dev.brewdeck.click");
   });
 
-  it("Testataan että päästään peliin ja että peli tomii. Sen jälkeen yritetään päästä etusivulle takaisin.", () => {
+  it("Testataan että päästään peliin ja että peli tomii. Sen jälkeen yritetään päästä takaisin etusivulle.", () => {
     cy.wait(1500);
     cy.get("button#play.button1").scrollIntoView().click();
     cy.wait(1500);
