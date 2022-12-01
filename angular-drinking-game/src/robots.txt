@@ -1,0 +1,4 @@
+User-agent: googlebot
+Disallow: /gameone/
+Disallow: /settings/
+Disallow: /contact/
