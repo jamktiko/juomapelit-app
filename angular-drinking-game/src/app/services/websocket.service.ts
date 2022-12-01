@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { webSocket } from 'rxjs/webSocket';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WebsocketService {
-  subject = webSocket('wss://gjv4qktnr1.execute-api.us-east-1.amazonaws.com/production');
+  private socket$ = webSocket('wss://gjv4qktnr1.execute-api.us-east-1.amazonaws.com/production');
+  public messages$ = this.socket$.asObservable();
+
+  public wsData: any;
 
   constructor() {}
 
-  sendToServer(event: any) {
-    this.subject.subscribe();
-    this.subject.next(event);
-    console.log('Message sent to server : ' + event);
+  sendToServer(msg: any) {
+    this.socket$.next(msg);
+    //console.log('Message sent to server : ' + JSON.stringify(event));
   }
 
   closeServer() {
-    this.subject.complete();
+    this.socket$.complete();
     console.log('Connection closed');
   }
 }

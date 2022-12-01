@@ -8,11 +8,22 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class CreateLobbyComponent implements OnInit {
   koodi = this.randomFourLetterCode();
+  messageFromServer: any;
 
   constructor(public wsService: WebsocketService) {}
 
   ngOnInit(): void {
     this.randomFourLetterCode();
+    this.wsService.messages$.subscribe({
+      next: (x) => {
+        console.log('got value ' + JSON.stringify(x));
+        this.messageFromServer = x;
+        //console.log(this.messageFromServer);
+      },
+      error(err: any) {
+        console.error('something wrong occurred: ' + err);
+      },
+    });
   }
 
   randomFourLetterCode() {
