@@ -1,4 +1,7 @@
-User-agent: googlebot
-Disallow: /gameone/
-Disallow: /settings/
-Disallow: /contact/
+User-agent: *
+Disallow: /GameOne/
+Disallow: /Settings/
+Disallow: /Contact/
+Disallow: /JoinTable/
+Disallow: /JoinLobby/
+Disallow: /CreateLobby/
