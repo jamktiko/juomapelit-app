@@ -5,9 +5,14 @@
       <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
     </svg>
   </div>
+  <div class="iconBtn iconRight" data-toggle="modal" data-target="#guide">
+    <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="currentColor" class="bi bi-question-lg" style="stroke:white;stroke-width:0.5px" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215 0 1.344-.665 2.288-1.79 2.973-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712 1.03-.632 1.397-1.135 1.397-2.028 0-.979-.758-1.698-1.926-1.698-1.009 0-1.71.529-1.938 1.402-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09 0-.618-.473-1.092-1.095-1.092-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"/>
+    </svg>
+  </div>
 </div>
 
-<h1>Luo huone</h1>
+<h1>Luo peli</h1>
 
 <form id="createGameForm">
   <label for="playerName" class="form-label">
@@ -20,10 +25,54 @@
 <h3>Huoneen koodi</h3>
 <div id="codeClass" style="font-size: 2em">{{this.koodi}}</div>
 
-<br>
-<br>
-
 <div class="navi">
   <div class="navitem"><button (click)="wsService.sendToServer(msg)" id="vesiputous" class="button1"
       [routerLink]="['/GameLobby']" routerLinkActive="router-link-active">Luo huone</button></div>
+</div>
+
+
+<!--Guide modal-->
+<div id="guide" class="modal fade bd-example-modal-lg" role="dialog">
+  <div class="modal-dialog modal-dialog-lg">
+
+<!-- Modal content-->
+<div class="modal-content">
+<h1 class="modal-title" style="text-align:center;margin-top: 0.5em;">Pelin luominen</h1>
+<div class="modal-body">
+
+<div class="container-fluid">
+<div class="row justify-content-center">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/createlobby.png" alt="Luo huone" style="width: 250px">  
+</div>
+<div class="row justify-content-center">
+    <h4>Kirjoita nimimerkkisi.</h4>
+</div>
+<div class="row justify-content-center" style="margin-top:1em">
+  <h4>Kun olet klikannut Luo huone -nappia, muut pelaajat voivat liittyä koodilla huoneeseen.</h4>
+</div>
+<div class="row justify-content-center">
+  <img src="https://gameassetsbucket.s3.amazonaws.com/inlobby.png" alt="Huonenäkymä" style="width: 250px;padding-top:3em">
+</div>
+<div class="row justify-content-center" style="margin-top:1em">
+  <h4>Huoneessa näkyy listattuna kaikki siihen liittyneet pelaajat.</h4>
+</div>
+<div class="row justify-content-center" style="margin-top:1em">
+  <h4>Kun kaikki ovat valmiita, voit aloittaa pelin Aloita-napilla.</h4>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="success">
+  <b>Huone on nyt valmis! Jaa 4-kirjaiminen koodi kavereillesi ja peli voi alkaa.</b>
+</div>
+</div>
+</div>
+</div>
+
+      <div style="text-align:center; margin:0.5em; margin-top:1em">
+        <button type="button" class="button3" data-dismiss="modal">Sulje</button>
+      </div>
+    </div>
+
+  </div>
 </div>

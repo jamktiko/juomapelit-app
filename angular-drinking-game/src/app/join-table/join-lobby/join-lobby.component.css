@@ -9,3 +9,12 @@
     font-family: "Roboto-Medium";
     width: 300px;
 }
+.success {
+    width:100%;
+    height:auto;
+    border: 1px dotted rgb(88, 44, 0);
+    background-color: rgb(255, 236, 173);
+    color: rgb(88, 44, 0);
+    padding:1em;
+    margin:2em;
+}

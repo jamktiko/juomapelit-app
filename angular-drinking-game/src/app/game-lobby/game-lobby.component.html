@@ -1,6 +1,6 @@
 <!--Bar on top of page for round buttons-->
 <div class="iconBar">
-  <div class="iconBtn iconRight iconRed" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">
+  <div class="iconBtn iconRight iconRed" type="button" id="exitLobbyBtn" data-toggle="modal" data-target="#exitLobby">
     <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2"
       class="bi bi-x-lg" viewBox="0 0 16 16">
       <path
@@ -8,6 +8,32 @@
     </svg>
   </div>
 </div>
+
+<!--Modal-->
+<div class="modal bd-example-modal-sm slide-in" tabindex="-1" id="exitLobby" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!--x button-->
+          <div class="iconBtn iconRight iconRed" style="height:2em;width:2em;margin-right:0.8em;margin-top:0.8em" type="button" id="exitLobbyBtn" data-dismiss="modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white" style="stroke:white;stroke-width:2"
+          class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path
+          d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+          </svg>
+          </div>
+      <!--content-->
+      <div id="exitLobbyHeader modalHeader"><h5 style="margin-top:0 !important">Poistu huoneesta</h5></div>
+      <div class="modal-body">
+        <p>Oletko varma, että haluat poistua huoneesta?</p>
+      </div>
+      <!--modal footer-->
+      <div id="exitLobbyFooter" style="text-align:center;padding:0.8em">
+        <button type="button" class="button4" data-dismiss="modal">Peruuta</button> <button type="button" class="button3" data-dismiss="modal" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Poistu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal ends-->
 
 <h1>Lobby</h1>
 <!--List of players-->
