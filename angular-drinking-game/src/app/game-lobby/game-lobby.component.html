@@ -10,10 +10,11 @@
 
 
 <p><b>Odota, että ylläpitäjä aloittaa pelin.</b></p>
-
+<!--Tähän tulee bäkkäristä lista pelaajista-->
+<!--startGame nappulaan tulee wsService createGamestate?-->
 <!--Navigation-->
 <div class="navi">
-    <div class="navitem"><button id="chooseGame" class="button1" [routerLink]="['/GameOne']"
+    <div class="navitem"><button id="startGame" class="button1" [routerLink]="['/GameOne']"
             routerLinkActive="router-link-active">Aloita peli</button></div>
     <div class="navitem"><button (click)="wsService.closeServer()" id="back" class="button2"
             [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Poistu</button></div>
