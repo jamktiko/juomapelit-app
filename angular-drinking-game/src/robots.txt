@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /GameOne/
+Disallow: /Settings/
+Disallow: /Contact/
+Disallow: /JoinTable/
+Disallow: /JoinLobby/
+Disallow: /CreateLobby/
