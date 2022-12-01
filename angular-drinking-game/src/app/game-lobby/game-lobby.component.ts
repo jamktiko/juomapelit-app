@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from '../services/websocket.service';
+import { LobbycodeService } from '../services/lobbycode.service';
 
 @Component({
   selector: 'app-game-lobby',
@@ -7,10 +8,46 @@ import { WebsocketService } from '../services/websocket.service';
   styleUrls: ['./game-lobby.component.css'],
 })
 export class GameLobbyComponent implements OnInit {
-  constructor(public wsService: WebsocketService) {}
-
-  ngOnInit(): void {}
+  constructor(public wsService: WebsocketService, public lcservice: LobbycodeService) {}
+  messageFromServer: any;
   players: any = [];
+  lobbyCode = '';
+
+  ngOnInit(): void {
+    this.wsService.messages$.subscribe({
+      next: (x: any) => {
+        console.log('got value ' + JSON.stringify(x));
+        this.messageFromServer = x;
+        //console.log(this.messageFromServer);
+      },
+      error(err: any) {
+        console.error('something wrong occurred: ' + err);
+      },
+    });
+    this.lobbyCode = this.lcservice.lobbycode;
+    this.getLobbyPlayers(this.lobbyCode);
+    console.log(this.messageFromServer);
+    this.vaikkafunktio();
+    console.log(this.players);
+  }
+
+  //players: any = this.playerList;
+
+  getLobbyPlayers(x: string) {
+    this.wsService.sendToServer({ action: 'admin', data: { path: 'getHost', lobbyCode: x, name: 'Test' } });
+  }
+
+  vaikkafunktio() {
+    this.players.push(JSON.stringify(this.messageFromServer));
+    console.log(this.players);
+  }
+
+  consolelog() {
+    console.log(this.players);
+    console.log(this.players[0]);
+    console.log(this.messageFromServer);
+    console.log(this.messageFromServer[0]);
+  }
 
   //Makes random name for player. For testing purposes.
   /*  testPlayers(){
