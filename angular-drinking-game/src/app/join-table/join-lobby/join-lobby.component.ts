@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { LobbycodeService } from 'src/app/services/lobbycode.service';
 
 @Component({
   selector: 'app-join-lobby',
@@ -7,13 +8,25 @@ import { WebsocketService } from 'src/app/services/websocket.service';
   styleUrls: ['./join-lobby.component.css'],
 })
 export class JoinLobbyComponent implements OnInit {
-  constructor(public wsService: WebsocketService) {}
+  messageFromServer: any;
+  constructor(public wsService: WebsocketService, private lcservice: LobbycodeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.wsService.messages$.subscribe({
+      next: (x: any) => {
+        //console.log('got value ' + x);
+        this.messageFromServer = JSON.stringify(x.retData);
+      },
+      error(err: any) {
+        console.error('something wrong occurred: ' + err);
+      },
+    });
+  }
 
   getLobbyCode(val: string) {
     this.msg.data.lobbyCode = val;
     console.log(this.msg);
+    this.lcservice.lobbycode = val;
   }
 
   getUserInput(val: string) {
