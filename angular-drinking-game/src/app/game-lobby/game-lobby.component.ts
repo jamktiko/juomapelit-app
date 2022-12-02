@@ -12,35 +12,39 @@ export class GameLobbyComponent implements OnInit {
   messageFromServer: any;
   players: any = [];
   lobbyCode = '';
-
   ngOnInit(): void {
     this.wsService.messages$.subscribe({
       next: (x: any) => {
         console.log('got value ' + JSON.stringify(x));
+        console.log(Object.values(x));
         this.messageFromServer = x;
-        //console.log(this.messageFromServer);
+        console.log(this.messageFromServer);
+        
       },
       error(err: any) {
         console.error('something wrong occurred: ' + err);
       },
     });
     this.lobbyCode = this.lcservice.lobbycode;
-    this.getLobbyPlayers(this.lobbyCode);
-    console.log(this.messageFromServer);
-    this.vaikkafunktio();
+
+    //this.getLobbyPlayers(this.lobbyCode);
+  
+  }
+
+  pushPlayers() {
+    this.players = [];
+    for(let i = 1; i<this.messageFromServer.length; i++){
+    this.players.push(this.messageFromServer.retData);
+    }
     console.log(this.players);
   }
+  
 
-  //players: any = this.playerList;
-
-  getLobbyPlayers(x: string) {
-    this.wsService.sendToServer({ action: 'admin', data: { path: 'getHost', lobbyCode: x, name: 'Test' } });
+   getLobbyPlayers(x: string) {
+    this.wsService.sendToServer({ action: 'admin', data: { path: 'getPlayers', lobbyCode: x, name: 'Test' } });
   }
 
-  vaikkafunktio() {
-    this.players.push(JSON.stringify(this.messageFromServer));
-    console.log(this.players);
-  }
+  
 
   consolelog() {
     console.log(this.players);
