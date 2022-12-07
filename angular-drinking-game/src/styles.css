@@ -455,9 +455,9 @@ width: 100%;
 height: 100%;
 z-index: -1000;
 overflow: hidden;
-animation: 3s slideup 2s linear;
+animation: 5s slideup 2s linear;
 animation-fill-mode: backwards;
-animation-timing-function: ease-out;
+animation-timing-function: ease-in-out;
 background: linear-gradient(to bottom,  rgba(255,197,120,1) 0%,rgba(251,157,35,1) 100%);
 }
 
@@ -485,8 +485,8 @@ background: linear-gradient(to bottom,  rgba(255,197,120,1) 0%,rgba(251,157,35,1
   height: 10vh;
   background-color: white;
   overflow:hidden;
-  animation: wave 3s ease-in-out infinite, 3s  slideup-foam 2s linear;
-  animation-timing-function: ease-out;
+  animation: wave 3s ease-in-out infinite, 5s  slideup-foam 2s linear;
+  animation-timing-function: ease-in-out;
   z-index: -1;
   animation-fill-mode: backwards;
 }

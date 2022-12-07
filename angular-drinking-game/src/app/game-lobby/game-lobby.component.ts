@@ -9,9 +9,9 @@ import { LobbycodeService } from '../services/lobbycode.service';
 })
 export class GameLobbyComponent implements OnInit {
   constructor(public wsService: WebsocketService, public lcservice: LobbycodeService) {}
-  wsResponse: any = [];
   players: any = [];
   lobbyCode = '';
+
   ngOnInit(): void {
     this.getLobbyPlayers();
     this.wsService.messages$.subscribe({
@@ -30,12 +30,12 @@ export class GameLobbyComponent implements OnInit {
 
     console.log(this.players);
     this.lobbyCode = this.lcservice.lobbycode;
-
     //this.getLobbyPlayers(this.lobbyCode);
-  
   }
 
-
+  compareHostId(x: string) {
+    this.wsService.sendToServer({ action: 'admin', data: { path: 'compareHost', lobbyCode: x, name: '' } });
+  }
   
   // Lobbycode tulee parametrina tähän funktioon
    getLobbyPlayers() {
@@ -47,6 +47,10 @@ export class GameLobbyComponent implements OnInit {
 
   
 
+  leavingLobby(x: string) {
+    this.compareHostId(x);
+    this.wsService.closeServer();
+  }
   //Makes random name for player. For testing purposes.
   /*  testPlayers(){
     let randName = Math.random().toString(36).substring(7);

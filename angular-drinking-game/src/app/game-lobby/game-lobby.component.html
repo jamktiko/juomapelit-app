@@ -32,7 +32,7 @@
       <!--modal footer-->
       <div id="exitLobbyFooter" style="text-align:center;padding:0.8em">
         <button type="button" class="button4" data-dismiss="modal">Peruuta</button> <button type="button"
-          class="button3" (click)="this.wsService.closeServer()" data-dismiss="modal" [routerLink]="['/JoinTable']"
+          class="button3" (click)="leavingLobby(this.lobbyCode)" data-dismiss="modal" [routerLink]="['/JoinTable']"
           routerLinkActive="router-link-active">Poistu</button>
       </div>
     </div>

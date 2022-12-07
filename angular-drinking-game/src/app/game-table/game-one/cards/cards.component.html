@@ -7,15 +7,15 @@
 </div>
 
 
-<div id="cardBox">
+<div id="cardBox" (click)="nextCard()">
     <!--Backside of card-->
-    <div (click)="nextCard()">
+    <div > 
         <canvas #canvas id="canvas" width="300" height="470"></canvas>
     </div>
 
-    <div (click)="nextCard()" id="rule" class="disableSelection" *ngIf="this.numcount % 2 === 0">{{this.curRule}}</div>
+    <div id="rule" class="disableSelection" *ngIf="this.numcount % 2 === 0">{{this.curRule}}</div>
 
-    <div (click)="nextCard()" id="ruleHeader" class="disableSelection" *ngIf="this.numcount % 2 === 0">
+    <div id="ruleHeader" class="disableSelection" *ngIf="this.numcount % 2 === 0">
         {{this.curRuleHeader}}
     </div>
 </div>
