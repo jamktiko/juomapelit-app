@@ -123,20 +123,20 @@ export class CardsComponent implements OnInit {
         // Changes the suit (string) to unicode. So it can be displayed right on mobile
         if (this.shuffledCards[0][0]['suit'] == "♦") {
           this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u2666', 35, 110);
-          this.c.fillText('\u2666', -265, -360);
+          this.c.fillText('\u2666\uFE0E', 35, 110);
+          this.c.fillText('\u2666\uFE0E', -265, -360);
         } else if (this.shuffledCards[0][0]['suit'] == "♥") {
           this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u2665', 35, 110);
-          this.c.fillText('\u2665', -265, -360);
+          this.c.fillText('\u2665\uFE0E', 35, 110);
+          this.c.fillText('\u2665\uFE0E', -265, -360);
         } else if (this.shuffledCards[0][0]['suit'] == "♠") {
           this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u2660', 35, 110);
-          this.c.fillText('\u2660', -265, -360);
+          this.c.fillText('\u2660\uFE0E', 35, 110);
+          this.c.fillText('\u2660\uFE0E', -265, -360);
         } else if (this.shuffledCards[0][0]['suit'] == "♣") {
           this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u2663', 35, 110);
-          this.c.fillText('\u2663', -265, -360);
+          this.c.fillText('\u2663\uFE0E', 35, 110);
+          this.c.fillText('\u2663\uFE0E;', -265, -360);
         };
     
     this.c.font = "50px Roboto-Black, sans-serif";
