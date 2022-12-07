@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { LobbycodeService } from 'src/app/services/lobbycode.service';
 
 @Component({
   selector: 'app-create-lobby',
@@ -10,10 +11,12 @@ export class CreateLobbyComponent implements OnInit {
   koodi = this.randomFourLetterCode();
   messageFromServer: any;
 
-  constructor(public wsService: WebsocketService) {}
+  constructor(public wsService: WebsocketService, private lcservice: LobbycodeService) {}
 
   ngOnInit(): void {
     this.randomFourLetterCode();
+    this.lcservice.changeLobbycode(this.koodi);
+    console.log(this.lcservice.lobbycode);
     this.wsService.messages$.subscribe({
       next: (x) => {
         console.log('got value ' + JSON.stringify(x));
