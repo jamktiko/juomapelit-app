@@ -1,5 +1,21 @@
-<h1>Valitse peli</h1>
-<!--List of players-->
+<!--Bar on top of page for round buttons-->
+<div class="iconBar">
+    <div class="iconBtn" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active"> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+      <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+    </svg>
+  </div>
+  </div>
+  
+  <!--Logo-->
+  <div id="logo" style="margin-bottom:4em">
+      <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:300px;padding-top:1em">
+  </div>
 
-<button id="vesiputous" class="button2" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Vesiputous</button><br>
-<button id="back" class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
+  <h1>Valitse peli</h1>
+  
+  <!--Navigation-->
+  <div class="navi" style="padding-top:0">
+    <div class="navitem"><button id="korttipakka" class="button1" [routerLink]="['/GameTwo']" routerLinkActive="router-link-active">Korttipakka</button></div>
+    <div class="navitem"><button id="vesiputous" class="button1" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Vesiputous</button></div>
+  </div>

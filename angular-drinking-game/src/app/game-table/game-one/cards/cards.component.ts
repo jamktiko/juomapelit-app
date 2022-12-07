@@ -1,6 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
-import { RULES } from '../../game-shareable/mock-rules';
 import { DeckComponent } from '../deck/deck.component';
 
   @Component({
@@ -19,8 +17,6 @@ export class CardsComponent implements OnInit {
   curRuleHeader: any;
   card: any;
 
-  
-
   constructor (public deckComponent : DeckComponent) {};
   
   @ViewChild('canvas', { static: true }) 
@@ -28,6 +24,18 @@ export class CardsComponent implements OnInit {
   canvas: ElementRef<HTMLCanvasElement>|ElementRef;
   // @ts-ignore
   c: CanvasRenderingContext2D|CanvasRenderingContext2D;
+
+  cw = 300;
+  ch = 475;
+
+  elem = document.getElementById('canvas');
+
+  toggleAdd() {
+    this.elem?.classList.add('fade');
+  }
+  toggleRem() {
+    this.elem?.classList.remove('fade');
+  }
 
   // Empty the canvas
   clearCanvas() {
@@ -121,17 +129,7 @@ export class CardsComponent implements OnInit {
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
   }
-/*  getRandomCard() {
-    // Get random card from array
-     this.card = Object.values(this.shuffledCards[0][Math.floor(Math.random() * this.shuffledCards[0].length)])
 
-     // Log name and rule of card
-     console.log(this.card[2], this.card[4], this.playedCards.length, this.shuffledCards[0].length)
-
-     this.playedCards.push(this.card)
-     this.shuffledCards[0].splice(this.shuffledCards[0].indexOf(this.card), 1)
-   };
-   */
   // Plays the next card when the user clicks the button to do so
   numcount = 0;
   //this.playedCards.indexOf(this.card) === -1
@@ -167,27 +165,18 @@ export class CardsComponent implements OnInit {
     if (this.numcount % 2 === 0 || this.numcount === 0) {
       this.clearCanvas();
       this.cardBackside();
-
       this.numcount++;
     } else {
       this.next();
       this.cardFrontside();
       this.addSuitRank();
-
       this.numcount++;
-
     }}
-//      console.log("s " + JSON.stringify(this.shuffledCards[0]))
-//      console.log("p " + this.playedCards[0])
     }
-  
 
-  // When page loads
-  ngOnInit(): void {
-
-    this.c = this.canvas.nativeElement.getContext('2d');
-    this.cardBackside();
-
-    //console.log(this.shuffledCards)
-  }
+// When page loads
+ngOnInit(): void {
+  this.c = this.canvas.nativeElement.getContext('2d');
+  this.cardBackside();
+}
 }

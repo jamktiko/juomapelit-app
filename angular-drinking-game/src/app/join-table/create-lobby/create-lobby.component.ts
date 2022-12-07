@@ -41,4 +41,5 @@ export class CreateLobbyComponent implements OnInit {
   }
 
   msg = { action: 'admin', data: { path: 'hostLobby', lobbyCode: this.koodi, name: 'pelaaja1' } };
+
 }

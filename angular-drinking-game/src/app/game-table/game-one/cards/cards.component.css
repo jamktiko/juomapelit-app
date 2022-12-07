@@ -8,8 +8,6 @@ body {
     align-items: center;
 }
 
-
-
 #cardBox > #rule {
     position: absolute;
     width: 280px;
@@ -39,5 +37,7 @@ body {
     height: 475px;
     border-radius:20px;
     margin: 0 auto;
+    opacity:1;
+    transition: opacity 3s;
     border: 2px solid #333333;
 }
