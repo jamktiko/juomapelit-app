@@ -44,7 +44,7 @@
 <h1>{{this.lobbyCode}}</h1>
 <!--Lista pelaajista. tässä otetaan players taulukosta 0 indexi käsittelyyn koska,
  en ole keksinyt miten serverin antaman responssin saisi muuten järkevästi parsittua. :D t:Aku-->
-<table id="players" style="margin-bottom: 30px" *ngFor="let player of players[0]">
+<table id="players" style="margin-bottom: 30px" *ngFor="let player of players">
   {{player}}
 </table>
 
@@ -58,6 +58,3 @@
       routerLinkActive="router-link-active">Aloita peli</button></div>
 </div>
 
-
-
-<button (click)="getLobbyPlayers()">TESTI</button>

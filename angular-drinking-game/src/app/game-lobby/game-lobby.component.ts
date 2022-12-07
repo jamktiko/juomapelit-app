@@ -9,17 +9,21 @@ import { LobbycodeService } from '../services/lobbycode.service';
 })
 export class GameLobbyComponent implements OnInit {
   constructor(public wsService: WebsocketService, public lcservice: LobbycodeService) {}
-  players: any = [];
+  players: any;
   lobbyCode = '';
+  messageFromServer: any;
+  
 
   ngOnInit(): void {
     this.getLobbyPlayers();
     this.wsService.messages$.subscribe({
       next: (x: any) => {
-
-        //serveri responssi players taulukkoon
-        this.players.push(Object.values(x));
-
+      // console.log('got value ' + Object.values(x));
+        this.messageFromServer = JSON.parse(x.retData);
+      // console.log(this.messageFromServer);
+      
+        this.players = this.messageFromServer;
+      // console.log(this.players);
       },
       error(err: any) {
         console.error('something wrong occurred: ' + err);
@@ -27,8 +31,6 @@ export class GameLobbyComponent implements OnInit {
     });
    
 
-
-    console.log(this.players);
     this.lobbyCode = this.lcservice.lobbycode;
     //this.getLobbyPlayers(this.lobbyCode);
   }
