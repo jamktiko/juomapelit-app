@@ -119,13 +119,31 @@ export class CardsComponent implements OnInit {
         } else if (this.shuffledCards[0][0]['rank'] == 1) {
           this.shuffledCards[0][0]['rank'] = "A";
         };
-    this.c.fillText(this.shuffledCards[0][0]['suit'], 35, 110);
+        
+        // Changes the suit (string) to unicode. So it can be displayed right on mobile
+        if (this.shuffledCards[0][0]['suit'] == "♦") {
+          this.c.font = "60px Roboto-Black, sans-serif";
+          this.c.fillText('\u2666', 35, 110);
+          this.c.fillText('\u2666', -265, -360);
+        } else if (this.shuffledCards[0][0]['suit'] == "♥") {
+          this.c.font = "60px Roboto-Black, sans-serif";
+          this.c.fillText('\u2665', 35, 110);
+          this.c.fillText('\u2665', -265, -360);
+        } else if (this.shuffledCards[0][0]['suit'] == "♠") {
+          this.c.font = "60px Roboto-Black, sans-serif";
+          this.c.fillText('\u2660', 35, 110);
+          this.c.fillText('\u2660', -265, -360);
+        } else if (this.shuffledCards[0][0]['suit'] == "♣") {
+          this.c.font = "60px Roboto-Black, sans-serif";
+          this.c.fillText('\u2663', 35, 110);
+          this.c.fillText('\u2663', -265, -360);
+        };
+    
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
-    this.c.font = "60px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
+
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
   }
