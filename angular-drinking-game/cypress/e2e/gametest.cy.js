@@ -4,7 +4,7 @@ const { describe } = require("mocha");
 
 describe("Pelitesti", () => {
   beforeEach(() => {
-    cy.visit("http://brewdeck.click");
+    cy.visit("localhost:4200/MainMenu");
   });
 
   it("Testataan että päästään peliin, peli tomii ja että pelaaja voi aloittaa uuden pelin.", () => {
@@ -20,17 +20,17 @@ describe("Pelitesti", () => {
     cy.get("button.button1").scrollIntoView();
     cy.wait(1500);
     cy.get("button.button1").click();
-    cy.url().should("include", "https://brewdeck.click/GameOne");
+    cy.url().should("include", "localhost:4200/GameOne");
     cy.wait(1000);
   });
 
   it("Testataan että päästään takaisin etusivulle", () => {
     cy.wait(1500);
-    cy.visit("https://brewdeck.click/GameOne");
+    cy.visit("localhost:4200/GameOne");
     cy.wait(5000);
     cy.get("div#exit.iconBtn.iconRight.iconRed").click();
     cy.wait(1500);
-    cy.url().should("include", "https://brewdeck.click/");
+    cy.url().should("include", "localhost:4200/MainMenu");
     cy.wait(1000);
   });
 });
