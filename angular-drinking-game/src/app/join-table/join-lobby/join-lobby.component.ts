@@ -12,6 +12,7 @@ export class JoinLobbyComponent implements OnInit {
   constructor(public wsService: WebsocketService, private lcservice: LobbycodeService) {}
 
   ngOnInit(): void {
+    this.lcservice.changeHostFalse();
     this.wsService.messages$.subscribe({
       next: (x: any) => {
         //console.log('got value ' + x);
