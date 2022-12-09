@@ -40,12 +40,11 @@
 </div>
 <!--Modal ends-->
 
-<h1>Lobby</h1>
-<h1>{{this.lobbyCode}}</h1>
+<h1>Lobby {{this.lobbyCode}}</h1>
 <!--Lista pelaajista. tässä otetaan players taulukosta 0 indexi käsittelyyn koska,
  en ole keksinyt miten serverin antaman responssin saisi muuten järkevästi parsittua. :D t:Aku-->
-<table id="players" style="margin-bottom: 30px" *ngFor="let player of players">
-  {{player}}
+<table id="players" *ngFor="let player of players">
+  <div class="playerName">{{player}}</div>
 </table>
 
 

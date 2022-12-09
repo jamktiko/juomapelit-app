@@ -16,7 +16,7 @@ export class CreateLobbyComponent implements OnInit {
   ngOnInit(): void {
     this.randomFourLetterCode();
     this.lcservice.changeLobbycode(this.koodi);
-    this.lcservice.changeHost();
+    this.lcservice.changeHostFalse();
     console.log(this.lcservice.lobbycode);
     this.wsService.messages$.subscribe({
       next: (x) => {
