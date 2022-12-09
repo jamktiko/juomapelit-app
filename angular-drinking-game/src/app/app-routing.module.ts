@@ -6,6 +6,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { GameTableComponent } from './game-table/game-table.component';
 import { JoinTableComponent } from './join-table/join-table.component';
 import { GameOneComponent } from './game-table/game-one/game-one.component';
+import { GameTwoComponent } from './game-table/game-two/game-two.component';
+import { GameThreeComponent } from './game-table/game-three/game-three.component';
 import { JoinLobbyComponent } from './join-table/join-lobby/join-lobby.component';
 import { GameLobbyComponent } from './game-lobby/game-lobby.component';
 import { AppComponent } from './app.component';
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'JoinTable', component: JoinTableComponent },
   { path: 'GameTable', component: GameTableComponent },
   { path: 'GameOne', component: GameOneComponent },
+  { path: 'GameTwo', component: GameTwoComponent },
+  { path: 'GameThree', component: GameThreeComponent},
   { path: 'JoinLobby', component: JoinLobbyComponent },
   { path: 'GameLobby', component: GameLobbyComponent },
   { path: 'CreateLobby', component: CreateLobbyComponent },
@@ -36,6 +40,7 @@ export const routingComponents = [
   JoinTableComponent,
   GameTableComponent,
   GameOneComponent,
+  GameTwoComponent,
   JoinLobbyComponent,
   GameLobbyComponent,
   CreateLobbyComponent,

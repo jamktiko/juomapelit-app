@@ -9,6 +9,11 @@ import { CreateLobbyComponent } from './join-table/create-lobby/create-lobby.com
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
+import { Deck2Component } from './game-table/game-two/deck2/deck2.component';
+import { Cards2Component } from './game-table/game-two/cards2/cards2.component';
+import { GameThreeComponent } from './game-table/game-three/game-three.component';
+import { Deck3Component } from './game-table/game-three/deck3/deck3.component';
+import { Cards3Component } from './game-table/game-three/cards3/cards3.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,12 @@ import { SettingsComponent } from './settings/settings.component';
     CreateLobbyComponent,
     ContactComponent,
     SettingsComponent,
+    Deck2Component,
+    Cards2Component,
+    GameThreeComponent,
+    Deck3Component,
+    Cards3Component,
+
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

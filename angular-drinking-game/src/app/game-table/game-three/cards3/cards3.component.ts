@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
-import { DeckComponent } from '../deck/deck.component';
+import { Deck3Component } from '../deck3/deck3.component';
 
-  @Component({
-    selector: 'app-cards',
-    templateUrl: './cards.component.html',
-    styleUrls: ['./cards.component.css']
-  })
-  
-export class CardsComponent implements OnInit {
+@Component({
+  selector: 'app-cards3',
+  templateUrl: './cards3.component.html',
+  styleUrls: ['./cards3.component.css']
+})
+export class Cards3Component implements OnInit {
   // Inputs
   @Input() curRule: any;
   @Input() shuffledCards:any[] = []; // Shuffled cards
@@ -17,7 +16,7 @@ export class CardsComponent implements OnInit {
   curRuleHeader: any;
   card: any;
 
-  constructor (public deckComponent : DeckComponent) {};
+  constructor (public deck3Component : Deck3Component) {};
   
   @ViewChild('canvas', { static: true }) 
   // @ts-ignore
@@ -119,31 +118,13 @@ export class CardsComponent implements OnInit {
         } else if (this.shuffledCards[0][0]['rank'] == 1) {
           this.shuffledCards[0][0]['rank'] = "A";
         };
-        
-        // Changes the suit (string) to unicode. So it can be displayed right on mobile
-        if (this.shuffledCards[0][0]['suit'] == "♦") {
-          this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u{2666}\u{FE0E}', 35, 110);
-          this.c.fillText('\u{2666}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♥") {
-          this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u{2665}\u{FE0E}', 35, 110);
-          this.c.fillText('\u{2665}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♠") {
-          this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u{2660}\u{FE0E}', 35, 110);
-          this.c.fillText('\u{2660}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♣") {
-          this.c.font = "60px Roboto-Black, sans-serif";
-          this.c.fillText('\u{2663}\u{FE0E}', 35, 110);
-          this.c.fillText('\u{2663}\u{FE0E}', -265, -360);
-        };
-    
+    this.c.fillText(this.shuffledCards[0][0]['suit'], 35, 110);
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
-
+    this.c.font = "60px Roboto-Black, sans-serif";
+    this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
     this.c.font = "50px Roboto-Black, sans-serif";
     this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
   }
@@ -152,7 +133,7 @@ export class CardsComponent implements OnInit {
   numcount = 0;
   //this.playedCards.indexOf(this.card) === -1
   next() {
-    if (this.deckComponent.cardCount < 52) {
+    if (this.deck3Component.cardCount < 52) {
         // Adds the card to the played cards array
         let temp = this.shuffledCards[0][0];
         this.shuffledCards[0].splice(0, 1);
@@ -160,23 +141,23 @@ export class CardsComponent implements OnInit {
         this.curRule = this.shuffledCards[0][0]['rule'];
         this.curRuleHeader = this.shuffledCards[0][0]['name'];
         // Increases the card count
-        this.deckComponent.cardCount++;
+        this.deck3Component.cardCount++;
       } else {
         // If the deck is empty, the game is over
-        this.deckComponent.isOver = true;
+        this.deck3Component.isOver = true;
       }
   }
  
   // Switches to next card
   nextCard() {
-    if (this.deckComponent.loading) {
+    if (this.deck3Component.loading) {
       return}
-    if (this.deckComponent.cardCount === 0){
+    if (this.deck3Component.cardCount === 0){
       this.cardFrontside();
       this.addSuitRank();
       this.curRule = this.shuffledCards[0][0]['rule'];
       this.curRuleHeader = this.shuffledCards[0][0]['name'];
-      this.deckComponent.cardCount++;
+      this.deck3Component.cardCount++;
       //This is the part where the app chooses to either show the card or its backside
       //also check the html file, there is a ngif that checks if the card should have rules drawn on top of it or not. The code is somewhat funky at this point.
     } else { 
