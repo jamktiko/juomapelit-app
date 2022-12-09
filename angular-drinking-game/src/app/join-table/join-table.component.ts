@@ -8,5 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class JoinTableComponent implements OnInit {
   constructor() {}
 
+  isCollapsed = true;
+
+  toggleCollapse() {
+    if(this.isCollapsed) {
+      this.isCollapsed = false;
+    } else {
+      this.isCollapsed = true;
+    }
+  }
+
   ngOnInit(): void {}
 }

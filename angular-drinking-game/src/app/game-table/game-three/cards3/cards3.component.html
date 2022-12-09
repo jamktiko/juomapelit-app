@@ -1,0 +1,21 @@
+<!--Loading data-->
+
+<div id="loading" *ngIf="this.deck3Component.loading">
+    <div class="spinner-border" style="width:3rem;height:3rem;color:yellow" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>
+
+
+<div id="cardBox" (click)="nextCard()">
+    <!--Backside of card-->
+    <div > 
+        <canvas #canvas id="canvas" width="300" height="470"></canvas>
+    </div>
+
+    <div id="rule" class="disableSelection" *ngIf="this.numcount % 2 === 0">{{this.curRule}}</div>
+
+    <div id="ruleHeader" class="disableSelection" *ngIf="this.numcount % 2 === 0">
+        {{this.curRuleHeader}}
+    </div>
+</div>

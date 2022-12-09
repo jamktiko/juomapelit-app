@@ -18,8 +18,15 @@
   <div class="navitem" style="display:flex;padding-right:0.3em;justify-content:flex-end;flex-direction: row;">
       <div class="speech-bubble" style="position:absolute;margin-top:-20px;margin-right:15px">
         Pelaa heti!</div></div>
-    <div class="navitem"><button id="quickGame" class="button1" [routerLink]="['/GameOne']" routerLinkActive="router-link-active">Pikapeli</button>
+    <!--nav buttons-->
+    <div class="navitem"><button id="quickGame" type="button" (click)="toggleCollapse()" class="button1">Pikapeli</button>
+        <!--Pikapeli collapse-->
+        <div id="pikapeli" *ngIf="this.isCollapsed === false">
+          <div class="navitem collapseBtn"><button id="emptyDeck" class="button2" [routerLink]="['/GameTwo']" routerLinkActive="router-link-active">Korttipakka</button></div>
+          <div class="navitem collapseBtn"><button id="vesiputous" class="button2" [routerLink]="['/GameThree']" routerLinkActive="router-link-active">Vesiputous</button></div>
+          </div>
     </div>
+    <!--nav buttons-->
     <div class="navitem"><button id="joinGameButton" class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button></div>
     <div class="navitem"><button id="createGame" class="button1" [routerLink]="['/CreateLobby']" routerLinkActive="router-link-active">Luo peli</button></div>
 </div>

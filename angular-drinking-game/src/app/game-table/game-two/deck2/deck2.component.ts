@@ -4,19 +4,18 @@ import { API } from 'aws-amplify';
 import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
-  selector: 'app-deck',
-  templateUrl: './deck.component.html',
-  styleUrls: ['./deck.component.css'],
+  selector: 'app-deck2',
+  templateUrl: './deck2.component.html',
+  styleUrls: ['./deck2.component.css']
 })
-export class DeckComponent implements OnInit {
+export class Deck2Component implements OnInit {
   isOver = false; // Tells when the game is over
   //cards = CARDS;
   //rules = RULES;
-  
+
   cardCount = 0; // How many cards have been played
   curRule = '';
-  curPlayerId = 0; // host starts the game
-  curPlayerName = '';
+
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
 
@@ -31,7 +30,6 @@ export class DeckComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCards();
-    this.playerChange();
   }
   loading = true;
   // Fisher-Yates shuffle algorithm
@@ -75,28 +73,6 @@ export class DeckComponent implements OnInit {
     this.shuffle(this.shuffledCards[0]);
     this.curRule = this.shuffledCards[0][0]['rule'];
   }
-
-
-  // This function is called when the user clicks the button to play a card, it also changes the player
-  playerArr = ['pelaaja1', 'pelaaja2', 'pelaaja3', 'pelaaja4', 'pelaaja5', 'pelaaja6']; // This is an array of players, this is a placeholder for now, I dont know how to get the players from the table :D
-  numcount = 0;
-  playerChange() {
-    let playerCount = this.playerArr.length; // this is the number of players. This is a placeholder for now, I dont know how to get the number of players from the table :D
-    let x; // Temporary variable to hold the current player
-    // Check if the card back is visible or not.
-    if (this.numcount % 2 === 0) {
-      // If curPlayerId is the last player in the array, set it to 0, else increment it by 1
-      if (this.curPlayerId === playerCount - 1) {
-        x = this.playerArr[this.curPlayerId];
-        this.curPlayerId = 0;
-      } else {
-        x = this.playerArr[this.curPlayerId];
-        this.curPlayerId++;
-      }
-      this.curPlayerName = x;
-      } 
-      this.numcount++;
-}
 
   // Restarts the page
   reloadPage() {
