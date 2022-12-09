@@ -1,7 +1,6 @@
 <!--Bar on top of page for round buttons-->
 <div class="iconBar">
-  <div class="iconBtn iconRed" id="exitButton" (click)="wsService.closeServer()" [routerLink]="['/JoinTable']"
-    routerLinkActive="router-link-active">
+  <div class="iconBtn iconRed" id="exitButton" data-toggle="modal" data-target="#exitGame">
     <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2"
       class="bi bi-x-lg" viewBox="0 0 16 16">
       <path
