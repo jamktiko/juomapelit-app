@@ -16,11 +16,11 @@ export class CreateLobbyComponent implements OnInit {
   ngOnInit(): void {
     this.randomFourLetterCode();
     this.lcservice.changeLobbycode(this.koodi);
-    this.lcservice.changeHostFalse();
+    this.lcservice.changeHost();
     console.log(this.lcservice.lobbycode);
     this.wsService.messages$.subscribe({
       next: (x) => {
-       // console.log('got value ' + JSON.stringify(x));
+        // console.log('got value ' + JSON.stringify(x));
         this.messageFromServer = x;
         //console.log(this.messageFromServer);
       },
@@ -45,5 +45,4 @@ export class CreateLobbyComponent implements OnInit {
   }
 
   msg = { action: 'admin', data: { path: 'hostLobby', lobbyCode: this.koodi, name: 'pelaaja1' } };
-
 }

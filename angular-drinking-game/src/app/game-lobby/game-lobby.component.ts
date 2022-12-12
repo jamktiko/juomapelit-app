@@ -15,24 +15,22 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   messageFromServer: any;
   interval: any;
   isHost = this.lcservice.isHost;
+  lobbycode = this.lcservice.lobbycode;
   ngOnInit(): void {
     this.lobbyCode = this.lcservice.lobbycode;
-
-    this.getLobbyPlayers();
-  
-
     this.wsService.messages$.subscribe({
       next: (x: any) => {
-
         this.messageFromServer = JSON.parse(x.retData);
       },
       error(err: any) {
         console.error('something wrong occurred: ' + err);
       },
     });
-   
 
-    
+    this.getLobbyPlayers();
+    setTimeout(() => {
+      this.insertData();
+    }, 5000);
     //this.getLobbyPlayers(this.lobbyCode);
   }
 
@@ -41,32 +39,28 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
       clearInterval(this.interval);
     }
   }
-  
 
   getLobbyPlayers() {
     //execute every 2 seconds
     this.interval = setInterval(() => {
-      this.wsService.sendToServer({ action: 'admin', data: { path: 'getPlayers', lobbyCode: this.lobbyCode, name: '' } });
+      this.wsService.sendToServer({
+        action: 'admin',
+        data: { path: 'getPlayers', lobbyCode: this.lobbyCode, name: '' },
+      });
       this.players = this.messageFromServer;
     }, 2000);
-
   }
 
   compareConnectionId(x: string) {
-    this.wsService.sendToServer({ action: 'admin', data: { path: 'compareHostId', lobbyCode: this.lobbyCode, name: '' } });
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'compareHostId', lobbyCode: this.lobbyCode, name: '' },
+    });
   }
-  
+
   // Lobbycode tulee parametrina tähän funktioon
-  
-   
 
   //Async function to get hostId from server then players from server
-
-  
-
-  
-
-  
 
   leavingLobby(x: string) {
     this.wsService.closeServer();
@@ -76,4 +70,17 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     let randName = Math.random().toString(36).substring(7);
     this.players.push(randName);
   } */
+
+  insertData() {
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'inlobby' },
+    });
+  }
+  gamebegining() {
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'ingame' },
+    });
+  }
 }
