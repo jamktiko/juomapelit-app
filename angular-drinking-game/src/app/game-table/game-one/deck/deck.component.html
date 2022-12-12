@@ -15,8 +15,7 @@
     </svg>
   </div>
 </div>
-<div class="currentPlayer">{{this.curPlayerName}}</div>
-
+{{this.curPlayer}}
 <!--Cards-component-->
 <app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards"
   [loading]="this.loading" (click)="this.playerChange()">
@@ -28,6 +27,8 @@
   <button id="newGame" type="button" class="button1" (click)="newGame()">Uusi peli</button>
 </div>
 
+
+<button (click)="clog()">Lol</button>
 
 <!--Guide modal-->
 <div id="rules" class="modal fade bd-example-modal-lg" role="dialog">

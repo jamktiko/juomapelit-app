@@ -9,6 +9,7 @@ import { LobbycodeService } from 'src/app/services/lobbycode.service';
   templateUrl: './deck.component.html',
   styleUrls: ['./deck.component.css'],
 })
+
 export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   //cards = CARDS;
@@ -16,8 +17,7 @@ export class DeckComponent implements OnInit {
 
   cardCount = 0; // How many cards have been played
   curRule = '';
-  curPlayerId = 0; // host starts the game
-  curPlayerName = '';
+
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
 
@@ -28,6 +28,7 @@ export class DeckComponent implements OnInit {
     queryStringParameters: {}, // OPTIONAL
   };
 
+  playerArr: any; // This is an array of players, this is a placeholder for now, I dont know how to get the players from the table :D
   constructor(public wsService: WebsocketService, public lcService: LobbycodeService) {}
 
   messageFromServer: any;
@@ -48,20 +49,20 @@ export class DeckComponent implements OnInit {
     });
     this.getCards();
 
-    //this.pushPlayers();
 
     setTimeout(() => {
       this.playerArr = this.item.players;
       console.log(JSON.stringify(this.item.players));
       console.log(this.playerArr);
-      this.playerChange();
     }, 3000);
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
 
+
+  //Loading boolean, which determines if the cards are clickable or not
   loading = true;
-  // Fisher-Yates shuffle algorithm
+  // Fisher-Yates shuffle algorithm for shuffling the cards. No need to worry about this.
   shuffle(cards: Card[]) {
     for (let i = cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -107,25 +108,45 @@ export class DeckComponent implements OnInit {
   }
 
   // This function is called when the user clicks the button to play a card, it also changes the player
-  playerArr: any; // This is an array of players, this is a placeholder for now, I dont know how to get the players from the table :D
-  numcount = 0;
-  playerChange() {
-    let playerCount = this.playerArr.length; // this is the number of players. This is a placeholder for now, I dont know how to get the number of players from the table :D
-    let x; // Temporary variable to hold the current player
-    // Check if the card back is visible or not.
-    if (this.numcount % 2 === 0) {
-      // If curPlayerId is the last player in the array, set it to 0, else increment it by 1
-      if (this.curPlayerId === playerCount - 1) {
-        x = this.playerArr[this.curPlayerId];
-        this.curPlayerId = 0;
-      } else {
-        x = this.playerArr[this.curPlayerId];
-        this.curPlayerId++;
-      }
-      this.curPlayerName = x;
+  curTurn = 'pelaaja0' // Current turn
+  numcount = 0; // This is used to check if the card back is visible or not
+  curPlayerId = 0; // Current player's ID. Host is always 0
+  curPlayer:any = ''; // Current player
+
+clog() {
+console.log("nimI : " + this.curPlayer)
+console.log("id : " + this.curPlayerId)
+console.log("kenen vuoro : " + this.curTurn)
+}
+clicks = 0;
+
+
+
+playerChange() {
+  // Find the current player
+  //@ts-ignore
+  this.curPlayer = this.playerArr.find(name => name === this.curTurn);
+  // Otherwise, allow the current player to take their turn
+  this.clicks++;
+  // Check if the card back is visible or not.
+  if (this.numcount % 2 === 0) {
+    this.curPlayerId++;
+    if (this.curPlayerId === this.playerArr.length) {
+      this.curPlayerId = 0;
+      console.log(this.curPlayerId)
+    } else {
+      this.curPlayer = this.playerArr[this.curPlayerId];
+      console.log(this.curPlayerId)
     }
-    this.numcount++;
   }
+    this.numcount++;
+    //This code is meant to prevent other players from playing cards when it's not their turn, there might be an easier way to do this.
+    if (this.clicks === 3) {
+      this.clicks = 0;
+      console.log("vuoro vaihtuu pelaajalle " + this.curPlayerId)
+    }
+    return true;
+}
 
   getData() {
     this.wsService.sendToServer({ action: 'admin', data: { path: 'getAllData', lobbyCode: this.lobbycode } });
@@ -134,7 +155,7 @@ export class DeckComponent implements OnInit {
   insertData(x: any) {
     this.wsService.sendToServer({
       action: 'admin',
-      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: this.curPlayerName, deck: x },
+      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: this.curPlayer, deck: x },
     });
   }
 
