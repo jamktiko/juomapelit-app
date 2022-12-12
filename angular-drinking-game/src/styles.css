@@ -229,6 +229,10 @@ h5 {
             1px 1px 15px 0px rgba(154, 137, 164, 0.1);
 }
 
+.button1:disabled {
+  opacity: 0.7;
+}
+
 .button2:hover {
     letter-spacing: 0.11em;
     border: 3.5px solid black;
@@ -824,6 +828,7 @@ div.burst {
   animation-fill-mode: backwards;
   opacity: 0;
   font-family:Roboto-Medium;
+
 }
 @keyframes disappear {
   0% {
@@ -925,4 +930,55 @@ div.burst {
   border-bottom: 8px solid transparent;
   right:-16px;
   bottom:10px;
+}
+
+/* Speech bubble */
+.speech-bubble3 {
+  float:right;
+  border: 2px solid #121212;
+  font-size: 0.9em;
+  border-radius:0.5em;
+  position:absolute;
+  padding:0.5em;
+  min-width: 150px;
+  min-height: 30px;
+  background:white;
+  box-shadow:4px 4px 1px rgb(0, 0, 0, 0.5);
+  animation: 2s wiggle infinite;
+  animation-fill-mode: backwards;
+  font-family:Roboto-Medium;
+  z-index:100;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(2deg); }
+ 95% { transform: rotate(-2deg); }
+100% { transform: rotate(0deg); }
+}
+
+.speech-bubble3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+  border-bottom: 10px solid transparent;
+  left: 30%;
+  bottom:-22px;
+}
+.speech-bubble3:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  border-bottom: 10px solid transparent;
+  left:30%;
+  bottom:-20px;
 }
