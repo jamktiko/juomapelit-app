@@ -108,7 +108,7 @@ cardFrontside() {
 
 spade:string = '&#9830;&#xFE0E;';
 club:string = '&#9827;&#xFE0E;';
-heart:string = '&#9824;&#xFE0E;';
+heart:string = '&#10084;&#xFE0F;';
 diamond:string = '&#9830;&#xFE0E;';
 
 // Draw suit and rank to card
