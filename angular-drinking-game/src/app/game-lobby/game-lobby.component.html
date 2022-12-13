@@ -1,6 +1,6 @@
 <!--Bar on top of page for round buttons-->
 <div class="iconBar">
-  <div class="iconBtn iconRight iconRed" type="button" id="exitLobbyBtn" data-toggle="modal" data-target="#exitLobby">
+  <div class="iconBtn iconRed" type="button" id="exitLobbyBtn" data-toggle="modal" data-target="#exitLobby">
     <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2"
       class="bi bi-x-lg" viewBox="0 0 16 16">
       <path
@@ -44,7 +44,7 @@
 <!--Lista pelaajista. tässä otetaan players taulukosta 0 indexi käsittelyyn koska,
  en ole keksinyt miten serverin antaman responssin saisi muuten järkevästi parsittua. :D t:Aku-->
 <table id="players" *ngFor="let player of players">
-  <div class="playerName">{{player}}</div>
+  <div class="playerName">{{player}}</div> 
 </table>
 
 

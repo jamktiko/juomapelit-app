@@ -3,6 +3,9 @@
   margin: 0 auto;
   margin-top: 3em;
   margin-bottom: 5em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .playerName {
@@ -11,5 +14,11 @@
   border: 1px solid white;
   font-size: 1.2em;
   width: 300px;
-  margin: 0 auto !important;
+  animation: 1s slider forwards;
+  position:absolute;
+}
+@keyframes slider {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+
 }

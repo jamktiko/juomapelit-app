@@ -62,13 +62,8 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
 
   //Async function to get hostId from server then players from server
 
-  
-
-  
-
-  
-
   leavingLobby(x: string) {
+    this.compareHostId(x);
     this.wsService.closeServer();
   }
   //Makes random name for player. For testing purposes.
@@ -76,4 +71,8 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     let randName = Math.random().toString(36).substring(7);
     this.players.push(randName);
   } */
+  compareHostId(x: string) {
+    this.wsService.sendToServer({ action: 'admin', data: { path: 'compareHost', lobbyCode: x, name: '' } });
+  }
 }
+
