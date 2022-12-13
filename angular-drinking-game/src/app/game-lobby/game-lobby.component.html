@@ -55,7 +55,8 @@
 <!--If hostId value is true, show button-->
 
 <div class="navi">
-  <div class="navitem"><button id="startGame" class="button1" (click)="gamebegining()" [disabled]="!isHost">Aloita
+  <div class="navitem"><button id="startGame" class="button1" (click)="gamebegining()" [routerLink]="['/GameOne']"
+      [disabled]="!isHost">Aloita
       peli</button></div>
 </div>
 

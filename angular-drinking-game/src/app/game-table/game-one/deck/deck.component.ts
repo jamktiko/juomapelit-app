@@ -53,16 +53,15 @@ export class DeckComponent implements OnInit {
       },
     });
     this.getCards();
-    /*
-    setTimeout(() => {
-      this.playerArr = this.item.players;
-      this.curTurn = ''; // Current turn
+    
+    //setTimeout(() => {
+      this.playerArr.push(this.players);
       console.log('paska');
       this.curPlayer = this.playerArr[0];
       this.curPlayerId = 0;
       this.curTurn = this.playerArr[0];
       this.nextPlayer = this.playerArr[1];
-    }, 3000);*/
+    //}, 3000);
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
@@ -158,7 +157,9 @@ export class DeckComponent implements OnInit {
     console.log('Hänen id on ' + this.curPlayerId);
     console.log('kenen vuoro pitäisi olla: ' + this.curTurn);
     console.log('Kuka on seuraava ' + this.nextPlayer);
-    console.log(this.playerArr);
+    console.log('tässä playerArr: ' + this.playerArr);
+    console.log('ketä ' + this.players);
+    console.log('msg from server: ' + this.messageFromServer.players);
   }
 
   getData() {

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./game-lobby.component.css'],
 })
 export class GameLobbyComponent implements OnInit, OnDestroy {
-  constructor(public wsService: WebsocketService, public lcservice: LobbycodeService) {}
+  constructor(public wsService: WebsocketService, public lcservice: LobbycodeService, private router: Router) {}
   players: any;
   lobbyCode = '';
   messageFromServer: any;
@@ -61,7 +61,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
       if (this.gameStatus == 'ingame') {
         clearInterval(this.interval);
         //redirect to game page
-        window.location.href = '/GameOne';
+        this.router.navigate(['/GameOne']);
       }
     }, 2000);
   }
