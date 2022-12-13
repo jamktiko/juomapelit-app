@@ -21,7 +21,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     this.lobbyCode = this.lcservice.lobbycode;
     this.wsService.messages$.subscribe(
       (x) => {
-       // console.log(x);
+        // console.log(x);
         //@ts-ignore
         this.messageFromServer = x;
 
@@ -52,20 +52,17 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
         action: 'admin',
         data: { path: 'getAllData', lobbyCode: this.lobbyCode, name: '' },
       });
-      this.players = this.messageFromServer.players ;
-      console.log(this.players)
+      this.players = this.messageFromServer.players;
+      console.log(this.players);
       this.gameStatus = this.messageFromServer.gamestatus;
-      console.log(this.gameStatus)
+      console.log(this.gameStatus);
 
       //If gamestatus is ingame, then stop interval and redirect to game page
       if (this.gameStatus == 'ingame') {
         clearInterval(this.interval);
         //redirect to game page
         window.location.href = '/GameOne';
-        
       }
-
-
     }, 2000);
   }
 
@@ -96,7 +93,6 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     });
   }
   gamebegining() {
-
     clearInterval(this.interval);
 
     this.wsService.sendToServer({
@@ -105,7 +101,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     });
 
     setTimeout(() => {
-    this.getLobbyPlayers();
+      this.getLobbyPlayers();
     }, 3000);
   }
 
@@ -116,4 +112,3 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     });
   }
 }
-
