@@ -35,5 +35,12 @@ export class JoinLobbyComponent implements OnInit {
     console.log(this.msg);
   }
 
+  test() {
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'updateGameState', lobbyCode: 'ABCD', name: 'pelaaja1' },
+    });
+  }
+
   msg = { action: 'admin', data: { path: 'addPlayer', lobbyCode: 'ABCD', name: 'pelaaja1' } };
 }

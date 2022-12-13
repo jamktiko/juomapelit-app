@@ -32,7 +32,7 @@
       <!--modal footer-->
       <div id="exitLobbyFooter" style="text-align:center;padding:0.8em">
         <button type="button" class="button4" data-dismiss="modal">Peruuta</button> <button type="button"
-          class="button3" (click)="leavingLobby(this.lobbyCode)"  data-dismiss="modal" [routerLink]="['/JoinTable']"
+          class="button3" (click)="leavingLobby(this.lobbyCode)" data-dismiss="modal" [routerLink]="['/JoinTable']"
           routerLinkActive="router-link-active">Poistu</button>
       </div>
     </div>
@@ -54,12 +54,10 @@
 <!--Navigation-->
 <!--If hostId value is true, show button-->
 
-<div class="navi" >
+<div class="navi">
   <div class="navitem"><button id="startGame" class="button1" [routerLink]="['/GameOne']"
       routerLinkActive="router-link-active" [disabled]="!isHost">Aloita peli</button></div>
 </div>
 
+<button (click)="test()">PAINA</button>
 <!--Button is disabled if value is false-->
-
-
-

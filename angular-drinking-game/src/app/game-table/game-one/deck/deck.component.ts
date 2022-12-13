@@ -9,7 +9,6 @@ import { LobbycodeService } from 'src/app/services/lobbycode.service';
   templateUrl: './deck.component.html',
   styleUrls: ['./deck.component.css'],
 })
-
 export class DeckComponent implements OnInit {
   isOver = false; // Tells when the game is over
   //cards = CARDS;
@@ -19,7 +18,6 @@ export class DeckComponent implements OnInit {
   curRule = '';
 
   numcount = 0; // This is used to check if the card back is visible or not
-
 
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
@@ -31,7 +29,7 @@ export class DeckComponent implements OnInit {
     queryStringParameters: {}, // OPTIONAL
   };
 
-  playerArr = ['Janne', 'Upi', 'Maija']; // This is an array of players, this is a placeholder for now. This should be fetched from the backend, lets do this when we have the backend ready.
+  playerArr: any; // This is an array of players, this is a placeholder for now. This should be fetched from the backend, lets do this when we have the backend ready.
   constructor(public wsService: WebsocketService, public lcService: LobbycodeService) {}
 
   messageFromServer: any;
@@ -59,12 +57,11 @@ export class DeckComponent implements OnInit {
 
     setTimeout(() => {
       this.playerArr = this.item.players;
-      this.curTurn = '' // Current turn
+      this.curTurn = ''; // Current turn
     }, 3000);
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
-
 
   //Loading boolean, which determines if the cards are clickable or not
   loading = true;
@@ -115,54 +112,50 @@ export class DeckComponent implements OnInit {
 
   // This function is called when the user clicks the button to play a card, it also changes the player
 
-  curPlayerId:any; // Current player's ID. Host is always 0
-  curPlayer:any = ''; // Current player
-  nextPlayer:any = ''; // Next player
-  nextPlayerId:any; // Next player's ID
+  curPlayerId: any; // Current player's ID. Host is always 0
+  curPlayer: any = ''; // Current player
+  nextPlayer: any = ''; // Next player
+  nextPlayerId: any; // Next player's ID
 
   isDisabled = true; // This is used to disable the button when the game is over
 
-changePlayer() {
-  this.numcount++;
-  if(this.numcount != 0 && this.numcount % 2 === 0) {
-  // Get the index of the current turn in the playerArr array
-  this.curPlayerId = this.playerArr.indexOf(this.curTurn);
-  // Set the curPlayer property to the player at the current index in the playerArr array
-  this.curPlayer = this.playerArr[this.curPlayerId];
-  // Set the nextPlayerId property to the current player's index plus one
-  this.nextPlayerId = this.curPlayerId + 1;
-  // If the next player's index is greater than the length of the playerArr array,
-  // reset it to 0 (start back at the first player in the array)
-  if (this.nextPlayerId > this.playerArr.length - 1) {
-    this.nextPlayerId = 0;
-  }
-    // If the next player's index is less than 0, set it to the last player in the array
-    if (this.nextPlayerId < 0) {
-      this.nextPlayerId = this.playerArr.length - 1;
+  changePlayer() {
+    this.numcount++;
+    if (this.numcount != 0 && this.numcount % 2 === 0) {
+      // Get the index of the current turn in the playerArr array
+      this.curPlayerId = this.playerArr.indexOf(this.curTurn);
+      // Set the curPlayer property to the player at the current index in the playerArr array
+      this.curPlayer = this.playerArr[this.curPlayerId];
+      // Set the nextPlayerId property to the current player's index plus one
+      this.nextPlayerId = this.curPlayerId + 1;
+      // If the next player's index is greater than the length of the playerArr array,
+      // reset it to 0 (start back at the first player in the array)
+      if (this.nextPlayerId > this.playerArr.length - 1) {
+        this.nextPlayerId = 0;
+      }
+      // If the next player's index is less than 0, set it to the last player in the array
+      if (this.nextPlayerId < 0) {
+        this.nextPlayerId = this.playerArr.length - 1;
+      }
+      this.curPlayer = this.playerArr[this.nextPlayerId];
+      this.curPlayerId = this.nextPlayerId;
+
+      // Set the curPlayer property to the player at the current index in the playerArr array
+      this.curPlayer = this.playerArr[this.curPlayerId];
+      // Set the nextPlayer property to the player at the new nextPlayerId index in the playerArr array
+      this.nextPlayer = this.playerArr[this.nextPlayerId];
+      // Update the curTurn property to the nextPlayer
+      this.curTurn = this.nextPlayer;
     }
-  this.curPlayer = this.playerArr[this.nextPlayerId];
-  this.curPlayerId = this.nextPlayerId;
-    
-  // Set the curPlayer property to the player at the current index in the playerArr array
-  this.curPlayer = this.playerArr[this.curPlayerId];
-  // Set the nextPlayer property to the player at the new nextPlayerId index in the playerArr array
-  this.nextPlayer = this.playerArr[this.nextPlayerId];
-  // Update the curTurn property to the nextPlayer
-  this.curTurn = this.nextPlayer;
-}
+  }
 
-}
-
-  
-clog() {
-console.log("Kuka klikkaa korttia " + this.curPlayer)
-console.log("Hänen id on "+this.curPlayerId)
-console.log("kenen vuoro pitäisi olla: " + this.curTurn)
-console.log("Kuka on seuraava " + this.nextPlayer)
-console.log(this.playerArr)
-}
-
-
+  clog() {
+    console.log('Kuka klikkaa korttia ' + this.curPlayer);
+    console.log('Hänen id on ' + this.curPlayerId);
+    console.log('kenen vuoro pitäisi olla: ' + this.curTurn);
+    console.log('Kuka on seuraava ' + this.nextPlayer);
+    console.log(this.playerArr);
+  }
 
   getData() {
     this.wsService.sendToServer({ action: 'admin', data: { path: 'getAllData', lobbyCode: this.lobbycode } });

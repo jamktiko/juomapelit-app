@@ -18,14 +18,21 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   lobbycode = this.lcservice.lobbycode;
   ngOnInit(): void {
     this.lobbyCode = this.lcservice.lobbycode;
-    this.wsService.messages$.subscribe({
-      next: (x: any) => {
-        this.messageFromServer = JSON.parse(x.retData);
+    this.wsService.messages$.subscribe(
+      (x) => {
+        console.log(x);
+        //@ts-ignore
+        if (x.retData) {
+          //@ts-ignore
+          this.messageFromServer = JSON.parse(x.retData);
+          console.log(this.messageFromServer);
+          console.log(JSON.stringify(this.messageFromServer));
+        }
       },
-      error(err: any) {
+      (err) => {
         console.error('something wrong occurred: ' + err);
-      },
-    });
+      }
+    );
 
     this.getLobbyPlayers();
     setTimeout(() => {
@@ -81,6 +88,12 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     this.wsService.sendToServer({
       action: 'admin',
       data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'ingame' },
+    });
+  }
+  test() {
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'getAllData', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'ingame' },
     });
   }
 }
