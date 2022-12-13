@@ -115,7 +115,7 @@ diamond:string = '&#9830;&#xFE0E;';
 addSuitRank() {
   this.c.textAlign = "center";
   // Adds suit and rank to top
-  this.c.font = "60px Roboto-Black, sans-serif";
+  this.c.font = "50px Roboto-Black, sans-serif";
       // Hearts and diamonds color red, spades and clubs black
       if (this.shuffledCards[0][0]['suit'] === "♦" || this.shuffledCards[0][0]['suit'] === "♥") {
         this.c.fillStyle = "red";
@@ -155,7 +155,7 @@ addSuitRank() {
   this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
   // Adds suit and rank to bottom upside down
   this.c.rotate(180 * Math.PI / 180);
-  this.c.font = "60px Roboto-Black, sans-serif";
+  this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
   this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
