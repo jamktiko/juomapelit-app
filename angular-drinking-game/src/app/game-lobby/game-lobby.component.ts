@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WebsocketService } from '../services/websocket.service';
 import { LobbycodeService } from '../services/lobbycode.service';
 import { interval } from 'rxjs';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-game-lobby',
   templateUrl: './game-lobby.component.html',
@@ -16,18 +16,16 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   interval: any;
   isHost = this.lcservice.isHost;
   lobbycode = this.lcservice.lobbycode;
+  gameStatus: any;
   ngOnInit(): void {
     this.lobbyCode = this.lcservice.lobbycode;
     this.wsService.messages$.subscribe(
       (x) => {
-        console.log(x);
+       // console.log(x);
         //@ts-ignore
-        if (x.retData) {
-          //@ts-ignore
-          this.messageFromServer = JSON.parse(x.retData);
-          console.log(this.messageFromServer);
-          console.log(JSON.stringify(this.messageFromServer));
-        }
+        this.messageFromServer = x;
+
+        console.log(this.messageFromServer);
       },
       (err) => {
         console.error('something wrong occurred: ' + err);
@@ -52,9 +50,22 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     this.interval = setInterval(() => {
       this.wsService.sendToServer({
         action: 'admin',
-        data: { path: 'getPlayers', lobbyCode: this.lobbyCode, name: '' },
+        data: { path: 'getAllData', lobbyCode: this.lobbyCode, name: '' },
       });
-      this.players = this.messageFromServer;
+      this.players = this.messageFromServer.players ;
+      console.log(this.players)
+      this.gameStatus = this.messageFromServer.gamestatus;
+      console.log(this.gameStatus)
+
+      //If gamestatus is ingame, then stop interval and redirect to game page
+      if (this.gameStatus == 'ingame') {
+        clearInterval(this.interval);
+        //redirect to game page
+        window.location.href = '/GameOne';
+        
+      }
+
+
     }, 2000);
   }
 
@@ -85,11 +96,19 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     });
   }
   gamebegining() {
+
+    clearInterval(this.interval);
+
     this.wsService.sendToServer({
       action: 'admin',
       data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'ingame' },
     });
+
+    setTimeout(() => {
+    this.getLobbyPlayers();
+    }, 3000);
   }
+
   test() {
     this.wsService.sendToServer({
       action: 'admin',
@@ -97,3 +116,4 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
     });
   }
 }
+

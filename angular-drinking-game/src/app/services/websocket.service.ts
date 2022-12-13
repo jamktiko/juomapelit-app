@@ -13,6 +13,7 @@ export class WebsocketService {
 
   constructor() {}
 
+
   sendToServer(msg: any) {
     this.socket$.next(msg);
     //console.log('Message sent to server : ' + JSON.stringify(event));
