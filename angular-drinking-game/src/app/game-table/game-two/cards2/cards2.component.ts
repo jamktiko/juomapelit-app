@@ -125,7 +125,7 @@ addSuitRank() {
       // Changing the symbols to UTF-8 to prevent emojis in Android devices
       // diamond
       if (this.shuffledCards[0][0]['suit'] === "♦") {
-        this.shuffledCards[0][0]['suit'] === this.diamond;
+        this.shuffledCards[0][0]['suit'] === "&#10084;&#xFE0E;";
       }
       // heart
       if (this.shuffledCards[0][0]['suit'] === "♥") {
