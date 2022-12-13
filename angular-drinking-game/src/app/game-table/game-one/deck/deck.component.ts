@@ -18,6 +18,9 @@ export class DeckComponent implements OnInit {
   cardCount = 0; // How many cards have been played
   curRule = '';
 
+  numcount = 0; // This is used to check if the card back is visible or not
+
+
   shuffledCards: any[] = []; // Shuffled cards
   playedCards: any[] = []; // Played cards
 
@@ -28,12 +31,13 @@ export class DeckComponent implements OnInit {
     queryStringParameters: {}, // OPTIONAL
   };
 
-  playerArr: any; // This is an array of players, this is a placeholder for now, I dont know how to get the players from the table :D
+  playerArr = ['Janne', 'Upi', 'Maija']; // This is an array of players, this is a placeholder for now. This should be fetched from the backend, lets do this when we have the backend ready.
   constructor(public wsService: WebsocketService, public lcService: LobbycodeService) {}
 
   messageFromServer: any;
   item: any;
   lobbycode = this.lcService.lobbycode;
+  curTurn: any;
 
   ngOnInit(): void {
     this.wsService.messages$.subscribe({
@@ -48,12 +52,14 @@ export class DeckComponent implements OnInit {
       },
     });
     this.getCards();
-
+    this.curPlayer = this.playerArr[0];
+    this.curPlayerId = 0;
+    this.curTurn = this.playerArr[0];
+    this.nextPlayer = this.playerArr[1];
 
     setTimeout(() => {
       this.playerArr = this.item.players;
-      console.log(JSON.stringify(this.item.players));
-      console.log(this.playerArr);
+      this.curTurn = '' // Current turn
     }, 3000);
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
@@ -108,45 +114,55 @@ export class DeckComponent implements OnInit {
   }
 
   // This function is called when the user clicks the button to play a card, it also changes the player
-  curTurn = 'pelaaja0' // Current turn
-  numcount = 0; // This is used to check if the card back is visible or not
-  curPlayerId = 0; // Current player's ID. Host is always 0
+
+  curPlayerId:any; // Current player's ID. Host is always 0
   curPlayer:any = ''; // Current player
+  nextPlayer:any = ''; // Next player
+  nextPlayerId:any; // Next player's ID
 
-clog() {
-console.log("nimI : " + this.curPlayer)
-console.log("id : " + this.curPlayerId)
-console.log("kenen vuoro : " + this.curTurn)
-}
-clicks = 0;
+  isDisabled = true; // This is used to disable the button when the game is over
 
-
-
-playerChange() {
-  // Find the current player
-  //@ts-ignore
-  this.curPlayer = this.playerArr.find(name => name === this.curTurn);
-  // Otherwise, allow the current player to take their turn
-  this.clicks++;
-  // Check if the card back is visible or not.
-  if (this.numcount % 2 === 0) {
-    this.curPlayerId++;
-    if (this.curPlayerId === this.playerArr.length) {
-      this.curPlayerId = 0;
-      console.log(this.curPlayerId)
-    } else {
-      this.curPlayer = this.playerArr[this.curPlayerId];
-      console.log(this.curPlayerId)
-    }
+changePlayer() {
+  this.numcount++;
+  if(this.numcount != 0 && this.numcount % 2 === 0) {
+  // Get the index of the current turn in the playerArr array
+  this.curPlayerId = this.playerArr.indexOf(this.curTurn);
+  // Set the curPlayer property to the player at the current index in the playerArr array
+  this.curPlayer = this.playerArr[this.curPlayerId];
+  // Set the nextPlayerId property to the current player's index plus one
+  this.nextPlayerId = this.curPlayerId + 1;
+  // If the next player's index is greater than the length of the playerArr array,
+  // reset it to 0 (start back at the first player in the array)
+  if (this.nextPlayerId > this.playerArr.length - 1) {
+    this.nextPlayerId = 0;
   }
-    this.numcount++;
-    //This code is meant to prevent other players from playing cards when it's not their turn, there might be an easier way to do this.
-    if (this.clicks === 3) {
-      this.clicks = 0;
-      console.log("vuoro vaihtuu pelaajalle " + this.curPlayerId)
+    // If the next player's index is less than 0, set it to the last player in the array
+    if (this.nextPlayerId < 0) {
+      this.nextPlayerId = this.playerArr.length - 1;
     }
-    return true;
+  this.curPlayer = this.playerArr[this.nextPlayerId];
+  this.curPlayerId = this.nextPlayerId;
+    
+  // Set the curPlayer property to the player at the current index in the playerArr array
+  this.curPlayer = this.playerArr[this.curPlayerId];
+  // Set the nextPlayer property to the player at the new nextPlayerId index in the playerArr array
+  this.nextPlayer = this.playerArr[this.nextPlayerId];
+  // Update the curTurn property to the nextPlayer
+  this.curTurn = this.nextPlayer;
 }
+
+}
+
+  
+clog() {
+console.log("Kuka klikkaa korttia " + this.curPlayer)
+console.log("Hänen id on "+this.curPlayerId)
+console.log("kenen vuoro pitäisi olla: " + this.curTurn)
+console.log("Kuka on seuraava " + this.nextPlayer)
+console.log(this.playerArr)
+}
+
+
 
   getData() {
     this.wsService.sendToServer({ action: 'admin', data: { path: 'getAllData', lobbyCode: this.lobbycode } });

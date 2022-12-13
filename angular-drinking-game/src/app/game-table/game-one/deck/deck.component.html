@@ -15,10 +15,11 @@
     </svg>
   </div>
 </div>
+{{this.numcount}}
 {{this.curPlayer}}
 <!--Cards-component-->
-<app-cards [curRule]="this.curRule" [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards"
-  [loading]="this.loading" (click)="this.playerChange()">
+<app-cards [ngClass]="{'disabled': curPlayer !== curTurn}" [curRule]="this.curRule" [shuffledCards]="this.shuffledCards"
+  [playedCards]="this.playedCards" [loading]="this.loading" (click)="this.changePlayer()">
 </app-cards>
 <div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
 
