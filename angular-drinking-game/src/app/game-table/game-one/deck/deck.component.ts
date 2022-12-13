@@ -36,29 +36,33 @@ export class DeckComponent implements OnInit {
   item: any;
   lobbycode = this.lcService.lobbycode;
   curTurn: any;
+  turn: any;
+  players: any;
+  deck: any;
 
   ngOnInit(): void {
     this.wsService.messages$.subscribe({
       next: (x: any) => {
-        console.log('value ' + Object.values(x));
-        this.messageFromServer = JSON.parse(x.retData);
-        this.item = this.messageFromServer.Item;
-        console.log(this.item);
+        this.messageFromServer = x;
+        this.turn = this.messageFromServer.turn;
+        this.players = this.messageFromServer.players;
+        this.deck = this.messageFromServer.deck;
       },
       error(err: any) {
         console.error('something wrong occurred: ' + err);
       },
     });
     this.getCards();
-    this.curPlayer = this.playerArr[0];
-    this.curPlayerId = 0;
-    this.curTurn = this.playerArr[0];
-    this.nextPlayer = this.playerArr[1];
-
+    /*
     setTimeout(() => {
       this.playerArr = this.item.players;
       this.curTurn = ''; // Current turn
-    }, 3000);
+      console.log('paska');
+      this.curPlayer = this.playerArr[0];
+      this.curPlayerId = 0;
+      this.curTurn = this.playerArr[0];
+      this.nextPlayer = this.playerArr[1];
+    }, 3000);*/
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
