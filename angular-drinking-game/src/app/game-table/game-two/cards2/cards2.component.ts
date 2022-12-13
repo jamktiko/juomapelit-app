@@ -115,30 +115,23 @@ diamond:string = '&#9830;&#xFE0E;'; */
 addSuitRank() {
   this.c.textAlign = "center";
   // Adds suit and rank to top
-  this.c.font = "60px Roboto-Black, sans-serif, monospace";
+  this.c.font = "60px Roboto-Black, sans-serif";
       // Hearts and diamonds color red, spades and clubs black
       if (this.shuffledCards[0][0]['suit'] === "♦" || this.shuffledCards[0][0]['suit'] === "♥") {
         this.c.fillStyle = "red";
       } else {
         this.c.fillStyle = "black";
-      }; /*
-      // Changing the symbols to UTF-8 to prevent emojis in Android devices
-      // diamond
-      if (this.shuffledCards[0][0]['suit'] === "♦") {
-        this.shuffledCards[0][0]['suit'] === this.diamond;
-      }
-      // heart
-      if (this.shuffledCards[0][0]['suit'] === "♥") {
-        this.shuffledCards[0][0]['suit'] === this.heart;
-      }
-      // spade
-      if (this.shuffledCards[0][0]['suit'] === "♠") {
-        this.shuffledCards[0][0]['suit'] === this.spade;
-      }
-      // club
-      if (this.shuffledCards[0][0]['suit'] === "♣") {
-        this.shuffledCards[0][0]['suit'] === this.club;
-      } */
+      }; 
+      // Prevent emoji
+      if (this.shuffledCards[0][0]['suit'] == "♦") {
+        this.shuffledCards[0][0]['suit'] = '&#9830;&#xFE0E;';
+      } else if (this.shuffledCards[0][0]['suit'] == '♠') {
+        this.shuffledCards[0][0]['suit'] = '&#9827;&#xFE0E;';
+      } else if (this.shuffledCards[0][0]['suit'] == '♥') {
+        this.shuffledCards[0][0]['suit'] = '&#10084;&#xFE0E;';
+      } else if (this.shuffledCards[0][0]['suit'] == '♣') {
+        this.shuffledCards[0][0]['suit'] = '&#9827;&#xFE0E;';
+      };
 
       // Changes ranks 11/12/13/1 to J/Q/K/A
       if (this.shuffledCards[0][0]['rank'] == 11) {
@@ -151,13 +144,13 @@ addSuitRank() {
         this.shuffledCards[0][0]['rank'] = "A";
       };
   this.c.fillText(this.shuffledCards[0][0]['suit'], 35, 110);
-  this.c.font = "50px Roboto-Black, sans-serif, monospace";
+  this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
   // Adds suit and rank to bottom upside down
   this.c.rotate(180 * Math.PI / 180);
-  this.c.font = "60px Roboto-Black, sans-serif, monospace";
+  this.c.font = "60px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
-  this.c.font = "50px Roboto-Black, sans-serif, monospace";
+  this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
 }
 
