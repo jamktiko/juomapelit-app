@@ -10,6 +10,7 @@ import { LobbycodeService } from 'src/app/services/lobbycode.service';
   styleUrls: ['./deck.component.css'],
 })
 export class DeckComponent implements OnInit {
+
   isOver = false; // Tells when the game is over
   //cards = CARDS;
   //rules = RULES;
@@ -29,15 +30,14 @@ export class DeckComponent implements OnInit {
     queryStringParameters: {}, // OPTIONAL
   };
 
-  playerArr: any; // This is an array of players, this is a placeholder for now. This should be fetched from the backend, lets do this when we have the backend ready.
+  
   constructor(public wsService: WebsocketService, public lcService: LobbycodeService) {}
-
+  players: any; // This is an array of players, this is a placeholder for now. This should be fetched from the backend, lets do this when we have the backend ready.
   messageFromServer: any;
   item: any;
   lobbycode = this.lcService.lobbycode;
   curTurn: any;
   turn: any;
-  players: any;
   deck: any;
 
   ngOnInit(): void {
@@ -54,15 +54,13 @@ export class DeckComponent implements OnInit {
     });
     this.getCards();
 
-    //setTimeout(() => {
-    this.playerArr.push(this.players);
-    console.log('paska');
-    this.curPlayer = this.playerArr[0];
+    setTimeout(() => {
+    this.curPlayer = this.players[0];
     this.curPlayerId = 0;
-    this.curTurn = this.playerArr[0];
-    this.nextPlayer = this.playerArr[1];
-    //}, 3000);
-
+    this.curTurn = this.players[0];
+    this.nextPlayer = this.players[1];
+      console.log('paska');
+    }, 3000);
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
 
@@ -83,11 +81,14 @@ export class DeckComponent implements OnInit {
       .then((response) => {
         //console.log(response.data);
         // console.log(response.data);
-        this.shuffledCards.push(response.data);
-        this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
-        this.loading = false;
-        this.insertData(this.shuffledCards);
+        if (this.lcService.isHost) {
+          console.log('shuffling cards');
+          this.shuffledCards.push(response.data);
+          this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
+          this.insertData(this.shuffledCards);
+      }
         this.getData();
+        this.loading = false;
       })
       .catch((error) => {
         console.log(error.response);
@@ -122,31 +123,36 @@ export class DeckComponent implements OnInit {
 
   isDisabled = true; // This is used to disable the button when the game is over
 
+  updateDeck() {
+    this.insertData(this.deck);
+    this.getData();
+  }
+
   changePlayer() {
     this.numcount++;
     if (this.numcount != 0 && this.numcount % 2 === 0) {
       // Get the index of the current turn in the playerArr array
-      this.curPlayerId = this.playerArr.indexOf(this.curTurn);
+      this.curPlayerId = this.players.indexOf(this.curTurn);
       // Set the curPlayer property to the player at the current index in the playerArr array
-      this.curPlayer = this.playerArr[this.curPlayerId];
+      this.curPlayer = this.players[this.curPlayerId];
       // Set the nextPlayerId property to the current player's index plus one
       this.nextPlayerId = this.curPlayerId + 1;
       // If the next player's index is greater than the length of the playerArr array,
       // reset it to 0 (start back at the first player in the array)
-      if (this.nextPlayerId > this.playerArr.length - 1) {
+      if (this.nextPlayerId > this.players.length - 1) {
         this.nextPlayerId = 0;
       }
       // If the next player's index is less than 0, set it to the last player in the array
       if (this.nextPlayerId < 0) {
-        this.nextPlayerId = this.playerArr.length - 1;
+        this.nextPlayerId = this.players.length - 1;
       }
-      this.curPlayer = this.playerArr[this.nextPlayerId];
+      this.curPlayer = this.players[this.nextPlayerId];
       this.curPlayerId = this.nextPlayerId;
 
       // Set the curPlayer property to the player at the current index in the playerArr array
-      this.curPlayer = this.playerArr[this.curPlayerId];
+      this.curPlayer = this.players[this.curPlayerId];
       // Set the nextPlayer property to the player at the new nextPlayerId index in the playerArr array
-      this.nextPlayer = this.playerArr[this.nextPlayerId];
+      this.nextPlayer = this.players[this.nextPlayerId];
       // Update the curTurn property to the nextPlayer
       this.curTurn = this.nextPlayer;
     }
@@ -157,9 +163,8 @@ export class DeckComponent implements OnInit {
     console.log('Hänen id on ' + this.curPlayerId);
     console.log('kenen vuoro pitäisi olla: ' + this.curTurn);
     console.log('Kuka on seuraava ' + this.nextPlayer);
-    console.log('tässä playerArr: ' + this.playerArr);
-    console.log('ketä ' + this.players);
-    console.log('msg from server: ' + this.messageFromServer.players);
+    console.log('tässä players: ' + this.players);
+    console.log(this.players);
   }
 
   getData() {
@@ -169,13 +174,13 @@ export class DeckComponent implements OnInit {
   insertData(x: any) {
     this.wsService.sendToServer({
       action: 'admin',
-      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: this.curPlayer, deck: x },
+      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: this.curPlayer, deck: x , nextCard: false},
     });
   }
 
   pushPlayers() {
     for (let i = 0; i < this.item.players.length; i++) {
-      this.playerArr.push(this.item.players[i].pname);
+      this.players.push(this.item.players[i].pname);
     }
   }
 

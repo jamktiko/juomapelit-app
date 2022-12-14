@@ -18,8 +18,9 @@
 {{this.numcount}}
 {{this.curPlayer}}
 <!--Cards-component-->
-<app-cards [ngClass]="{'disabled': curPlayer !== curTurn}" [curRule]="this.curRule" [shuffledCards]="this.shuffledCards"
-  [playedCards]="this.playedCards" [loading]="this.loading" (click)="this.changePlayer()">
+<app-cards [ngClass]="{'disabled': curPlayer !== curTurn}" [curRule]="this.curRule" [deck]="deck"
+  [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards" [loading]="this.loading"
+  (click)="this.changePlayer()" (click)="this.updateDeck()">
 </app-cards>
 <div class="disableSelection" style="margin:1em">{{cardCount}}/52</div>
 

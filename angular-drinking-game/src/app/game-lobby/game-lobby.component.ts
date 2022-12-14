@@ -24,8 +24,6 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
         // console.log(x);
         //@ts-ignore
         this.messageFromServer = x;
-
-        console.log(this.messageFromServer);
       },
       (err) => {
         console.error('something wrong occurred: ' + err);
@@ -88,7 +86,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   insertData() {
     this.wsService.sendToServer({
       action: 'admin',
-      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'inlobby' },
+      data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'inlobby' , nextCard: false},
     });
   }
   gamebegining() {

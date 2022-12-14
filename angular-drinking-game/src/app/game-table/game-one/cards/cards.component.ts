@@ -13,10 +13,11 @@ export class CardsComponent implements OnInit {
   @Input() shuffledCards:any[] = []; // Shuffled cards
   @Input() playedCards: any[] = []; // Played cards
   @Input() loading: boolean = true;
-  
+  @Input() deck: any[] = [];
+
   curRuleHeader: any;
   card: any;
-
+  nCard: any;
   constructor (public deckComponent : DeckComponent) {};
   
   @ViewChild('canvas', { static: true }) 
@@ -98,54 +99,60 @@ export class CardsComponent implements OnInit {
     this.addSuitRank();
   }
 
+  clog() {
+    console.log(this.deck);
+    console.log(this.deck[0])
+    console.log(this.deck[0][0])
+    console.log(this.deck[0][0][0]['suit'])
+  }
   // Draw suit and rank to card
   addSuitRank() {
     this.c.textAlign = "center";
     // Adds suit and rank to top
     this.c.font = "60px Roboto-Black, sans-serif";
         // Hearts and diamonds color red, spades and clubs black
-        if (this.shuffledCards[0][0]['suit'] === "♦" || this.shuffledCards[0][0]['suit'] === "♥") {
+        if (this.deck[0][0]['suit'] === "♦" || this.deck[0][0]['suit'] === "♥") {
           this.c.fillStyle = "red";
         } else {
           this.c.fillStyle = "black";
         };
         // Changes ranks 11/12/13/1 to J/Q/K/A
-        if (this.shuffledCards[0][0]['rank'] == 11) {
-          this.shuffledCards[0][0]['rank'] = "J";
-        } else if (this.shuffledCards[0][0]['rank'] == 12) {
-          this.shuffledCards[0][0]['rank'] = "Q";
-        } else if (this.shuffledCards[0][0]['rank'] == 13) {
-          this.shuffledCards[0][0]['rank'] = "K";
-        } else if (this.shuffledCards[0][0]['rank'] == 1) {
-          this.shuffledCards[0][0]['rank'] = "A";
+        if (this.deck[0][0]['rank'] == 11) {
+          this.deck[0][0]['rank'] = "J";
+        } else if (this.deck[0][0]['rank'] == 12) {
+          this.deck[0][0]['rank'] = "Q";
+        } else if (this.deck[0][0]['rank'] == 13) {
+          this.deck[0][0]['rank'] = "K";
+        } else if (this.deck[0][0]['rank'] == 1) {
+          this.deck[0][0]['rank'] = "A";
         };
         
         // Changes the suit (string) to unicode. So it can be displayed right on mobile
-        if (this.shuffledCards[0][0]['suit'] == "♦") {
+        if (this.deck[0][0]['suit'] == "♦") {
           this.c.font = "60px Roboto-Black, sans-serif";
           this.c.fillText('\u{2666}\u{FE0E}', 35, 110);
           this.c.fillText('\u{2666}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♥") {
+        } else if (this.deck[0][0]['suit'] == "♥") {
           this.c.font = "60px Roboto-Black, sans-serif";
           this.c.fillText('\u{2665}\u{FE0E}', 35, 110);
           this.c.fillText('\u{2665}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♠") {
+        } else if (this.deck[0][0]['suit'] == "♠") {
           this.c.font = "60px Roboto-Black, sans-serif";
           this.c.fillText('\u{2660}\u{FE0E}', 35, 110);
           this.c.fillText('\u{2660}\u{FE0E}', -265, -360);
-        } else if (this.shuffledCards[0][0]['suit'] == "♣") {
+        } else if (this.deck[0][0]['suit'] == "♣") {
           this.c.font = "60px Roboto-Black, sans-serif";
           this.c.fillText('\u{2663}\u{FE0E}', 35, 110);
           this.c.fillText('\u{2663}\u{FE0E}', -265, -360);
         };
     
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
+    this.c.fillText(this.deck[0][0]['rank'], 35, 60);
     // Adds suit and rank to bottom upside down
     this.c.rotate(180 * Math.PI / 180);
 
     this.c.font = "50px Roboto-Black, sans-serif";
-    this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);
+    this.c.fillText(this.deck[0][0]['rank'], -265, -410);
   }
 
   // Plays the next card when the user clicks the button to do so
@@ -154,11 +161,11 @@ export class CardsComponent implements OnInit {
   next() {
     if (this.deckComponent.cardCount < 52) {
         // Adds the card to the played cards array
-        let temp = this.shuffledCards[0][0];
-        this.shuffledCards[0].splice(0, 1);
-        this.shuffledCards[0].push(temp);
-        this.curRule = this.shuffledCards[0][0]['rule'];
-        this.curRuleHeader = this.shuffledCards[0][0]['name'];
+        let temp = this.deck[0][0];
+        this.deck[0].splice(0, 1);
+        this.deck[0].push(temp);
+        this.curRule = this.deck[0][0]['rule'];
+        this.curRuleHeader = this.deck[0][0]['name'];
         // Increases the card count
         this.deckComponent.cardCount++;
       } else {
@@ -174,8 +181,8 @@ export class CardsComponent implements OnInit {
     if (this.deckComponent.cardCount === 0){
       this.cardFrontside();
       this.addSuitRank();
-      this.curRule = this.shuffledCards[0][0]['rule'];
-      this.curRuleHeader = this.shuffledCards[0][0]['name'];
+      this.curRule = this.deck[0][0]['rule'];
+      this.curRuleHeader = this.deck[0][0]['name'];
       this.deckComponent.cardCount++;
       //This is the part where the app chooses to either show the card or its backside
       //also check the html file, there is a ngif that checks if the card should have rules drawn on top of it or not. The code is somewhat funky at this point.
@@ -190,11 +197,13 @@ export class CardsComponent implements OnInit {
       this.addSuitRank();
       this.numcount++;
     }}
+
     }
 
 // When page loads
 ngOnInit(): void {
   this.c = this.canvas.nativeElement.getContext('2d');
   this.cardBackside();
+  
 }
 }
