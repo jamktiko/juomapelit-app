@@ -41,7 +41,6 @@ export class DeckComponent implements OnInit {
   deck: any;
 
   ngOnInit(): void {
-
     this.wsService.messages$.subscribe({
       next: (x: any) => {
         this.messageFromServer = x;
@@ -54,14 +53,14 @@ export class DeckComponent implements OnInit {
       },
     });
     this.getCards();
-    
+
     //setTimeout(() => {
-      this.playerArr.push(this.players);
-      console.log('paska');
-      this.curPlayer = this.playerArr[0];
-      this.curPlayerId = 0;
-      this.curTurn = this.playerArr[0];
-      this.nextPlayer = this.playerArr[1];
+    this.playerArr.push(this.players);
+    console.log('paska');
+    this.curPlayer = this.playerArr[0];
+    this.curPlayerId = 0;
+    this.curTurn = this.playerArr[0];
+    this.nextPlayer = this.playerArr[1];
     //}, 3000);
 
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
@@ -183,5 +182,18 @@ export class DeckComponent implements OnInit {
   // Restarts the page
   reloadPage() {
     window.location.reload();
+  }
+
+  removeLobby() {
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'removeLobby', lobbyCode: this.lobbycode },
+    });
+    this.wsService.sendToServer({
+      action: 'admin',
+      data: { path: 'removeGameState', lobbyCode: this.lobbycode },
+    });
+    this.wsService.closeServer();
+    window.location.href = '/MainMenu';
   }
 }

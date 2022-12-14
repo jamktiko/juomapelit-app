@@ -110,8 +110,8 @@
       <!--modal footer-->
       <div id="exitGameFooter" style="text-align:center;padding:0.8em">
         <button type="button" class="button4" data-dismiss="modal">Peruuta</button> <button type="button"
-          class="button3" data-dismiss="modal" (click)="wsService.closeServer()" [routerLink]="['/JoinTable']"
-          routerLinkActive="router-link-active">Poistu</button>
+          class="button3" (click)="removeLobby()" data-dismiss="modal" (click)="wsService.closeServer()"
+          [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Poistu</button>
       </div>
     </div>
   </div>

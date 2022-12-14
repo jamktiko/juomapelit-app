@@ -40,7 +40,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-      clearInterval(this.interval);
+    clearInterval(this.interval);
   }
 
   getLobbyPlayers() {
@@ -57,7 +57,6 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
 
       //If gamestatus is ingame, then stop interval and redirect to game page
       if (this.gameStatus == 'ingame') {
-    
         //redirect to game page
         this.router.navigate(['/GameOne']);
 
