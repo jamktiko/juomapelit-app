@@ -12,6 +12,7 @@
   </div>
 </div>
 
+<!--Content-->
 <h1 style="margin-top:2em">Liity huoneeseen</h1>
 <form id="joinGameForm">
   <label for="lobbyCode" class="form-label">
@@ -26,7 +27,7 @@
   <input class="form-control form-control-lg" #box (keyup)="getUserInput(box.value)" type="text" maxlength="15"
     style="text-align:center" id="playerName" placeholder="pelaaja1" aria-label="playerName">
 </form>
-
+<!--Join button-->
 <div class="navi" style="margin-top: 4em">
   <div class="navitem"><button (click)="wsService.sendToServer(msg)" class="button1"
       [routerLink]="['/GameLobby']">Liity</button>
@@ -37,7 +38,6 @@
 <!--Guide modal-->
 <div id="guide" class="modal fade bd-example-modal-lg" role="dialog">
   <div class="modal-dialog modal-dialog-lg">
-
 <!-- Modal content-->
 <div class="modal-content">
   <!--x button-->
@@ -76,7 +76,7 @@
 </div>
 </div>
 </div>
-
+<!--Modal footer-->
       <div style="text-align:center; margin:0.5em; margin-top:1em">
         <button type="button" class="button3" data-dismiss="modal">Sulje</button>
       </div>

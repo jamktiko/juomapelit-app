@@ -12,8 +12,8 @@
   </div>
 </div>
 
+<!--Content-->
 <h1 style="margin-top:2em">Luo peli</h1>
-
 <form id="createGameForm">
   <label for="playerName" class="form-label">
     <h3>Nimimerkkisi</h3>
@@ -21,7 +21,6 @@
   <input class="form-control form-control-lg" #box (keyup)="getUserInput(box.value)" type="text" maxlength="15"
     style="text-align:center" id="playerName" placeholder="pelaaja1" aria-label="playerName">
 </form>
-
 <h3>Huoneen koodi</h3>
 <div id="codeClass" style="font-size: 2em">{{this.koodi}}</div>
 
@@ -35,7 +34,6 @@
 <!--Guide modal-->
 <div id="guide" class="modal fade bd-example-modal-lg" role="dialog">
   <div class="modal-dialog modal-dialog-lg">
-
 <!-- Modal content-->
 <div class="modal-content">
   <!--x button-->
@@ -82,7 +80,7 @@
 </div>
 </div>
 </div>
-
+<!--Modal footer-->
       <div style="text-align:center; margin:0.5em; margin-top:1em">
         <button type="button" class="button3" data-dismiss="modal">Sulje</button>
       </div>
