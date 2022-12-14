@@ -40,9 +40,7 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (this.interval) {
       clearInterval(this.interval);
-    }
   }
 
   getLobbyPlayers() {
@@ -59,9 +57,11 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
 
       //If gamestatus is ingame, then stop interval and redirect to game page
       if (this.gameStatus == 'ingame') {
-        clearInterval(this.interval);
+    
         //redirect to game page
         this.router.navigate(['/GameOne']);
+
+        clearInterval(this.interval);
       }
     }, 2000);
   }
@@ -99,10 +99,6 @@ export class GameLobbyComponent implements OnInit, OnDestroy {
       action: 'admin',
       data: { path: 'updateGameState', lobbyCode: this.lobbycode, turn: '', deck: '', gamestatus: 'ingame' },
     });
-
-    setTimeout(() => {
-      this.getLobbyPlayers();
-    }, 3000);
   }
 
   test() {

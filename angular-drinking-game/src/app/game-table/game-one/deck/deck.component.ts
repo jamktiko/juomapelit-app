@@ -41,6 +41,7 @@ export class DeckComponent implements OnInit {
   deck: any;
 
   ngOnInit(): void {
+
     this.wsService.messages$.subscribe({
       next: (x: any) => {
         this.messageFromServer = x;
