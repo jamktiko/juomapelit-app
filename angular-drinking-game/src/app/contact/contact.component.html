@@ -26,7 +26,12 @@
 
 <!--Contact form begins here-->
 <h3>Palaute</h3>
-<div id="contactFormDiv">
+<!--When form has been submitted, form resets and shows this message-->
+<div *ngIf="submitClicked == true">
+    <p><b>Kiitos viestistäsi! Luemme sen mahdollisimman pian.</b></p>
+</div>
+
+<div id="contactFormDiv" *ngIf="submitClicked == false">
 <form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;max-width: 600px;"
     class="was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
 
@@ -83,11 +88,6 @@
 </form>
 </div>
 <!--Form div ends here-->
-
-<!--When form has been submitted, form resets and shows this message-->
-<div *ngIf="submitClicked == true">
-    <p><b>Kiitos viestistäsi! Luemme sen mahdollisimman pian.</b></p>
-</div>
 
 <!--Code for the form data to go to our email-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">

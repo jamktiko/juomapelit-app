@@ -2,20 +2,21 @@
 #players {
   margin: 0 auto;
   margin-top: 3em;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   display:flex;
   justify-content: center;
   align-items: center;
 }
 
 .playerName {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 4px;
-  border: 1px solid white;
+  background-color: #2f8faf;
+  padding: 8px;
   font-size: 1.2em;
+  font-family:'Roboto-Bold';
   width: 300px;
   animation: 1s slider forwards;
   position:absolute;
+  color:white;
 }
 @keyframes slider {
   0% { transform: translateX(-100%); }
