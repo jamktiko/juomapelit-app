@@ -99,12 +99,6 @@ export class CardsComponent implements OnInit {
     this.addSuitRank();
   }
 
-  clog() {
-    console.log(this.deck);
-    console.log(this.deck[0])
-    console.log(this.deck[0][0])
-    console.log(this.deck[0][0][0]['suit'])
-  }
   // Draw suit and rank to card
   addSuitRank() {
     this.c.textAlign = "center";

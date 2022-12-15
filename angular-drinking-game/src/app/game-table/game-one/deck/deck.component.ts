@@ -59,7 +59,6 @@ export class DeckComponent implements OnInit {
     this.curPlayerId = 0;
     this.curTurn = this.players[0];
     this.nextPlayer = this.players[1];
-      console.log('paska');
     }, 3000);
     //note maanantaille, pitäs saada pelaajalistan backista fronttiin näkymään yms.
   }
@@ -79,10 +78,7 @@ export class DeckComponent implements OnInit {
   getCards() {
     API.get('brewdeckApi', '/cards', this.params)
       .then((response) => {
-        //console.log(response.data);
-        // console.log(response.data);
         if (this.lcService.isHost) {
-          console.log('shuffling cards');
           this.shuffledCards.push(response.data);
           this.shuffle(this.shuffledCards[0]); // Shuffles the cards when the app is started
           this.insertData(this.shuffledCards);
@@ -95,13 +91,7 @@ export class DeckComponent implements OnInit {
       });
   }
 
-  /*
-  consolelog() {
-    console.log(this.shuffledCards);
-    console.log(this.shuffledCards[0]);
-    console.log(this.shuffledCards[0][0]['rank']);
-  }
-  */
+
   // This function gets random object from the randCards array (random indexing)
   // Card object values: index 0 = suit, index 1 = Id, index 2 = Name, index 3 = rank, and index 4 = Rule
 
@@ -158,14 +148,7 @@ export class DeckComponent implements OnInit {
     }
   }
 
-  clog() {
-    console.log('Kuka klikkaa korttia ' + this.curPlayer);
-    console.log('Hänen id on ' + this.curPlayerId);
-    console.log('kenen vuoro pitäisi olla: ' + this.curTurn);
-    console.log('Kuka on seuraava ' + this.nextPlayer);
-    console.log('tässä players: ' + this.players);
-    console.log(this.players);
-  }
+
 
   getData() {
     this.wsService.sendToServer({ action: 'admin', data: { path: 'getAllData', lobbyCode: this.lobbycode } });

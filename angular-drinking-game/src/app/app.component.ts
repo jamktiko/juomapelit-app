@@ -38,7 +38,6 @@ export class AppComponent {
   }
   openModal() {
     document.getElementById('modalButton')?.click();
-    console.log('modal opened');
   }
 
   constructor() {}

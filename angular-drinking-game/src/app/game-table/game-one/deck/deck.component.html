@@ -15,8 +15,7 @@
     </svg>
   </div>
 </div>
-{{this.numcount}}
-{{this.curPlayer}}
+
 <!--Cards-component-->
 <app-cards [ngClass]="{'disabled': curPlayer !== curTurn}" [curRule]="this.curRule" [deck]="deck"
   [shuffledCards]="this.shuffledCards" [playedCards]="this.playedCards" [loading]="this.loading"
@@ -29,8 +28,6 @@
   <button id="newGame" type="button" class="button1" (click)="newGame()">Uusi peli</button>
 </div>
 
-
-<button (click)="clog()">Lol</button>
 
 <!--Guide modal-->
 <div id="rules" class="modal fade bd-example-modal-lg" role="dialog">

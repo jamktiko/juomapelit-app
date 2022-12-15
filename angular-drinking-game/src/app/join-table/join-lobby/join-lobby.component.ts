@@ -15,7 +15,6 @@ export class JoinLobbyComponent implements OnInit {
     this.lcservice.changeHostFalse();
     this.wsService.messages$.subscribe({
       next: (x: any) => {
-        //console.log('got value ' + x);
         this.messageFromServer = JSON.stringify(x.retData);
       },
       error(err: any) {
@@ -26,13 +25,11 @@ export class JoinLobbyComponent implements OnInit {
 
   getLobbyCode(val: string) {
     this.msg.data.lobbyCode = val;
-    console.log(this.msg);
     this.lcservice.lobbycode = val;
   }
 
   getUserInput(val: string) {
     this.msg.data.name = val;
-    console.log(this.msg);
   }
 
   test() {

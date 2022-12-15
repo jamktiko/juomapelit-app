@@ -56,11 +56,6 @@ export class Deck3Component implements OnInit {
         });
     }
   
-    consolelog() {
-      console.log(this.shuffledCards);
-      console.log(this.shuffledCards[0]);
-      console.log(this.shuffledCards[0][0]['rank']);
-    }
   
     // This function gets random object from the randCards array (random indexing)
     // Card object values: index 0 = suit, index 1 = Id, index 2 = Name, index 3 = rank, and index 4 = Rule

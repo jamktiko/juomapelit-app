@@ -17,12 +17,9 @@ export class CreateLobbyComponent implements OnInit {
     this.randomFourLetterCode();
     this.lcservice.changeLobbycode(this.koodi);
     this.lcservice.changeHost();
-    console.log(this.lcservice.lobbycode);
     this.wsService.messages$.subscribe({
       next: (x) => {
-        // console.log('got value ' + JSON.stringify(x));
         this.messageFromServer = x;
-        //console.log(this.messageFromServer);
       },
       error(err: any) {
         console.error('something wrong occurred: ' + err);
@@ -41,7 +38,6 @@ export class CreateLobbyComponent implements OnInit {
 
   getUserInput(val: string) {
     this.msg.data.name = val;
-    console.log(this.msg);
   }
 
   msg = { action: 'admin', data: { path: 'hostLobby', lobbyCode: this.koodi, name: 'pelaaja1' } };
