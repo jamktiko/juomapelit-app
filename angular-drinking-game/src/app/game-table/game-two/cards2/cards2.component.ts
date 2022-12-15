@@ -27,6 +27,8 @@ c: CanvasRenderingContext2D|CanvasRenderingContext2D;
 cw = 300;
 ch = 475;
 
+myImg = new Image();
+
 elem = document.getElementById('canvas');
 
 toggleAdd() {
@@ -84,6 +86,7 @@ cardBackside() {
   this.c.fill();
 }
 
+
 // Draw upward card to canvas
 cardFrontside() {
   // Clears canvas
@@ -93,21 +96,50 @@ cardFrontside() {
   this.c.rect(0, 0, 300, 470);
   this.c.fillStyle = "#fff";
   this.c.fill();
+  // Draw logo
+  let img = new Image();
+  img.onload = () => {
+    this.c.drawImage(img, 50, 120, 200, 200)
+  }
+  img.src = 'https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png';
   // Adds suits and ranks
   this.addSuitRank();
 }
+
+spade:string = '&#9830;&#xFE0E;';
+club:string = '&#9827;&#xFE0E;';
+heart:string = '&#10084;&#xFE0E;';
+diamond:string = '&#9830;&#xFE0E;';
 
 // Draw suit and rank to card
 addSuitRank() {
   this.c.textAlign = "center";
   // Adds suit and rank to top
-  this.c.font = "60px Roboto-Black, sans-serif";
+  this.c.font = "50px Roboto-Black, sans-serif";
       // Hearts and diamonds color red, spades and clubs black
       if (this.shuffledCards[0][0]['suit'] === "♦" || this.shuffledCards[0][0]['suit'] === "♥") {
         this.c.fillStyle = "red";
       } else {
         this.c.fillStyle = "black";
       };
+      // Changing the symbols to UTF-8 to prevent emojis in Android devices
+      // diamond
+      if (this.shuffledCards[0][0]['suit'] === "♦") {
+        this.shuffledCards[0][0]['suit'] === this.diamond;
+      }
+      // heart
+      if (this.shuffledCards[0][0]['suit'] === "♥") {
+        this.shuffledCards[0][0]['suit'] === this.heart;
+      }
+      // spade
+      if (this.shuffledCards[0][0]['suit'] === "♠") {
+        this.shuffledCards[0][0]['suit'] === this.spade;
+      }
+      // club
+      if (this.shuffledCards[0][0]['suit'] === "♣") {
+        this.shuffledCards[0][0]['suit'] === this.club;
+      } 
+
       // Changes ranks 11/12/13/1 to J/Q/K/A
       if (this.shuffledCards[0][0]['rank'] == 11) {
         this.shuffledCards[0][0]['rank'] = "J";
@@ -123,7 +155,7 @@ addSuitRank() {
   this.c.fillText(this.shuffledCards[0][0]['rank'], 35, 60);
   // Adds suit and rank to bottom upside down
   this.c.rotate(180 * Math.PI / 180);
-  this.c.font = "60px Roboto-Black, sans-serif";
+  this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['suit'], -265, -360);
   this.c.font = "50px Roboto-Black, sans-serif";
   this.c.fillText(this.shuffledCards[0][0]['rank'], -265, -410);

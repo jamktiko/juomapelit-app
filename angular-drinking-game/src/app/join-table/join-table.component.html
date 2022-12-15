@@ -9,7 +9,7 @@
 
 <!--Logo-->
 <div id="logo">
-    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:300px;padding-top:1em">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo" style="max-width:250px;padding-top:5px">
 </div>
 
 <!--Navigation-->
@@ -22,9 +22,9 @@
     <div class="navitem"><button id="quickGame" type="button" (click)="toggleCollapse()" class="button1">Pikapeli</button>
         <!--Pikapeli collapse-->
         <div id="pikapeli" *ngIf="this.isCollapsed === false">
-          <div class="navitem collapseBtn"><button id="emptyDeck" class="button2" [routerLink]="['/GameTwo']" routerLinkActive="router-link-active">Korttipakka</button></div>
           <div class="navitem collapseBtn"><button id="vesiputous" class="button2" [routerLink]="['/GameThree']" routerLinkActive="router-link-active">Vesiputous</button></div>
-          </div>
+          <div class="navitem collapseBtn"><button id="emptyDeck" class="button2" [routerLink]="['/GameTwo']" routerLinkActive="router-link-active">Korttipakka</button></div>  
+        </div>
     </div>
     <!--nav buttons-->
     <div class="navitem"><button id="joinGameButton" class="button1" [routerLink]="['/JoinLobby']" routerLinkActive="router-link-active">Liity peliin</button></div>
