@@ -7,10 +7,10 @@ Welcome to BrewDeck, the ultimate drinking game app! With BrewDeck, you can play
 The app was created during the "Ticorporate" course, which is a mandatory course for TIKO-BIT students. This application was created by 4 IT-students, and the course was 4 or so months long. 
 
 The team composition:
-[juliuskelja](https://github.com/juliuskelja) Scrum Master / UI/UX
-[konnad](https://github.com/Konnad) Product Owner / Frontend
-[akunen](https://github.com/Akunen) Tester / Backend
-[toniv](https://github.com/AA3098) Backend
+* [juliuskelja](https://github.com/juliuskelja) Scrum Master / UI/UX
+* [konnad](https://github.com/Konnad) Product Owner / Frontend
+* [akunen](https://github.com/Akunen) Tester / Backend
+* [toniv](https://github.com/AA3098) Backend
 
 You can use and modify the code as you want.
 
