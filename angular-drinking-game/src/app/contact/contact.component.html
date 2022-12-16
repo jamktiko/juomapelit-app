@@ -1,11 +1,99 @@
+<!--Bar on top of page for round buttons-->
+<div class="iconBar">
+    <div class="iconBtn" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">
+  <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+  </svg>
+</div>
+</div>
+
 <h1>Ota yhteyttä</h1>
 
 <h3>Yhteystiedot</h3>
+
+<!--Social medias-->
+<a href="https://www.instagram.com/brewdeckgames/">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_instagram.png" alt="Instagram"
+        style="width: 60px; margin:10px;"></a>
+<a href="https://www.tiktok.com/@brewdeckgames">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_tiktok.png" alt="Tiktok"
+        style="width: 60px;margin:10px;"></a>
+<a href="https://twitter.com/brewdeckgames">
+    <img src="https://gameassetsbucket.s3.amazonaws.com/bd_twitter.png" alt="Twitter"
+        style="width: 60px;margin:10px;"></a>
+
 <p>brewdeckgames@gmail.com</p>
 
-<h3>Ilmoita bugista</h3>
-<p>Tähän lomake, jolla voi reporttaa bugin</p>
+<!--Contact form begins here-->
+<h3>Palaute</h3>
+<!--When form has been submitted, form resets and shows this message-->
+<div *ngIf="submitClicked == true">
+    <p><b>Kiitos viestistäsi! Luemme sen mahdollisimman pian.</b></p>
+</div>
 
-<p>
-    <button id="back" class="button2" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">Takaisin</button>
-</p>
+<div id="contactFormDiv" *ngIf="submitClicked == false">
+<form [formGroup]="contactionForm" name="contactForm " id="contactForm" style="text-align:left;margin-bottom: 15px;max-width: 600px;"
+    class="was-validated contact-form" (submit)="sendEmail($event)" target="_blank" no-validation>
+
+    <!--Title of form-->
+    <input class="form-control" id="formHeader" type="text" name="topic" placeholder="Otsikko" aria-label="title"
+        required formControlName="header">
+    <div class="invalid-feedback">
+        Kirjoita otsikko.
+    </div>
+    <br>
+
+    <!--Dropdown menu-->
+    <select class="form-select form-control" id="formSelect" aria-label="specifictopic" name="specifictopic" required
+        formControlName="type">
+        <option selected disabled value>Mitä asiasi koskee?</option>
+        <option value="Bugi">Bugi</option>
+        <option value="Palaute">Palaute</option>
+        <option value="Muu">Muu</option>
+    </select>
+    <div class="invalid-feedback">
+        Valitse aihe.
+    </div>
+
+    <br>
+    <!--Textarea-->
+    <div class="mb-3" style="width:100%">
+        <label for="msg" class="form-label">Kerro, miten voimme auttaa.</label>
+        <textarea class="form-control" id="msg" rows="3" name="message" required formControlName="problem"></textarea>
+        <div class="invalid-feedback">
+            Tämä kenttä ei voi olla tyhjä.
+        </div>
+
+    </div>
+
+    <!--Sender's email -form-->
+    <div class="mb-3" style="width:100%">
+        <label for="emailMsg" class="form-label">Jos haluat, että vastaamme viestiisi, annathan
+            sähköpostiosoitteesi.</label>
+        <input type="email" class="form-control" id="emailMsg" name="user_email" placeholder="name@example.com"
+            formControlName="email">
+    </div>
+
+    <!--Spam prevention field (not shown to regular users)-->
+    <input type="hidden" name="_honeypot" value="">
+
+    <!--Send or reset form buttons-->
+    <div style="text-align: center;">
+        <input type="submit" style="margin-right:3px" class="btn btn-primary btn-lg" id="formSubmit" value="Lähetä"
+            [disabled]="!contactionForm.valid" (click)="submittedFunction()">
+
+        <button type="reset" class="btn btn-secondary btn-lg" id="formReset">Tyhjennä</button>
+    </div>
+
+</form>
+</div>
+<!--Form div ends here-->
+
+<!--Code for the form data to go to our email-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("VvNpmdrxMAxW2nvcX");
+    })();
+</script>

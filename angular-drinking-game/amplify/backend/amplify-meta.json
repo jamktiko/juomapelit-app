@@ -1,81 +1,78 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-juomapeliapp-dev-83818-authRole",
-      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-juomapeliapp-dev-83818-authRole",
+      "AuthRoleName": "amplify-brewdeck-dev-90235-authRole",
+      "UnauthRoleArn": "arn:aws:iam::845860726746:role/amplify-brewdeck-dev-90235-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::845860726746:role/amplify-brewdeck-dev-90235-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
-      "UnauthRoleName": "amplify-juomapeliapp-dev-83818-unauthRole",
-      "StackName": "amplify-juomapeliapp-dev-83818",
-      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-juomapeliapp-dev-83818/46b42480-5c0b-11ed-a3a1-12dd9142426f",
-      "AmplifyAppId": "do1h3s391252d",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "DeploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
+      "UnauthRoleName": "amplify-brewdeck-dev-90235-unauthRole",
+      "StackName": "amplify-brewdeck-dev-90235",
+      "StackId": "arn:aws:cloudformation:us-east-1:845860726746:stack/amplify-brewdeck-dev-90235/fbe11a30-670e-11ed-9d2d-0e22ccdff659",
+      "AmplifyAppId": "d2hglbtt4qs1gs",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     }
   },
   "storage": {
-    "juomapeliDb": {
+    "brewdeckDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/storage/juomapeliDb-cloudformation-template.json",
-        "logicalId": "storagejuomapeliDb"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/storage/brewdeckDb-cloudformation-template.json",
+        "logicalId": "storagebrewdeckDb"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.548Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.743Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "us-east-1",
-        "Arn": "arn:aws:dynamodb:us-east-1:845860726746:table/juomapeliDb-dev",
-        "StreamArn": "arn:aws:dynamodb:us-east-1:845860726746:table/juomapeliDb-dev/stream/2022-11-04T06:46:28.417",
+        "Arn": "arn:aws:dynamodb:us-east-1:845860726746:table/brewdeckDb-dev",
+        "StreamArn": "arn:aws:dynamodb:us-east-1:845860726746:table/brewdeckDb-dev/stream/2022-11-18T07:08:31.022",
         "PartitionKeyType": "N",
-        "Name": "juomapeliDb-dev"
+        "Name": "brewdeckDb-dev"
       },
-      "lastPushDirHash": "34j3lwhQAqU9CzaM51JyRZcurpg="
+      "lastPushDirHash": "O4QHdDUqneol3sayMzEwHPTdg4Y="
     }
   },
   "function": {
-    "juomapeliLambda": {
+    "brewdeckLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "juomapeliDb",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
+          "resourceName": "brewdeckDb",
+          "attributes": ["Name", "Arn"],
           "attributeEnvMap": {
             "Name": "TABLE_NAME",
             "Arn": "TABLE_ARN"
           }
         }
       ],
-      "lastBuildTimeStamp": "2022-11-04T07:09:44.250Z",
+      "lastBuildTimeStamp": "2022-11-18T08:25:33.942Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2022-11-04T07:09:45.108Z",
-      "distZipFilename": "juomapeliLambda-52496c72365871336836-build.zip",
+      "lastPackageTimeStamp": "2022-11-18T08:25:34.932Z",
+      "distZipFilename": "brewdeckLambda-45386e77435156647463-build.zip",
       "s3Bucket": {
-        "deploymentBucketName": "amplify-juomapeliapp-dev-83818-deployment",
-        "s3Key": "amplify-builds/juomapeliLambda-52496c72365871336836-build.zip"
+        "deploymentBucketName": "amplify-brewdeck-dev-90235-deployment",
+        "s3Key": "amplify-builds/brewdeckLambda-45386e77435156647463-build.zip"
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/function/juomapeliLambda-cloudformation-template.json",
-        "logicalId": "functionjuomapeliLambda"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/function/brewdeckLambda-cloudformation-template.json",
+        "logicalId": "functionbrewdeckLambda"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:30.387Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.750Z",
       "output": {
         "Region": "us-east-1",
-        "Arn": "arn:aws:lambda:us-east-1:845860726746:function:juomapeliLambda-dev",
-        "Name": "juomapeliLambda-dev",
-        "LambdaExecutionRole": "juomapeliappLambdaRolec4755ca6-dev"
+        "Arn": "arn:aws:lambda:us-east-1:845860726746:function:brewdeckLambda-dev",
+        "Name": "brewdeckLambda-dev",
+        "LambdaExecutionRole": "brewdeckLambdaRole52d2c51d-dev"
       },
-      "lastPushDirHash": "BYXgJ5BUoEE6k0J8CCeBkhpA++E="
+      "lastPushDirHash": "uDYJUbkl9gPRpd75UyxPNnbKGT0="
     }
   },
   "auth": {
-    "juomapeliapp": {
+    "brewdeck": {
       "service": "Cognito",
       "serviceType": "managed",
       "providerPlugin": "awscloudformation",
@@ -83,63 +80,68 @@
       "frontendAuthConfig": {
         "socialProviders": [],
         "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL"
-        ],
+        "signupAttributes": ["EMAIL"],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
+        "mfaTypes": ["SMS"],
+        "verificationMechanisms": ["EMAIL"]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/auth/juomapeliapp-cloudformation-template.json",
-        "logicalId": "authjuomapeliapp"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/auth/brewdeck-cloudformation-template.json",
+        "logicalId": "authbrewdeck"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.570Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.758Z",
       "output": {
-        "UserPoolId": "us-east-1_AMXDiV1ZK",
-        "AppClientIDWeb": "42t70oebclev51p5oqrkjtocrt",
-        "AppClientID": "40p8lhr6a50lo5hbbg184vtsa0",
-        "IdentityPoolId": "us-east-1:1d62d762-adf8-46aa-a55f-efec40ff2894",
-        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:845860726746:userpool/us-east-1_AMXDiV1ZK",
-        "IdentityPoolName": "juomapeliapp_identitypool_7fefb741__dev",
-        "UserPoolName": "juomapeliapp_userpool_7fefb741"
+        "UserPoolId": "us-east-1_zyMNiHRxN",
+        "AppClientIDWeb": "4iae33mrq98e6dc7bou6hlor6k",
+        "AppClientID": "7dsep3vioip9iau5t46sit6e8c",
+        "IdentityPoolId": "us-east-1:16c16f3e-2d80-4ea1-8c21-a270e85df366",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:845860726746:userpool/us-east-1_zyMNiHRxN",
+        "IdentityPoolName": "brewdeck_identitypool_0b6a959f__dev",
+        "UserPoolName": "brewdeck_userpool_0b6a959f"
       },
-      "lastPushDirHash": "zB9mdB9jJw2oC1V7AO47k2phyfM="
+      "lastPushDirHash": "FlhZyo7ncZ7jYLc0lUbqJfGoakM="
     }
   },
   "api": {
-    "juomapeliApi": {
+    "brewdeckApi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "juomapeliLambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "resourceName": "brewdeckLambda",
+          "attributes": ["Name", "Arn"]
         }
       ],
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-juomapeliapp-dev-83818-deployment/amplify-cfn-templates/api/juomapeliApi-cloudformation-template.json",
-        "logicalId": "apijuomapeliApi"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/api/brewdeckApi-cloudformation-template.json",
+        "logicalId": "apibrewdeckApi"
       },
-      "lastPushTimeStamp": "2022-11-04T07:11:29.593Z",
+      "lastPushTimeStamp": "2022-11-22T06:47:24.766Z",
       "output": {
-        "ApiName": "juomapeliApi",
-        "RootUrl": "https://1hy4iwdp82.execute-api.us-east-1.amazonaws.com/dev",
-        "ApiId": "1hy4iwdp82"
+        "ApiName": "brewdeckApi",
+        "RootUrl": "https://dkfyn9kpji.execute-api.us-east-1.amazonaws.com/dev",
+        "ApiId": "dkfyn9kpji"
       },
-      "lastPushDirHash": "gs6W5lUVmv9N7QWMRzMokj0tNh8="
+      "lastPushDirHash": "3JaxLSumXxz1wq7ubEFCFeIVvmw="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-brewdeck-dev-90235-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
+        "logicalId": "hostingamplifyhosting"
+      },
+      "lastPushTimeStamp": "2022-11-22T06:47:24.774Z",
+      "output": {},
+      "lastPushDirHash": "mwDEPdfv12dnh4QxWjHhBs6m1QI="
     }
   }
 }

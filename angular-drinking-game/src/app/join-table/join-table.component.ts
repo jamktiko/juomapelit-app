@@ -3,13 +3,20 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-join-table',
   templateUrl: './join-table.component.html',
-  styleUrls: ['./join-table.component.css']
+  styleUrls: ['./join-table.component.css'],
 })
 export class JoinTableComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  isCollapsed = true;
 
-  ngOnInit(): void {
+  toggleCollapse() {
+    if(this.isCollapsed) {
+      this.isCollapsed = false;
+    } else {
+      this.isCollapsed = true;
+    }
   }
 
+  ngOnInit(): void {}
 }

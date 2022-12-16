@@ -23,7 +23,7 @@ body {
     position: absolute;
     width: 280px;
     height: 190px;
-    top: 8rem;
+    top: 7rem;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -34,13 +34,10 @@ body {
 
 #canvas {
     width: 300px;
-    height: 470px;
-    border-radius:25px;
+    height: 475px;
+    border-radius:20px;
     margin: 0 auto;
+    opacity:1;
+    transition: opacity 3s;
     border: 2px solid #333333;
-}
-
-/* Responsive layout */
-@media screen and (max-width: 500px) {
-
 }

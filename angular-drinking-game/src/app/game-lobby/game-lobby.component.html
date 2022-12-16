@@ -1,26 +1,64 @@
-<h1>Lobby ABCD</h1>
-<!--List of players-->
-<table id="players">
-    <tr>
-        <th>Pelaajat (5)</th>
-    </tr>
-    <tr>
-        <td>dragonslayer999</td>
-    <tr>
-        <td>HyperCarry645</td>
-    </tr>
-    <tr>
-        <td>theLegend333</td>
-    </tr>
-    <tr>
-        <td>FuriousStrawberry</td>
-    </tr>
-    <tr>
-        <td>beautiful_curry67</td>
-    </tr>
+<!--Bar on top of page for round buttons-->
+<div class="iconBar">
+  <div class="iconBtn iconRed" type="button" id="exitLobbyBtn" data-toggle="modal" data-target="#exitLobby">
+    <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="white" style="stroke:white;stroke-width:2"
+      class="bi bi-x-lg" viewBox="0 0 16 16">
+      <path
+        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+    </svg>
+  </div>
+</div>
+
+<!--Modal-->
+<div class="modal bd-example-modal-sm slide-in" tabindex="-1" id="exitLobby" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <!--x button-->
+      <div class="iconBtn iconRight iconRed" style="height:2em;width:2em;margin-right:0.8em;margin-top:0.8em"
+        type="button" id="exitLobbyBtn" data-dismiss="modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white"
+          style="stroke:white;stroke-width:2" class="bi bi-x-lg" viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+        </svg>
+      </div>
+      <!--content-->
+      <div id="exitLobbyHeader modalHeader">
+        <h5 style="margin-top:0 !important">Poistu huoneesta</h5>
+      </div>
+      <div class="modal-body">
+        <p>Oletko varma, että haluat poistua huoneesta?</p>
+      </div>
+      <!--modal footer-->
+      <div id="exitLobbyFooter" style="text-align:center;padding:0.8em">
+        <button type="button" class="button4" data-dismiss="modal">Peruuta</button> <button type="button"
+          class="button3" (click)="leavingLobby(this.lobbyCode)" data-dismiss="modal" [routerLink]="['/JoinTable']"
+          routerLinkActive="router-link-active">Poistu</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal ends-->
+
+
+
+<h1 style="margin-top:2em">Lobby {{this.lobbyCode}}</h1>
+<!--Lista pelaajista. tässä otetaan players taulukosta 0 indexi käsittelyyn koska,
+ en ole keksinyt miten serverin antaman responssin saisi muuten järkevästi parsittua. :D t:Aku-->
+<table id="players" *ngFor="let player of players">
+  <div class="playerName">{{player}}</div> 
 </table>
 
-<!--Buttons-->
+<p><b>Odota, että ylläpitäjä aloittaa pelin.</b></p>
 
-<button id="chooseGame" class="button2" [routerLink]="['/GameTable']" routerLinkActive="router-link-active">Valitse peli</button><br>
-<button id="back" class="button2" [routerLink]="['/JoinTable']" routerLinkActive="router-link-active">Takaisin</button>
+<!--Navigation-->
+<!--If hostId value is true, show button-->
+
+<div class="navi">
+  <div class="navitem"><button id="startGame" class="button1" (click)="gamebegining()" [routerLink]="['/GameOne']"
+      [disabled]="!isHost">Aloita
+      peli</button></div>
+</div>
+
+
+<!--Button is disabled if value is false-->

@@ -11,7 +11,7 @@
     "env": {
       "Type": "String"
     },
-    "juomapeliApi": {
+    "brewdeckApi": {
       "Type": "String"
     }
   },
@@ -52,7 +52,7 @@
                       },
                       ":",
                       {
-                        "Ref": "juomapeliApi"
+                        "Ref": "brewdeckApi"
                       },
                       "/",
                       {
@@ -82,7 +82,7 @@
                       },
                       ":",
                       {
-                        "Ref": "juomapeliApi"
+                        "Ref": "brewdeckApi"
                       },
                       "/",
                       {
@@ -135,7 +135,7 @@
                       },
                       ":",
                       {
-                        "Ref": "juomapeliApi"
+                        "Ref": "brewdeckApi"
                       },
                       "/",
                       {
@@ -165,7 +165,7 @@
                       },
                       ":",
                       {
-                        "Ref": "juomapeliApi"
+                        "Ref": "brewdeckApi"
                       },
                       "/",
                       {

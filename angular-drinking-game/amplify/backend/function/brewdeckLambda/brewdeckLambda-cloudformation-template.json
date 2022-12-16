@@ -16,13 +16,13 @@
     "s3Key": {
       "Type": "String"
     },
-    "storagejuomapeliDbName": {
+    "storagebrewdeckDbName": {
       "Type": "String",
-      "Default": "storagejuomapeliDbName"
+      "Default": "storagebrewdeckDbName"
     },
-    "storagejuomapeliDbArn": {
+    "storagebrewdeckDbArn": {
       "Type": "String",
-      "Default": "storagejuomapeliDbArn"
+      "Default": "storagebrewdeckDbArn"
     }
   },
   "Conditions": {
@@ -55,12 +55,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "juomapeliLambda",
+            "brewdeckLambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "juomapeliLambda",
+                  "brewdeckLambda",
                   "-",
                   {
                     "Ref": "env"
@@ -97,12 +97,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "juomapeliappLambdaRolec4755ca6",
+            "brewdeckLambdaRole52d2c51d",
             {
               "Fn::Join": [
                 "",
                 [
-                  "juomapeliappLambdaRolec4755ca6",
+                  "brewdeckLambdaRole52d2c51d",
                   "-",
                   {
                     "Ref": "env"
@@ -182,14 +182,14 @@
               ],
               "Resource": [
                 {
-                  "Ref": "storagejuomapeliDbArn"
+                  "Ref": "storagebrewdeckDbArn"
                 },
                 {
                   "Fn::Join": [
                     "/",
                     [
                       {
-                        "Ref": "storagejuomapeliDbArn"
+                        "Ref": "storagebrewdeckDbArn"
                       },
                       "index/*"
                     ]

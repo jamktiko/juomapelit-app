@@ -1,37 +1,29 @@
+<!--Bar on top of page for round buttons-->
+<div class="iconBar">
+  <!--Speech bubble-->
+  <div class="speech-bubble2">
+    Tippaa!</div>
+  <a class="iconRight" href="https://www.buymeacoffee.com/brewdeck" target="_blank">
+    <div class="iconBtn iconRight iconGreen">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="stroke:white;stroke-width:0.5px;"
+        fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
+        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+        <path
+          d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
+      </svg>
+    </div>
+  </a>
+</div>
+
 <!--Logo-->
 <div id="logo">
-  <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo">
+  <img src="https://gameassetsbucket.s3.amazonaws.com/bd_logo1.png" alt="Logo"
+    style="max-width: 250px; padding-top:5px">
 </div>
-
 <!--Navigation-->
 <div class="navi">
-      <div class="naviItem"><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
-      <div class="naviItem"><button type="button" class="button2" data-toggle="modal" data-target="#guide">Ohjeet</button></div>
-      <div class="naviItem"><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
-</div>
-
-<!--Guide modal-->
-<div id="guide" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-        <h1 class="modal-title" style="text-align:center;margin-top: 0.5em;">Ohjeet</h1>
-      <div class="modal-body" style="text-align:left">
-        <h4 style="text-align:center">Kuinka pelaan BrewDeckiä?</h4>
-        <p><b>Unohtuiko korttipakka kotiin? Ei hätää, onhan meillä BrewDeck!</b></p>
-        <p>BrewDeck on ilmainen verkkoselaimessa toimiva sovellus, jolla voit pelata niin perinteisiä kuin uusia juomapelejä.
-          Sovellus korvaa fyysisen korttipakan ja on helppo ja nopea käyttää.
-        </p>
-        <p>BrewDeckillä luot pelin nopeasti ilman sisäänkirjautumista, ja kaikki pelaajat voivat pelata peliä omilta laitteiltaan.
-          Liittyäksesi peliin, tarvitset vain huoneen koodin. Koodi on näkyvillä sillä pelaajalla, joka on luonut pelin ja huoneen.
-        </p>
-        <p>Luo siis vain peli ja jaa huoneen koodi ystävillesi, niin peli voi alkaa!</p>
-      </div>
-      <div style="text-align:center; margin:0.5em;">
-        <button type="button" class="button2" data-dismiss="modal" style="width: 30%">Sulje</button>
-      </div>
-    </div>
-
-  </div>
+  <div class="navitem"><button id="play" class="button1" [routerLink]="['/JoinTable']">Pelaa!</button></div>
+  <div class="navitem"><button id="contact" class="button2" [routerLink]="['/Contact']">Ota yhteyttä</button></div>
+  <div class="navitem"><button id="settings" class="button2" [routerLink]="['/Settings']">Meistä</button></div>
 </div>

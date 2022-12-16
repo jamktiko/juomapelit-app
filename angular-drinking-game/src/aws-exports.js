@@ -6,14 +6,14 @@ const awsmobile = {
     "aws_dynamodb_all_tables_region": "us-east-1",
     "aws_dynamodb_table_schemas": [
         {
-            "tableName": "juomapeliDb-dev",
+            "tableName": "brewdeckDb-dev",
             "region": "us-east-1"
         }
     ],
-    "aws_cognito_identity_pool_id": "us-east-1:1d62d762-adf8-46aa-a55f-efec40ff2894",
+    "aws_cognito_identity_pool_id": "us-east-1:16c16f3e-2d80-4ea1-8c21-a270e85df366",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_AMXDiV1ZK",
-    "aws_user_pools_web_client_id": "42t70oebclev51p5oqrkjtocrt",
+    "aws_user_pools_id": "us-east-1_zyMNiHRxN",
+    "aws_user_pools_web_client_id": "4iae33mrq98e6dc7bou6hlor6k",
     "oauth": {},
     "aws_cognito_username_attributes": [],
     "aws_cognito_social_providers": [],
@@ -33,8 +33,8 @@ const awsmobile = {
     ],
     "aws_cloud_logic_custom": [
         {
-            "name": "juomapeliApi",
-            "endpoint": "https://1hy4iwdp82.execute-api.us-east-1.amazonaws.com/dev",
+            "name": "brewdeckApi",
+            "endpoint": "https://dkfyn9kpji.execute-api.us-east-1.amazonaws.com/dev",
             "region": "us-east-1"
         }
     ]

@@ -1,6 +1,6 @@
 {
-  "resourceName": "juomapeliDb",
-  "tableName": "juomapeliDb",
+  "resourceName": "brewdeckDb",
+  "tableName": "brewdeckDb",
   "partitionKey": {
     "fieldName": "id",
     "fieldType": "number"

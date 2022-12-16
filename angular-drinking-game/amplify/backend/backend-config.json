@@ -1,19 +1,19 @@
 {
   "storage": {
-    "juomapeliDb": {
+    "brewdeckDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
   },
   "function": {
-    "juomapeliLambda": {
+    "brewdeckLambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "storage",
-          "resourceName": "juomapeliDb",
+          "resourceName": "brewdeckDb",
           "attributes": [
             "Name",
             "Arn"
@@ -27,7 +27,7 @@
     }
   },
   "auth": {
-    "juomapeliapp": {
+    "brewdeck": {
       "service": "Cognito",
       "serviceType": "managed",
       "providerPlugin": "awscloudformation",
@@ -53,19 +53,26 @@
     }
   },
   "api": {
-    "juomapeliApi": {
+    "brewdeckApi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "juomapeliLambda",
+          "resourceName": "brewdeckLambda",
           "attributes": [
             "Name",
             "Arn"
           ]
         }
       ]
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "providerPlugin": "awscloudformation",
+      "type": "manual"
     }
   }
 }
